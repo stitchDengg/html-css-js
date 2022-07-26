@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj1 = {
+            a:1,
+            b:2,
+            c:[44,55,66],
+        };
+
+        // var obj2 = obj1; //只是把obj1的地址给了obj2，obj1改变obj2也会跟着改变。
+        var obj2 = {
+
+        };
+        for(var k in obj1){
+            // 每遍历一个k属性，就给obj2添加一个同名的k属性
+            obj2[k] = obj1[k];
+        }
+
+        console.log(obj2 == obj1); //flase完成克隆
+        obj1.c[0]++;
+        console.log(obj2);  //c数组里第一项变成了45，只是完成了浅克隆
+    </script>
+</body>
+</html>

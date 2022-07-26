@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            a:11,
+            b:22,
+            c:88,
+        };
+
+        for(var k in obj){
+            // 此时键名k是变量只能用方框而不能使用.语法
+            console.log('对象obj的属性' + k + '的值是' + obj[k]);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    div{
+        width: 400px;
+        height: 400px;
+        border: 1px solid #000;
+        margin: 40px auto;
+    }
+    p{
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        /* 相对定位相对原来的位置移动 竖直方向选一个词 水平方向选一个词*/
+        /* 相对定位的元素会在“老家留坑” 本质依然在原来的位置，只不过渲染在其他地方 */
+        /* 相对定位用来微调元素位置 */
+        position: relative;
+        /* top: 100px;
+        left: 100px; */
+        /* right: 100px;
+        bottom: 100px; */
+        top: 700px;
+        left: 400px;
+        /* 文字会向下移动 */
+        margin-bottom: 100px;
+    }
+</style>
+<body>
+    <div>
+        <p></p>
+        <h3>我是一个三级标题</h3>
+        <ul>
+            <li>列表</li>
+            <li>列表</li>
+            <li>列表</li>
+        </ul>
+    </div>
+</body>
+</html>

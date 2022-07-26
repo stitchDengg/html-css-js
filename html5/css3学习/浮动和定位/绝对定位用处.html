@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .div1{
+        width: 650px;
+        height: 360px;
+        border: 1px solid #000;
+        margin: 40px auto;
+        position: relative;
+    }
+    /* 使用共性和个性一起写样式 */
+    .div1 .btn{
+        text-decoration: none;
+        position: absolute;
+        /* 使用绝对定位即可写宽高 */
+        width: 40px;
+        height: 40px;
+        border: 1px solid #000;
+        top: 50%;
+        margin-top: -20px;
+        /* 圆形 */
+        border-radius: 50%;
+        text-align: center;
+        line-height: 40px;
+        background-color: rgba(255, 255,255, .5);
+        /* 鼠标为小手 */
+        cursor: pointer;
+        font-family: consolas;
+        font-size: 26px;
+    }
+    .div1 .btn:hover{
+        background-color: gold;
+        color: white;
+    }
+    .div1 .leftbtn{
+        left: 10px;
+    }
+    .div1 .rightbtn{
+        right: 10px;
+       
+    }
+    .div1 ol{
+        position: absolute;
+        width: 120px;
+        height: 20px;
+        right: 20px;
+        bottom: 20px;
+        /* background-color: green; */
+    }
+    .div1 ol li{
+        float: left;
+        width: 20px;
+        height: 20px;
+        background-color: rgba(255, 255,255, .5);
+        /* 变为圆形 */
+        border-radius: 50%;
+        margin-right: 10px;
+        list-style: none;
+    }
+    .div1 ol li.current{
+        background-color: gold;
+    }
+</style>
+<body>
+    <!-- 若有压盖处理则使用绝对定位 -->
+    <div class="div1">
+        <img src="../images/beijing/1.jpg" alt="">
+        <a href="#" class="leftbtn btn" >&lt;</a>
+        <a href="#" class="rightbtn btn">&gt;</a>
+        <ol>
+            <li></li>
+            <li></li>
+            <li class="current"></li>
+            <li></li>
+        </ol>
+    </div>
+</body>
+</html>

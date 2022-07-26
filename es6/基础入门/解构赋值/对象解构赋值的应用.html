@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.函数的参数解构赋值
+        // const logPersonInfo = user => console.log(user.userName,user.age);
+        // logPersonInfo({userName:'alex',age:18});
+
+        const logPersonInfo = ({userName = 'dasdsa',age = 20}) => console.log(userName,age);
+        logPersonInfo({userName:'alex',age:18});  //alex 18
+        logPersonInfo({});  //默认值  dasdsa 20
+        // 有一个这样的过程
+        //{userName,age} = {userName:'alex',age:18};
+
+
+        // 2.复杂的嵌套
+        const obj = {
+            x:1,
+            y:[2,3,4],
+            z:{
+                a:5,
+                b:6
+            },
+        };
+        
+        // const {x,y,z}  = obj;
+        // console.log(x,y,z);   //1  [2, 3, 4] {a: 5, b: 6}
+
+        const {y,y:[,d]} = obj;
+        console.log(d,y);  //3 [2, 3, 4]
+    </script>
+</body>
+</html>

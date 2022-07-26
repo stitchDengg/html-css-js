@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+    </ul>
+
+
+    <script>
+        var oList = document.getElementById('list');
+        var lis = oList.getElementsByTagName('li');
+
+        // 书写循环语句，批量给元素添加监听
+        // 每个事件注册都会消耗内存，批量添加事件导致内存消耗非常大
+        // 每个函数也是不同的监听函数，这些函数本身也会占用内存
+        for (var index = 0; index < lis.length; index++) {
+            lis[index].onclick = function(){
+                // 在这个函数中，this表示的就是点击的这个元素,this涉及了函数上下文的相关知识，我们在面向对象课程中介绍
+                this.style.color = 'red';
+            }
+        }
+
+        // 新增元素必须分别添加事件监听，不能自动获得事件监听
+        // 大量事件监听，大量事件处理函数都会造成大量的消耗内存
+    </script>
+</body>
+</html>

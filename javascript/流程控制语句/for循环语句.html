@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //for简单算法1
+        //求1到100的累加和
+        for(var i = 1,sum = 0;i <= 100;i++){
+            sum += i;
+        } 
+        console.log(sum); 
+        
+        //for简单算法2
+        //1到100中那个数字除3余1，除4余2，除5余3
+        for(var a = 1;a <= 100;a ++){
+            if(a % 3 == 1 && a % 4 == 2 && a % 5 == 3){
+                break;
+            }
+        }
+        console.log(a);
+    </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .dengpao{
+        position: absolute;
+        top: 300px;
+        left: 300px;
+    }
+    .guang{
+        position: absolute;
+        top: 236px;
+        left: 221px;
+        /* 灯光闪烁 */
+        animation: ss 2s ease 0s infinite alternate;
+    }
+    @keyframes ss {
+        from{
+            opacity: 1;
+        }
+        to{
+            opacity: 0;
+        }
+    }
+    .huojian{
+        position: absolute;
+        top: 300px;
+        left: 800px;
+        animation: zd .8s ease 0s infinite alternate;
+    }
+    @keyframes zd {
+        form{
+            transform: translateX(-20px) translateY(-20px);
+        }
+        to{
+            transform: translateX(20px) translateY(20px);
+        }
+    }
+    .line1{
+        opacity: 0;
+        width: 2px;
+        height: 166px;
+        background-color: blue;
+        position: absolute;
+        top: 300px;
+        left: 800px;
+        transform: rotate(45deg);
+        animation: yd .8s ease 0s infinite alternate;
+    }
+    @keyframes yd {
+        0%{
+            opacity: 0;
+            transform: rotate(45deg)  translateY(200px);
+        }
+        50%{
+            opacity: 1;
+            transform: rotate(45deg)  translateY(-200px);
+        }
+        100%{
+            opacity: 0;
+            transform: rotate(45deg)  translateY(-200px);
+        }
+    }
+    .line2{
+        opacity: 0;
+        width: 2px;
+        height: 166px;
+        background-color: blue;
+        position: absolute;
+        top: 340px;
+        left: 850px;
+        transform: rotate(45deg);
+        animation: yd .8s ease .4s infinite alternate;
+    }
+    .line3{
+        opacity: 0;
+        width: 2px;
+        height: 166px;
+        background-color: blue;
+        position: absolute;
+        top: 380px;
+        left: 900px;
+        transform: rotate(45deg);
+        animation: yd .8s ease .8s infinite alternate;
+    }
+    .line4{
+        opacity: 0;
+        width: 2px;
+        height: 166px;
+        background-color: blue;
+        position: absolute;
+        top: 420px;
+        left: 950px;
+        transform: rotate(45deg);
+        animation: yd .8s ease .5s infinite alternate;
+    }
+</style>
+<body>
+    <img class="dengpao" src="images/dengpao.png" alt="">
+    <img class="guang" src="images/guang.png" alt="">  
+    <img class="huojian" src="images/huojian.png" alt="">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+    <div class="line4"></div>
+</body>
+</html>

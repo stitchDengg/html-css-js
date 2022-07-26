@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <input type="text" id="nameField">
+    <form id="myform">
+        <!-- 表单元素子元素可以不用id用name -->
+        <p>
+            姓名：
+            <input type="text" name="nameField">
+        </p>
+        <p>
+            年龄：
+            <input type="text" name="ageField">
+        </p>
+        <p>
+            <input type="submit">
+        </p>
+        <p>
+            <input type="reset">
+        </p>
+    </form>
+    <script>
+        var box = document.getElementById('box');
+        // 常见鼠标监听
+        // 给box盒子添加点击事件监听
+        box.onclick = function() {
+            console.log('你好，我是点击事件函数');
+        }
+        // 给box盒子添加双击击事件监听
+        box.ondblclick = function() {
+            console.log('你好，我是双击击事件函数');
+        }
+
+        // 这个属性和onclick的区别是onclick需要左键抬起来才能触发（可以将鼠标移出去反悔），而这个鼠标一点击就能触发
+        box.onmousedown = function() {
+            console.log('你好，我是onmousedown');
+        }
+        // 和onmousedown相反 左键抬起来时触发
+        box.onmouseup = function() {
+            console.log('你好，我是onmouseup');
+        }
+
+        // 鼠标从外到内移进来就会触发
+        box.onmouseenter = function() {
+            console.log('你好，我是onmouseenter');
+        }
+
+        // 鼠标从内到外移进来就会触发
+        box.onmouseleave = function() {
+            console.log('你好，我是onmouseleave');
+        }
+
+        //鼠标在上面移动
+        box.onmousemove = function() {
+            console.log('你好，我是onmousemove');
+        }
+
+
+        var oName = document.getElementById('nameField');
+        // 常见键盘监听
+        // 键盘按下时即可监听到，有些系统按键例如方向键无法识别
+        oName.onkeypress = function(){
+            console.log('你好，我是onkeypress');
+        }
+
+        //键盘按下即可监听到，包括系统按键
+        oName.onkeydown = function(){
+            console.log('你好，我是onkeydown');
+        }
+
+        //键盘按下即可监听到，包括系统按键
+        oName.onkeydown = function(){
+            console.log('你好，我是onkeydown');
+        }
+
+        //键盘松开即可监听到，包括系统按键
+        oName.onkeyup = function(){
+            console.log('你好，我是onkeyup');
+        }
+
+        // 常见表单监听
+        var myform = document.getElementById('myform');
+        // 通过表单打点name直接调用子元素
+        var nameField = myform.nameField;
+        var ageField = myform.ageField;
+        // 修改表单完毕时监听到
+        nameField.onchange = function(){
+            console.log('你已经修改完姓名');
+        }
+        // 修改表单时听到
+        nameField.oninput = function(){
+            console.log('你正在修改姓名');
+        }
+        // 得到焦点时
+        nameField.onfocus = function(){
+            console.log('姓名框得到焦点');
+        }
+        // 失去焦点
+        nameField.onblur = function(){
+            console.log('姓名框失去焦点');
+        }
+        // 提交表单时
+        myform.onsubmit = function(){
+            alert('表单会被提交');
+        }
+        // 重置表单时
+        myform.onreset = function(){
+            alert('表单会被重置');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 等窗口加载完毕以后再运行js就可以成功找到dom节点
+        window.onload = function() {
+        // 将script标签写在dom后面 不然无法找到dom节点
+        // 获取盒子1
+        var box1 = document.getElementById('box1');
+         // 获取盒子2
+        var box2 = document.getElementById('box2');
+        console.log(box1.nodeType);
+        console.log(typeof box1);
+        console.log(box1);
+        console.log(box2);
+        }
+    </script>
+</head>
+<body>
+    <div id="box1">我是盒子1</div>
+    <div id="box2">我是盒子2</div>
+</body>
+</html>

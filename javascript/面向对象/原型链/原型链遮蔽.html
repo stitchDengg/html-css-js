@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // 构造函数
+        function People(name,age,sex){
+            // this指代的是实例
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+
+        // 实例化
+        var xiaoming = new People('小明',12,'男');
+        var tom = new People('汤姆',10,'男');
+        
+        // 给实例原型添加了国籍属性，此时实例可以通过打点方式调用该属性
+        People.prototype.nationality = '中国';
+        console.log(xiaoming.nationality);    //中国
+        console.log(xiaoming);   //xiaoming对象没有nationality属性，但是有一个__proto__属性里是一个对象，有nationality属性
+        console.log(tom.nationality);  //中国
+        // 给tom对象添加nationality方法
+        tom.nationality = '美国';
+        console.log(tom.nationality);        //美国，本身就自带有nationality属性，不用再在原型里寻找，这就是原型的遮蔽效应
+
+        console.log(xiaoming.hasOwnProperty('nationality'));  //false,hasOwnProperty可以检查是否真正拥有某属性或者方法
+        console.log(tom.hasOwnProperty('nationality'));
+
+        // in运算符只能检查某个属性或方法是否可以被对象访问，不能检查是否是自己的属性和方法
+        console.log('name' in xiaoming);  //true
+        console.log('nationality' in xiaoming);    //true
+    </script>
+</body>
+</html>

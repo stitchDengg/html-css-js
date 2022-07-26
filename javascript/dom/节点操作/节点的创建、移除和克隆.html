@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <p>我是原本的段落0</p>
+        <p>我是原本的段落1</p>
+        <p>我是原本的段落2</p>
+        <p id="para">我是box1的段落</p>
+        <p>我是被删除的节点</p>
+    </div>
+
+    <div id="box2">
+        <p>我是box2原有的标签</p>
+        <p>我是box2原有的标签</p>
+        <p>我是box2原有的标签</p>
+        <p>我是box2原有的标签</p>
+    </div>
+    <script>
+        var oBox = document.getElementById('box');
+        //拿到所有p标签
+        var oPs = document.getElementsByTagName('p');
+        
+        
+        //创建一个孤儿节点
+        var oP = document.createElement('p');
+        // 添加到dom树上
+        // appendChild方法是将孤儿节点挂载到最后一个子节点
+        //oBox.appendChild(oP);
+        oP.innerText = '我是新来的';
+
+        // 上树方法2
+        // insertBefore前面参数表示需要插入的节点，后面参数表示指标节点
+        oBox.insertBefore(oP,oPs[0]);
+
+
+        // 节点的移动（如果已经挂载的节点使用appendChild方法或者insertBefore方法就可以移动该节点）
+        var box2 = document.getElementById('box2');
+        var para = document.getElementById('para');
+        box2.appendChild(para);
+
+
+        // 删除节点 removeChild方法
+        var delNode = oBox.lastElementChild;
+        // 节点不能主动删除自己 只能用父节点来删除自己
+        oBox.removeChild(delNode);
+    </script>
+</body>
+</html>

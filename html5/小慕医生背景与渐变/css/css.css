@@ -1,0 +1,480 @@
+* {
+    margin:0;
+    padding: 0;
+}
+/* 去掉所有ul和ol的小圆点 */
+ul, ol {
+    list-style: none;
+}
+/* 去掉所有超级链接的下划线 */
+a {
+    text-decoration: none;
+}
+/* 使用继承性，给body标签设置字体 */
+body {
+    font: normal 14px/25px '微软雅黑';
+}
+/* 头部 */
+header {
+
+}
+header .header-top {
+    width: 1201px;
+    margin: 0 auto;
+    /* 清除浮动 */
+    overflow: hidden;
+}
+header .header-top .logo {
+    padding-top: 27px;
+    width: 221px;
+    height: 63px;
+    float: left;
+    color: #00978E;
+    font-size: 20px;
+}
+header .header-top .logo h1 {
+    width: 221px;
+    height: 63px;
+    background-image:url(../images/logo.png);
+    /* 将段首缩进这个属性，设置为负数，是一个很巧妙的做法，可以隐藏文字 */
+    text-indent: -999em;
+}
+header .header-top .tool {
+    float: right;
+    width: 266px;
+    height: 77px;
+    padding-top: 22px;
+}
+header .header-top .tool .r1 {
+    margin-bottom: 14px;
+}
+header .header-top .tool .r1 .tel {
+    width: 32px;
+    height: 25px;
+}
+header .header-top .tool .r1 .telnumber {
+    font-size: 20px;
+    color: #00978E;
+    display: inline-block;
+    width: 158px;
+    height: 26px;
+    text-align: center;
+}
+header .header-top .tool .r1 .icon {
+    width: 24px;
+    height: 24px;
+}
+header .header-top .tool .r1 .chinese_icon {
+    margin-right: 15px;
+}
+header .header-top .tool .r2 {
+    width: 264px;
+    height: 28px;
+    border: 1px solid rgba(202,202,202,.6);
+    border-radius: 4px;
+}
+header .header-top .tool .r2 input {
+    float: left;
+    width: 224px;
+    height: 28px;
+    /* 去掉边框线 */
+    border: none;
+    padding-left: 20px;
+    /* 去掉鼠标点击时候的蓝色框 */
+    outline: none;
+}
+header .header-top .tool .r2 button {
+    float: left;
+    width: 20px;
+    height: 20px;
+    /* 背景去掉 */
+    background: none;
+    /* 边框去掉 */
+    border: none;
+    /* 去掉鼠标点击时候的蓝色框 */
+    outline: none;
+    /* 设置触碰时候的鼠标指针的样式 */
+    cursor: pointer;
+    /* 相对定位来微调位置 */
+    position: relative;
+    top: 4px;
+    right: 4px;
+}
+header .main-nav {
+    /* 不用写宽度，这样自动撑满 */
+    height: 60px;
+    background-color: #00978E;
+    margin-top: 20px;
+}
+header .main-nav ul {
+    width: 1200px;
+    height: 60px;
+    margin: 0 auto;
+}
+header .main-nav ul li {
+    float: left;
+    width: 150px;
+    text-align: center;
+    /* 行高等于盒子高 */
+    line-height: 60px;
+}
+/* 又是li，又有cur类 */
+header .main-nav ul li.cur {
+    background-color: #015E58;
+}
+header .main-nav ul li a {
+    /* 转为块级元素 */
+    display: block;
+    width: 150px;
+    height: 60px;
+    font-size: 16px;
+    color: white;
+}
+header .main-nav ul li a:hover {
+    background-color: orange;
+}
+
+/* banner区域 */
+.banner {
+    width: 100%;
+    position: relative;
+}
+.banner .banner-img{
+    width: 100%;
+}
+.banner .center {
+    position: absolute;
+    width: 1200px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -600px;
+}
+.banner .center .left-btn {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -37px;
+    width: 56px;
+    height: 74px;
+    background: url(../images/icons.png) no-repeat -42px -31px;
+    border-radius: 6px;
+}
+.banner .center .left-btn:hover {
+    background-position: -160px -31px;
+}
+.banner .center .right-btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    /* 垂直居中，拉回负的height的一半 */
+    margin-left: -60px;
+    margin-top: -37px;
+    width: 56px;
+    height: 74px;
+    background: url(../images/icons.png) no-repeat -42px -121px;
+    border-radius: 6px;
+}
+.banner .center .right-btn:hover {
+    background-position: -160px -121px;
+}
+.banner .center h2 {
+    position: absolute;
+    width: 504px;
+    height: 79px;
+    font-size: 60px;
+    color: #015E58;
+    font-weight: normal;
+    top: 50%;
+    margin-top: -50px;
+    left: 114px;
+}
+.banner ol {
+    position: absolute;
+    width: 120px;
+    height: 12px;
+    bottom: 20px;
+    left: 50%;
+    /* 水平居中，拉回负的width的一半 */
+    margin-left: -60px;
+}
+.banner ol li {
+    float: left;
+    width: 20px;
+    height: 12px;
+    background-color: white;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+/* 最后一个没有margin */
+.banner ol li:last-child {
+    margin-right: 0;
+}
+.banner ol li.cur {
+    width: 30px;
+    background-color: #00978E;
+}
+
+/* 内容部分 */
+.content{
+    padding-top: 71px;
+}
+.content h3 {
+    border-left: 8px solid #00978E;
+    padding-left: 10px;
+    height: 20px;
+    line-height: 20px;
+}
+.content .useful-links {
+    width: 904px;
+    height: 151px;
+    /* 居中 */
+    margin: 0 auto;
+}
+.content .useful-links ul {
+    /* 清除浮动 */
+    overflow: hidden;
+}
+.content .useful-links ul li {
+    float: left;
+    width: 104px;
+    margin-right: 56px;
+}
+.content .useful-links ul li span {
+    /* 转块，不设置宽度，就相当于width属性为100%了，此时可以文字text-align:center居中了 */
+    display: block;
+    text-align: center;
+    color:#333333;
+    font-size: 20px;
+    line-height: 40px;
+}
+.content .useful-links ul li:last-child {
+    margin-right: 0;
+}
+.content .news-and-notice {
+    width: 1200px;
+    height: 376px;
+    margin: 0 auto;
+    margin-top: 56px;
+}
+.content .news-and-notice .news {
+    float: left;
+    width: 877px;
+    height: 376px;
+}
+.content .news-and-notice .notice {
+    float: left;
+    width: 323px;
+    height: 376px;
+}
+.content .news-and-notice .news h3 {
+    margin-bottom: 20px;
+}
+.content .news-and-notice .news .news-content .hot-news {
+    float: left;
+    width: 422px;
+    height: 328px;
+    margin-right: 20px;
+    position: relative;
+}
+.content .news-and-notice .news .news-content .hot-news .info {
+    position: absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height: 40px;
+    background-color: rgba(0,0,0,.3);
+    text-align: center;
+    color: white;
+    line-height: 40px;
+}
+.content .news-and-notice .news .news-content ul {
+    float: left;
+    width: 400px;
+    height: 328px;
+}
+.content .news-and-notice .news .news-content ul li {
+    line-height: 41px;
+}
+.content .news-and-notice .news .news-content ul li a{
+    float: left;
+    color: #666666;
+}
+.content .news-and-notice .news .news-content ul li span{
+    float: right;
+}
+.content .news-and-notice .news .news-content ul li.spec a {
+    color: #00978E;
+    font-weight: bold;
+}
+.content .news-and-notice .notice h3 {
+    margin-bottom: 20px;
+}
+.content .news-and-notice .notice ol li {
+    overflow: hidden;
+    margin-bottom: 11px;
+}
+.content .news-and-notice .notice ol li .number {
+    float: left;
+    width: 53px;
+    height: 57px;
+    background-color: #00978E;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    line-height: 57px;
+    margin-right: 9px;
+}
+.content .news-and-notice .notice ol li dl dt a{
+    color: #666;
+}
+.content .news-and-notice .notice ol li dl dd a{
+    color: #999;
+}
+.content .ad-images {
+    width: 1200px;
+    margin: 20px auto;
+}
+.content .dep-info {
+    height: 400px;
+    background-color: #FAFAFA;
+}
+.content .dep-info .center {
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-top: 37px;
+    position: relative;
+}
+.content .dep-info .center .more {
+    position: absolute;
+    right: 0;
+    top: 37px;
+    color: #999999;
+}
+.content .dep-info .center .col {
+    float: left;
+    width: 265px;
+    padding-left: 35px;
+}
+.content .dep-info .center .col h4 {
+    text-align: center;
+    margin-bottom: 18px;
+    margin-top: 20px;
+    position: relative;
+}
+.content .dep-info .center .col h4::before {
+    content: '';
+    position: absolute;
+    left: 61px;
+    top: 12px;
+    width: 40px;
+    height: 2px;
+    background-color: #00978E;
+}
+.content .dep-info .center .col h4::after {
+    content: '';
+    position: absolute;
+    left: 162px;
+    top: 12px;
+    width: 40px;
+    height: 2px;
+    background-color: #00978E;
+}
+.content .dep-info .center .col li {
+    float: left;
+    width: 119px;
+    height: 34px;
+    border: 1px solid #CDCDCD;
+    text-align: center;
+    line-height: 34px;
+    margin-right: 17px;
+    margin-bottom: 16px;
+    border-radius: 4px;
+}
+.content .dep-info .center .col li:nth-child(2n) {
+    margin-right: 0;
+}
+.content .dep-info .center .col li a{
+    color: #333333;
+}
+.content .dep-info .center .col li.spec a {
+    color: #00978E;
+    font-weight: bold;
+}
+.content .exp-info {
+    width: 1200px;
+    padding-top: 24px;
+    margin: 0 auto;
+    position: relative;
+}
+.content .exp-info .more {
+    position: absolute;
+    right: 0;
+    top: 37px;
+    color: #999999;
+}
+.content .exp-info ul {
+    overflow: hidden;
+    padding-top: 40px;
+}
+.content .exp-info ul li {
+    float: left;
+    width: 400px;
+    height: 240px;
+}
+.content .exp-info ul li .picbox {
+    float: left;
+    width: 152px;
+}
+.content .exp-info ul li .picbox img {
+    width: 152px;
+}
+.content .exp-info ul li .wordbox {
+    float: left;
+    width: 220px;
+    padding-left: 10px;
+    color: #333;
+    line-height: 27px;
+}
+
+/* 页脚 */
+footer {
+    height: 395px;
+    background-color: #FAFAFA;
+}
+footer .center {
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 26px;
+}
+footer .center h3 {
+    font-size: 20px;
+    color: #333333;
+}
+footer .center .friend-links ul{
+    overflow: hidden;
+    padding-top: 20px;
+}
+footer .center .friend-links li {
+    float: left;
+    padding: 0 50px;
+}
+footer .center .friend-links li a { 
+    color: #333333;
+    font-size: 16px;
+}
+footer .center address {
+    font-style: normal;
+    padding-top: 30px;
+}
+footer .center address ul {
+    width: 730px;
+    padding-top: 20px;
+}
+footer .center address ul li {
+    float: left;
+    width: 237px;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 让用户输入星期几
+        var week = Number(prompt('请输入星期几'));
+        // 用户输入年龄
+        var age = Number(prompt('请输入年龄'));
+
+        //以星期几为大前提条件
+        if(week == 0 || week == 6){
+            if(age >= 10){
+                alert(500);
+            }
+            else{
+                alert(210);
+            }
+        }
+        else{
+            if(age >= 10){
+                alert(300);
+            }
+            else{
+                alert(140);
+            }
+        }
+    </script>
+</body>
+</html>

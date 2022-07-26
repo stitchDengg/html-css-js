@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            border: 4px solid red;
+            width: 400px;
+            height: 400px;
+            margin: 60px auto;
+        }
+        #para{
+            width: 80px;
+            height: 80px;
+            background-color: orange;
+        }
+        ul{
+            padding-top: 10px;
+        }
+        li{
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li>
+                <p id="para"></p>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        var para = document.getElementById('para');
+        // offsetTop属性指到祖先第一个有定位的盒子的距离
+        // 使用这个属性所有祖先元素不要有定位，不然不好用
+        console.log(para.offsetTop);
+    </script>
+</body>
+</html>

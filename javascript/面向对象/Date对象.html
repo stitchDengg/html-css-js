@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //不加参数得到此时此刻的日期对象
+        var d1 = new Date();
+        console.log(d1);
+        console.log(typeof d1);
+
+        // 加上参数
+        // 中间参数表示月份，从0开始
+        var d2 = new Date(2020,5,1);   //不算时区
+        var d3 = new Date('2020-6-1');  // //不算时区
+        console.log(d2);        //Mon Jun 01 2020 00:00:00 GMT+0800 (GMT+08:00)
+        console.log(d3);         //Mon Jun 01 2020 00:00:00 GMT+0800 (GMT+08:00)
+
+        // Date对象常用方法
+        var d = new Date(); 
+        console.log('日期',d.getDate());   
+        console.log('星期',d.getDay());   //礼拜天是0
+        console.log('年份',d.getFullYear());   
+        console.log('月份',d.getMonth());   
+        console.log('小时',d.getHours());   
+        console.log('分钟',d.getMinutes());   
+        console.log('秒数',d.getSeconds());   
+
+
+
+        // 得到时间戳
+        var timeStamp1 = d.getTime();  //精确到ms
+        var timeStamp2 = Date.parse(d);  //精确到s 单位也是ms
+        console.log('时间戳1',timeStamp1);  
+        console.log('时间戳2',timeStamp2);
+    </script>
+</body>
+</html>

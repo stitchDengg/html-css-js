@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        /* 使用绝对定位不会对其他元素干扰（不会留坑） 而是对他们压盖 */
+        /* 脱离了标准文档流 */
+        /* 绝对定位会以自己祖先元素中离自己最近的拥有绝对定位属性的盒子为基准点 */
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        width: 200px;
+        height: 200px;
+        background-color: orange;
+
+    }
+</style>
+<body>
+        <div class="box"></div>
+</body>
+</html>

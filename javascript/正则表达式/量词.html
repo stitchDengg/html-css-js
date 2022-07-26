@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 题目1：请验证字符串是否符合手机号码的规则：11位数字，并且以1开头
+        var regexp1 = /^1\d{10}$/;
+        var str1 = '17683715514';
+        console.log(regexp1.test(str1));  //true
+        console.log(regexp1.test('27683715514')); //false
+
+        // 题目二：请验证某字符串是否这样的：以字母开头，中间是任意位数字构成，并且以字母结尾
+        var regexp2 = /^[A-z]\d+[A-z]$/;
+        var str2 = 'a1245a';
+        var str3 = 'asd4';
+        console.log(regexp2.test(str2));  //true
+        console.log(regexp2.test(str3));   //false
+
+
+        // 题目3：请验证某字符串是否符合以下网址规则，以www.开头，中间是任意的字符，最后以.com结尾
+        var regexp3 = /^w{3}\.\w*\.com(\.cn)?$/;
+        var str4 = 'www.baidu.com.cn';
+        var str5 = 'www.dasdas.con';
+        console.log(regexp3.test(str4));  //true
+        console.log(regexp3.test(str5));  //false
+    </script>
+</body>
+</html>

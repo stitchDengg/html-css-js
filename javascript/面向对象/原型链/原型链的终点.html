@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function People (name,age) {
+            this.name = name;
+            this.age = age;
+        }
+        var xiaoming  = new People('小明',12);
+
+        console.log(xiaoming.__proto__.__proto__  === Object.prototype);  //true
+
+        console.log(Object.prototype.__proto__);    //null  Object.prototype对象没有原型了 是原型链的终点
+
+        var char = xiaoming.toString();  //toString方法是Object.prototype对象的方法，xiaoming通过寻找原型链找到此方法
+        console.log(char);
+
+        console.log(Object.prototype.hasOwnProperty('hasOwnProperty'));  //true
+        console.log(Object.prototype.hasOwnProperty('toString'));      //true
+
+
+        // 数组的原型链
+        var arr = [344,45,34,23];
+        
+        console.log(arr.__proto__ == Array.prototype);   //true,任何数组的原都是Array.prototype对象
+        console.log(arr.__proto__.__proto__ === Object.prototype);  //true
+        console.log(Array.prototype.hasOwnProperty('push'));     //true
+        console.log(Array.prototype.hasOwnProperty('splice'));    //true
+    </script>
+</body>
+</html>

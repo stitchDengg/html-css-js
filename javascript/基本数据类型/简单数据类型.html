@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // typeof 获取变量的数据类型
+        var a = 3;
+        var b = '好好学习';
+        console.log(typeof(a));
+        console.log(typeof(b));
+
+        // 五种基本数据类型
+        // 数字类型（不分大小，不分整浮，不分正负都是数字类型）
+        var c = 3e8; //科学计数法 e表示 10的八次方
+        console.log(c,typeof(c));
+        c = 3e-4; //e表示 10的-4次方
+        console.log(c,typeof(c));
+
+        // string类型
+        var str = '好好学习，天天向上';
+        console.log(str.charAt(3));    //charAt方法可以得到字符串指定序号的字符 从0开始
+        console.log(str.substring(0,4));  //substring方法表示返回从a到b的子串，不包括b
+        console.log(str.substring(4));     //substring方法如果省略第二个数字会一直到字符串结尾
+        console.log(str.substr(0,4));      //substr方法是a和b分别指起始字符和子串大小 a可以是负数表示倒数位置
+        console.log(str.slice(0,4));     //slice方法是指返回从a到b的子串，不包括b和subString方法很像（但是a必须小于b不会自动交换顺序）
+
+
+        //boolean类型
+        var bol = true;
+
+
+        // undefined类型(只有一个值就是undefined 是所有的变量默认值)
+        var un = undefined;
+        console.log(un);
+
+        //null类型（表示空 是空对象的意思）要将对象或者数组摧毁通常将它们设置为null
+        var nu = null;
+        console.log(nu);
+        console.log(typeof(nu))   //输出是object 
+
+
+        //数据类型转换
+        //转换为数字类型 使用Number函数
+        console.log(Number('456'));  //输出为number类型的456
+        console.log(Number('3e3'));
+        console.log(Number(''));   //输出为0
+        console.log(Number(true));  //输出为1
+        console.log(Number(null));  //输出为0
+        console.log(Number(undefined));  //输出为NaN
+
+        // 使用parseInt函数 将字符串转化为整数
+        console.log(parseInt('3.14'));  //输出为3
+        console.log(parseInt('3.14是圆周率'));  //输出为3  会截掉出现第一个非数字字符以后的所有字符
+
+        // 使用parseFloat函数 将字符串转化为浮点数
+        console.log(parseFloat('3.14'));  //输出为3.14
+        console.log(parseFloat('3.14是圆周率')); //输出为3.14
+
+
+        // 其他值转化为字符串
+        //使用String函数
+        console.log(String(123));
+        console.log(String(123.4));
+        console.log(String(2e3));  //输出为'2000'
+        console.log(String(NaN));  //输出为'NaN'
+        console.log(String(0xf));  //输出为'16'
+        console.log(String(true));  //输出为'true'
+
+        // 使用toString方法
+        console.log((6).toString());  //数字使用toString方法需要用括号将数字转化为对象才能使用
+        var test = 6;
+        console.log(test.toString()); 
+        console.log(true.toString()); //输出为'true'
+
+
+        // 转化为boolean
+        // 使用boolean函数 
+        console.log(Boolean(123)); //输出为true
+        console.log(Boolean(0));
+        console.log(Boolean(NaN));  //0和NaN为false 其他都true
+        console.log(Boolean(123));
+        console.log(Boolean(Infinity));    //输出为true
+
+
+        console.log(Boolean(''));
+        console.log(Boolean('123'));  //空字符串为false 其他字符串都为true
+
+        console.log(Boolean(undefined));
+        console.log(Boolean(null));  //undefinede和 null为flase
+    </script>
+
+</body>
+</html>

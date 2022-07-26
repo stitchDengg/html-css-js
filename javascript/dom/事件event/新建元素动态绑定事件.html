@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按我添加新的列表项</button>
+    <ul id="list"></ul>
+
+    <!-- 动态创建列表项并且给列表项都添加监听 点击变红 -->
+    <script>
+        var oBtn = document.getElementById('btn');
+        var oList = document.getElementById('list');
+
+        // 创建按钮的点击事件
+        oBtn.onclick = function (){
+            // 创建一个新的li列表项
+            var oLi = document.createElement('li');
+            oLi.innerHTML = '我是列表项';
+            // 上树
+            oList.appendChild(oLi);
+            // 给新创建的节点添加onclik监听
+            oLi.onclick = function () {
+                this.style.color = 'red';
+            } 
+        }
+    </script>
+</body>
+</html>

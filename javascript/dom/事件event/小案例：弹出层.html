@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #modal{
+            width: 400px;
+            height: 140px;
+            background-color: #333;
+            position: absolute;
+            top:50%;
+            left: 50%;
+            margin-top: -70px;
+            margin-left: -200px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">按我弹出弹出层</button>
+    <div id="modal"></div>
+
+    <script>
+        var oBtn = document.getElementById('btn');
+        var oModal = document.getElementById('modal');
+
+        // 点击按钮的时候弹出层显示
+        oBtn.onclick = function(e) {
+            // 必须阻止事件传播到document否则无法实现
+            e.stopPropagation();
+            oModal.style.display = 'block';
+        };
+        // 点击页面任何部分的的时候关闭弹出层
+        document.onclick = function () {
+            oModal.style.display = 'none';
+        };
+        
+        oModal.onclick = function (e) {
+            // 点击弹出层的时候是不能关闭弹出层的，所以应该阻止事件继续传播
+            e.stopPropagation();
+        };
+    </script>
+</body>
+</html>

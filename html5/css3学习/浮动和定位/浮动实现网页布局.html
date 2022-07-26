@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    header{
+        width: 1000px;
+        height: 100px;
+        margin: 0 auto;
+        /* background-color: #333; */
+    }
+    .content{
+        width: 1000px;
+        height: 500px;
+        margin: 20px auto;
+        /* background-color: #333; */
+    }
+    footer{
+        width: 1000px;
+        height: 200px;
+        margin: 20px auto;
+        background-color: #333;
+    }
+    header .logo{
+        float: left;
+        width: 220px;
+        height: 100px;
+        background-color: orange;
+    }
+    header .login{
+        float: right;
+        width: 220px;
+        height: 30px;
+        background-color: orange;
+    }
+    nav{
+        float: right;
+        width: 690px;
+        height: 50px;
+        margin-top: 20px;
+        background-color: green;
+    }
+    .content .ad{
+        float: left;
+        width: 300px;
+        height: 500px;
+        background-color: rgb(41, 41, 173);
+    }
+    .content main{
+        float: right;
+        width: 680px;
+        height: 500px;
+        /* background-color: rgb(167, 21, 116); */
+    }
+    .content main .banner{
+        width: 680px;
+        height: 380px;
+        background-color: pink;
+    }
+    .content main .pics{
+        width: 680px;
+        height: 100px;
+        margin-top: 20px;
+        /* background-color: rgb(179, 28, 51); */
+    }
+    .content main .pics ul{
+        list-style: none;
+    }
+    .content main .pics ul li{
+        float: left;
+        width: 160px;
+        height: 100px;
+        margin-right: 10px;
+        background-color: orange;
+
+    }
+    .content main .pics ul li:last-child{
+        width: 170px;
+        margin-right: 0;
+    }
+</style>
+<body>
+    <header>
+        <div class="logo"></div>
+        <div class="login"></div>
+        <nav></nav>
+    </header>
+    <section class="content">
+        <aside class="ad"></aside>
+        <main>
+            <div class="banner"></div>
+            <div class="pics">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </main>
+    </section>
+    <footer></footer>
+</body>
+</html>

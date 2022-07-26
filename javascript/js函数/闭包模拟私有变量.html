@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 封装一个函数，这个功能就是私有化变量
+        function fun() {
+            //定义一个局部变量
+            var a = 0;
+
+            return {
+                getA: function(){
+                    return a;
+                },
+                add: function() {
+                    a++;
+                },
+                pow: function() {
+                    a *= 2;
+                }
+            }
+
+        }
+        var obj = fun();
+        console.log(obj.getA()); //输出0  即可以拿到局部变量的值
+        // 想让变量加一
+        obj.add();
+        obj.add();
+        obj.add();
+        console.log(obj.getA());  //3
+        obj.pow();
+        console.log(obj.getA());  //6
+    </script>
+</body>
+</html>

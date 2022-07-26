@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td{
+            width:120px;
+            height: 30px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <table id="myTable">
+
+    </table>
+    <script>
+        // 动态创建99乘法表
+        var mytable = document.getElementById('myTable');
+        
+        for(var i = 1;i <= 9; i++){
+            // 创建一个动态的tr标签
+            var tr = document.createElement('tr');
+            for(var j = i; j <= 9; j++){
+                var td = document.createElement('td');
+                // 设置td内部的文字
+                td.innerText = i + '乘以' + j + '=' + i*j;
+                // tr挂载到td上
+                tr.appendChild(td);
+            }
+            mytable.appendChild(tr);
+        }
+    </script>
+</body>
+</html>

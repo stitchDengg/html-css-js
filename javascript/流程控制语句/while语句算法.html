@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 猜数字小游戏
+        // 随机生成一个2到99的数，让用户猜是几，用户猜了以后提示数字太大了或者输入的数字太小了不断重复直到猜到这个数字
+        var num = parseInt(Math.random() *98) + 2;
+        console.log(num,1545);
+        var min = 1;
+        var max = 100;
+        while(true) {
+            var term = Number(prompt('请输入您猜测的数字'+ min +'-' + max));
+
+            // 验证用户的输入的数字是否在区间内
+            if( term<= min || term>=max){
+                alert('您输入的数字不在范围内');
+                //不在区间内，直接放弃这次循环，就开启下一次迭代
+                continue;
+            }   
+            if(term > num){
+                alert('您输入的数字过大');
+                max = term;
+            }
+            else if(term < num){
+                alert('您输入的数字过小');
+                min = term;
+            }
+            else{
+                alert('您猜对啦');
+                // 结束循环
+                break;
+            }
+        }
+    </script>
+</body>
+</html>

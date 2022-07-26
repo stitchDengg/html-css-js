@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: #333;
+        }
+        body{
+            height: 2000px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 小案例，preventDefault方法 -->
+    <input type="text" id="field">
+
+
+    <!-- 小案例，鼠标滚轮事件 -->
+    <div id="box"></div>
+    <h1 id="info"></h1>
+    <script>
+        var oField = document.getElementById('field');
+        var oBox = document.getElementById('box');
+        var oInfo = document.getElementById('info');
+
+        oField.onkeypress = function (e) {
+            console.log(e.charCode);
+            // 根据用户输入的字符码（e.charcode）
+            // 数字0~9，字符码48-57
+            // 小写字母a~z,字符码是97-122
+            // 要求必须是数字和小写字母，不然没有效果
+            if (!(e.charCode >= 48 && e.charCode <= 57 || e.charCode >= 92 && e.charCode <= 122)) {
+                // 阻止默认的事件发生
+                e.preventDefault();
+            }
+        }
+
+        // 设置全局变量info显示的数字
+        var a = 0;
+
+        // 给盒子添加鼠标滚轮事件监听
+        // 页面过长的时候会有bug
+        oBox.onmousewheel = function (e){
+            // 阻止默认事件：当用户在盒子里面滚动鼠标滚轮的时候，不会引发页面滚动条的滚动
+            e.preventDefault();
+            if(e.deltaY > 0){
+                a--;
+            }
+            else{
+                a++;
+            }
+            oInfo.innerText = a;
+        }
+    </script>
+</body>
+</html>

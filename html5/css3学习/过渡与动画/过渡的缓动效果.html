@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .box {
+        border: 1px solid #000;
+    }
+    .box p {
+        width: 60px;
+        height: 60px;
+        background-color: orange;
+        margin-bottom: 10px;
+        position: relative;
+        left: 0;
+        transition: left 5s linear 0s   ;
+    }
+    .box:hover p{
+        left: 1000px;
+    }
+    .box p:nth-child(2) {
+        transition-timing-function: ease;
+    }
+    .box p:nth-child(3) {
+        transition-timing-function: ease-in;
+    }
+    .box p:nth-child(4) {
+        transition-timing-function: ease-out;
+    }
+    .box p:nth-child(5) {
+        transition-timing-function: ease-in-out;
+    }
+    /* 贝塞尔曲线属性 */
+    .box p:nth-child(6) {
+        transition-timing-function: cubic-bezier(0,.82,.99,.54);
+    }
+</style>
+<body>
+    <div class="box">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+</body>
+</html>

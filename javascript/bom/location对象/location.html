@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">点我去百度</button>
+    <button id="btn2">刷新页面</button>
+    <script>
+        var btn1 = document.getElementById('btn1');
+        var btn2 = document.getElementById('btn2');
+
+        btn1.onclick = function() {
+            // 跳转
+            window.location = 'http://www.baidu.com';
+        }
+        btn2.onclick = function() {
+            //如果把该方法的参数设置为 true，那么无论文档的最后修改日期是什么，它都会绕过缓存，从服务器上重新下载该文档
+            window.location.reload(true);
+        }
+    </script>
+</body>
+</html>

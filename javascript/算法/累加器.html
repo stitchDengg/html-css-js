@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 计算3/2 + 4/3 ...... +n+1/n
+        var term = Number(prompt('请输入n的值'));
+        var sum = 0;
+        for(var n = 2; n <= term; n++){
+            sum += (n + 1) / n;
+        }
+        console.log(sum.toFixed(2));
+
+
+        //计算n的阶乘
+        var x = Number(prompt('请输入x的值'));
+        var m = 1;
+        for(x; x > 1; x--){
+            m *= x;
+        }
+        console.log(m);
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .box1{
+        width: 508px;
+        height: 107px;
+        border: 1px solid #000;
+        margin: 0 auto;
+    }
+    .box1 ul{
+        list-style: none;
+    }
+    .box1 ul li{
+        float: left;
+        width: 107px;
+        height: 107px;
+        margin-right: 20px;
+        position: relative;
+    }
+    .box1 ul li::before{
+        content: "";
+        display: block;
+        width: 107px;
+        height: 107px;
+        /* 防止浏览器bug */
+        transform: rotate(0);
+        transition: transform 2s linear 0s;
+    }
+    .box1 ul li:nth-child(1)::before{
+        background-image: url(images/a_1.png);
+
+    }
+    .box1 ul li:nth-child(2)::before{
+        background-image: url(images/a_2.png);
+
+    }
+    .box1 ul li:nth-child(3)::before{
+        background-image: url(images/a_3.png);
+
+    }
+    .box1 ul li:nth-child(4)::before{
+        background-image: url(images/a_4.png);
+
+    }
+    .box1 ul li img{
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        top: 50%;
+        margin-top: -30px;
+        left: 50%;
+        margin-left: -30px;
+        transition: transform 2s linear 0s;
+    }
+    .box1 ul li:hover::before{
+        transform: rotate(360deg);
+    }
+    .box1 ul li:hover img{
+        transform: scale(1.2);
+    }
+</style>
+<body>
+    <div class="box1">
+        <ul>
+            <li><img src="images/icon1.svg" alt=""></li>
+            <li><img src="images/icon2.svg" alt=""></li>
+            <li><img src="images/icon3.svg" alt=""></li>
+            <li><img src="images/icon4.svg" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.接受很多参数
+        // const logUser = (userName = 'zhangsan',age = 0,sex = 'male') => console.log(userName,age,sex);
+        // logUser('alex',18,'male');
+        // logUser();
+
+        // 2.接受一个对象作为参数
+        // 解构赋值的默认值
+        //const logUser = ({userName = 'zhangsan',age = 12,sex = 'male'}) => console.log(userName,age,sex);
+        
+        
+        // 函数的默认值
+        const logUser = ({userName = 'zhangsan',age = 18,sex = 'male'} = {}) => console.log(userName,age,sex);
+        
+        
+        // logUser({
+        //     userName:'alex',
+        //     age:18,
+        //     sex:'male'
+        // });  //alex 18 male
+
+        // logUser({
+        //     userName:'alex'
+        // });
+        // logUser({
+        // })
+        //logUser();  //报错
+        // {userName = 'zhangsan',age = 12,sex = 'male'} = undefined
+
+        logUser();  //zhangsan 18 male
+         // {userName = 'zhangsan',age = 12,sex = 'male'} = {}
+        logUser({userName:'alex'});//alex 18 male
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        /* 网页出现滚动条 */
+        height: 3000px;
+    }
+    .box1 {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+        /* 纵向溢出的内容用滚动条显示 */
+        overflow-y: scroll;
+        background-image: url(../../images/gugong.jpg);
+        /* 背景不动 */
+        background-attachment: fixed;
+        margin-bottom: 20px;
+    }
+    .box2{
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+        /* 纵向溢出的内容用滚动条显示 */
+        overflow-y: scroll;
+        background-image: url(../../images/gugong.jpg);
+        /* 默认值 */
+        background-attachment: scroll;
+        margin-bottom: 20px;
+    }
+    .box3{
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+        /* 纵向溢出的内容用滚动条显示 */
+        overflow-y: scroll;
+        background-image: url(../../images/gugong.jpg);
+        /* 随着元素改变而改变 */
+        background-attachment: local;
+        margin-bottom: 20px;
+    }
+</style>
+<body>
+    <div class="box1">
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+    </div>
+    <div class="box2">
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+    </div>
+    <div class="box3">
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+    </div>
+</body>
+</html>

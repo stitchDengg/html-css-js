@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.为什么需要const
+        // let
+        // let sex = 'female';
+        // // 当我们不经意修改时
+        // sex = 'male';
+        // console.log(sex);   //male
+        // const sex = 'female';
+        // sex = 'male';  //直接报错 从语法层面来杜绝此类问题
+
+        // const就是为了那些一旦初始化就不希望重新赋值的情况设计的
+        // 2.const注意事项
+        // 2.1一旦使用const声明常量，就必须立刻初始化，不能留以后赋值
+
+        // 2.2const声明的常量，允许通过不重新赋值的情况下修改他的值
+        // 基本数据类型
+        // const sex = 'female';
+        // sex = 'male'; 
+
+        // 引用数据类型
+        const person = {
+            userName:'Alex',
+        };
+        // person = {
+
+        // }   //报错
+        person.userName = 'zhangsan';   //
+        console.log(person);    //person.userName = 'zhangsan';
+
+        // 3.什么时候使用const，什么时候使用let
+        //  不知道用什么的时候使用const 需要修改再改为let
+        
+    </script>
+</body>
+</html>

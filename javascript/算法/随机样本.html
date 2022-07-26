@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [3,6,10,5,8,9];
+        var res = [];
+
+        // 遍历原数组
+        for(var i = 0; i < 3; i++){
+            // 随机选一项0到arr.length下标
+            var n = parseInt(Math.random() * arr.length);
+            // 把这项推入结果数组
+            res.push(arr[n]);
+            // 删除这项
+            arr.splice(n,1);
+        }
+        console.log(res);
+    </script>
+</body>
+</html>

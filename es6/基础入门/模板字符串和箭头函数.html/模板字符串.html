@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.认识模板字符串
+        const userName1 = 'alex';
+        //模板字符串
+        const userName2 = `alex`;
+
+        console.log(userName1,userName1); //alex alex
+        console.log(userName1 === userName2);  //true
+
+        //2.模板字符串和其他字符串的区别
+        const person = {
+            userName:'Alex',
+            age:18,
+            sex:'male',
+        };
+        // 一般字符串的拼接
+        // const info = '我的名字是:'+ person.userName+',性别是：' + person.sex + 
+        // ',年龄是:' + person.age;
+        // console.log(info);
+
+        // 模板字符串的拼接
+        const info = `我的名字是：${person.userName},性别：${person.sex},我的年龄是${person.age}`;
+        console.log(info);
+
+        // 3.总结
+        // 和其他东西一起混用的时候，使用模板字符串，方便注入
+        // 其他情况下使用模板字符串或者一般字符串都可以
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 使用方括号，比如[xyz]可以创建一个字符集合，表示匹配方括号中的任意字符
+        // 例子：某学校规定：第一位是一个字母，b表示本科生，y表示研究生，后面七位是数字
+        var regexp1 = /^[by]\d{7}$/;
+        var str1 = 'y1234567';
+        var str2 = 'd1234567';
+        // 测试
+        console.log(regexp1.test(str1));  //true
+        console.log(regexp1.test(str2));   //false
+
+
+        // 可以用短横表示一个字符范围，^表示否定
+        // 题目1请验证某字符串是否为5位字母，大小写均可
+        var regexp2 = /^[a-zA-Z]{5}$/
+        var str3 = 'AHdsd';
+        console.log(regexp2.test(str3));  //true
+
+        // 请验证某字符串是否为5位，有且仅有小写字母 .构成
+        var regexp3 = /^[a-z\.]{5}$/;
+        var str4 = 'sda.a';
+        console.log(regexp3.test(str4));  //true
+
+
+        // 请验证某字符串是否为4位小写字母，且最后一位不能是m字母
+        //var regexp4 = /^[a-z]{3}[a-z^m]$/; 这样写a-z已经包含m了方括号内部都是或连接 所以无效
+        var regexp4 = /^[a-z]{3}[a-ln-z]$/;
+        var str5 = 'abfd';
+        var str6 = 'abcm';
+        console.log(regexp4.test(str5)); //true
+        console.log(regexp4.test(str6));  //false
+    </script>
+</body>
+</html>

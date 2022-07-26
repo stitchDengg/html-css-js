@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td{
+            width: 20px;
+            height: 20px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <table id="myTable">
+
+    </table>
+    <script>
+        // 动态创建一个二十行12列的表格
+        var mytable = document.getElementById('myTable');
+        
+        for(var i = 0;i < 20; i++){
+            // 创建一个动态的tr标签
+            var tr = document.createElement('tr');
+            for(var j = 0; j < 12; j++){
+                var td = document.createElement('td');
+                tr.appendChild(td);
+            }
+            mytable.appendChild(tr);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+
+    <script>
+        var oBox = document.getElementById('box');
+        // 不仅可以写text还能写html标签
+        oBox.innerHTML = '<ul><li>牛奶</li><li>咖啡</li></ul>';
+        oBox.innerText = '好好学习';
+    </script>
+</body>
+</html>

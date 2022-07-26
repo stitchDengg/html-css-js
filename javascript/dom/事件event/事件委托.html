@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按我创建一个新列表项</button>
+    <ul id="list">
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+    </ul>
+
+    <script>
+        var oList = document.getElementById('list');
+        var oBtn = document.getElementById('btn');
+
+        oList.onmouseover = function (e) {
+            // 事件委托
+            // 通过冒泡的方式将后代元素事件委托给祖先元素
+            // target属性表示触发此事件的最内层元素
+            // currentTarget属性表示事件处理程序附加到的元素
+            //e.target表示用户真正点击的那个元素
+            // 注意onmouseenter和onmouseover的区别  前者不冒泡，后者冒泡
+            // 最内层元素不能再有额外元素了
+            e.target.style.color = 'red';
+        }
+        oBtn.onclick = function(){
+            // 添加孤儿节点
+            var node = document.createElement('li');
+            node.innerText = '添加的列表项'
+            // 上树
+            oList.appendChild(node);
+        }
+
+        
+    </script>
+</body>
+</html>

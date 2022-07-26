@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box img{
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        // 定义红绿灯类
+        function TrafficLight(){
+            // 颜色属性 一开始都是红色
+            // 红色就是1，黄色就是2，绿色就是3
+            this.color = 1;
+            // 调用自己的初试化方法
+            this.init();
+            this.bindEvent();
+            // this.changeColor();
+        }
+
+        // 给实例原型添加方法
+        // 初始化
+        TrafficLight.prototype.init = function () {
+            // 创建自己的dom
+            this.dom = document.createElement('img');
+            this.dom.src = 'images/' + this.color + '.jpg';
+            box.appendChild(this.dom);
+        }
+        // 绑定事件
+        TrafficLight.prototype.bindEvent =  function() {
+            // 备份上下文,这里的this指代的是js实例
+            var self = this;
+            // 当自己的dom被点击的时候
+            this.dom.onclick = function () {
+                //当被点击的时候，调用自己的changeColor方法即可
+                self.changeColor();
+            }
+        }
+        // 改变颜色
+        TrafficLight.prototype.changeColor = function() {
+            this.color ++;
+            if(this.color == 4){
+                this.color =1;
+            }
+            //光color变化没用，还要改变dom的src
+            this.dom.src = 'images/' + this.color + '.jpg';
+        }
+        // 得到盒子
+        var box = document.getElementById('box');
+        // 实例化100个
+        var count = 100;
+        while(count--){
+            new TrafficLight();
+        }
+    </script>
+</body>
+</html>

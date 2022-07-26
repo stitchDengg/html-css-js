@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn1">2s后弹出你好</button>
+    <button id="btn2">取消弹出</button>
+    <script>
+        var oBtn1 = document.getElementById('btn1');
+        var oBtn2 = document.getElementById('btn2');
+        // 设置全局变量 
+        var timer;
+        oBtn1.onclick = function () {
+            // 延时器，将一个函数延后执行，不重复执行
+            timer = setTimeout(function () {
+                alert('nihao');
+            }, 2000);
+        };
+        oBtn2.onclick = function() {
+            clearTimeout(timer);
+        };
+    </script>
+</body>
+
+</html>

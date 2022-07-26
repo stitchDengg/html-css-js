@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            float: left;
+            border: 1px solid #000;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+
+    <script>
+        var box1 = document.getElementById('box1');
+        var box2 = document.getElementById('box2');
+        var box3 = document.getElementById('box3');
+
+        function setColorRed() {
+            // 复制一份上下文
+            var self = this;
+            setTimeout(function(){
+                self.style.backgroundColor = 'red';
+            },2000);
+        }
+
+        // 此时通过监听事件触发函数this指代的是触发的dom元素对象
+        box1.onclick = setColorRed;
+        box2.onclick = setColorRed;
+        box3.onclick = setColorRed;
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box1{
+        width: 300px;
+        height: 300px;
+        border: 10px dotted #000;
+        background-image: url(../../images/gugong.jpg);
+        padding: 60px;
+        margin-bottom: 20px;
+    }
+    .box2{
+        width: 300px;
+        height: 300px;
+        border: 10px dotted #000;
+        background-image: url(../../images/gugong.jpg);
+        padding: 60px;
+        /* 裁剪到padiing部分 */
+        background-clip: padding-box;
+        margin-bottom: 20px;
+    }
+    .box3{
+        width: 300px;
+        height: 300px;
+        border: 10px dotted #000;
+        background-image: url(../../images/gugong.jpg);
+        padding: 60px;
+        /* 裁剪到content部分 */
+        background-clip: content-box;
+        margin-bottom: 20px;
+    }
+</style>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+</html>

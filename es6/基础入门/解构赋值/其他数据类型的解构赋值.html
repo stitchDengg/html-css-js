@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.字符串的机构赋值 
+        //'' = 'hello' x
+        // 数组形式的解构赋值
+        // const [a,b,,,c]  = 'hello';
+        // console.log(a,b);   //h e
+        // console.log(c);   //o
+
+        // 对象形式的解构赋值
+        // const {0:a,1:b,length}  = 'hello';
+        // console.log(a,b,length);   //h e 5
+
+        // 2.数值和布尔值的解构赋值
+        // 对象形式的解构赋值
+        // 先将等号右边的转为对象
+        //console.log(new Number(123));
+        // const {a = 1,toString} = 123;
+        // console.log(a,toString);
+
+
+        // const {b = 2,toString} = true;
+        // console.log(b,toString);
+
+        // 3.undefined和null的解构赋值
+        // 无法转化为对象，所以对他们进行解构赋值，都会报错
+
+    </script>
+</body>
+</html>

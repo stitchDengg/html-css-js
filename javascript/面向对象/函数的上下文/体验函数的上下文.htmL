@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            a: 1,
+            b: 2,
+            fn: function () {
+                console.log(this.a + this.b);
+                console.log(this == obj);
+                console.log(this === window);
+            }
+        }
+        obj.fn(); //结果是3，此时this指代的obj对象
+
+        // 全局变量是window对象的属性
+        var a = 4;
+        var b = 9;
+
+        
+        // 此时this指代的是window对象
+        var fn = obj.fn;
+        fn();   //13 flase true
+        // ☆说明this指代只和函数调用方式有关
+    </script>
+</body>
+</html>

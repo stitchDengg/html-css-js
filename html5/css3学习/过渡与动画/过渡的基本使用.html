@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+    }
+    .box1{
+        width: 200px;
+        height: 200px;
+        background-color: orange;
+        transition: width 5s linear 0s;
+        margin-bottom: 20px;
+    }
+    .box1:hover{
+        width: 800px;  
+    }
+    .box2{
+        margin-bottom: 20px;
+    }
+    .box2 p{
+        width: 200px;
+        height: 200px;
+        background-color: orange;
+        position: relative;
+        left: 0;
+        transition: left 5s linear 0s ;
+    }
+    .box2:hover p{
+        left: 1000px;
+    }
+    .box3{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        transition: background-color 5s linear 0s;
+    }
+    .box3:hover{
+        background-color: green;
+    }
+    .box4{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border: 1px solid #000;
+        border-radius: 0;
+        transition: border-radius 5s linear 0s;
+        margin-bottom: 20px;
+    }
+    .box4:hover{
+        border-radius: 50%;
+    }
+    .box5{
+        width: 200px;
+        height: 200px;
+        margin-bottom: 20px;
+        background-color: orange;
+        transition: transform 1s linear 0s;
+    }
+    .box5:hover{
+        transform: scale(1.2) rotate(360deg);
+    }
+    .box6{
+        perspective: 300px;
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+        margin-bottom: 20px;
+    }
+    /* 3d变形过渡 */
+    .box6 p{
+        width: 200px;
+        height: 200px;
+        background-color: orange;
+        transition:transform 1s linear 0s ;
+    }
+    .box6:hover p{
+        transform: rotateX(360deg);
+    }
+    .box7{
+        width: 200px;
+        height: 200px;
+        background-color: orange;
+        border-radius: 0;
+        transition: all 1s linear 0s;
+    }
+    .box7:hover{
+        width: 500px;
+        height: 160px;
+        background-color: red;
+        border-radius: 50%;
+    }
+</style>
+<body>
+    <div class="box1"></div>
+    <div class="box2">
+        <p></p>
+    </div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+    <div class="box6">
+        <p></p>
+    </div>
+    <div class="box7"></div>
+</body>
+</html>

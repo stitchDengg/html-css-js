@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // IIFE是立即执行函数的意思，通常将匿名函数用括号包裹转换为表达式的形式在加上括号对运行
+        (function () {
+            console.log(123);
+        })();
+
+        // 案例
+        var age = 12;
+        var sex = '男';
+        var title = (function () {
+            if (age < 18) {
+                return '小朋友';
+            }
+            else {
+                if (sex == '男') {
+                    return '男士';
+                }
+                else {
+                    return '女士';
+                }
+            }
+        })();
+        console.log(title);
+
+        // 案例2  将全局变量变为局部变量
+        var arr = [];
+        // for (var i = 0; i < 5; i++) {
+        //     arr.push(function () {
+        //         alert(i);
+        //     })
+        // }
+        //arr[2]();  //结果是5 i是全局变量     
+
+        for(var i = 0; i < 5; i++){
+            (function (i){
+                arr.push(function(){
+                    alert(i);
+                })
+            })(i)
+        }
+        arr[2]();  //结果是2
+
+    </script>
+</body>
+
+</html>

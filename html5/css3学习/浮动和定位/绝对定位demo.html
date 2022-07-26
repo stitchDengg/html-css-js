@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .box1{
+        width: 402px;
+        height: 402px;
+        border: 1px solid #000;
+        padding: 50px;
+        margin: 0 auto;
+    }
+    .box2{
+        width: 300px;
+        height: 300px;
+        padding: 50px;
+        border: 1px solid #000;
+    }
+    .box3{
+        width: 198px;
+        height: 198px;
+        padding: 50px;
+        border: 1px solid #000;
+        position: relative;
+    }
+    p{
+        width: 50px;
+        height: 50px;
+        background-color: orange;
+        /* 直接以三号盒子为参考点了 */
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+</style>
+<body>
+    <div class="box1">
+        <div class="box2">
+            <div class="box3">
+                <p></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

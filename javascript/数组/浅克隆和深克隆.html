@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr1 = [1,2,3,4];
+        var arr2 =  arr1;  //由于是引用类型的变量都指向同一个地址
+        // 结果数组
+        var result = [];
+        // 遍历数组每一项，把遍历的每一项推入到结果数组中
+        for(var i = 0; i < arr1.length; i ++){
+            result.push(arr1[i]);
+        }
+        console.log(result);
+        console.log(arr1 == arr2);     //true      内存指向完全相同
+        console.log(result == arr1);       //false  浅克隆成功
+        arr1.push(5);
+        console.log(result,arr2);    
+    </script>
+</body>
+</html>

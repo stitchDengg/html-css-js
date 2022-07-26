@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+        .box{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box"></div>
+
+    <script>
+        var oBox = document.getElementById('box');
+        // 通过style属性改变css  通过行内样式添加的
+        oBox.style.backgroundColor = 'rgb(100,200,200)';  
+        oBox.style.backgroundColor = '#f80';  
+    </script>
+</body>
+</html>

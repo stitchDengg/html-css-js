@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 5000px;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .content-part {
+            width: 1000px;
+            margin: 0 auto;
+            background-color: #ccc;
+            font-size: 50px;
+            margin-bottom: 30px;
+        }
+
+        .floornav {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            margin-top: -100px;
+            width: 80px;
+            height: 200px;
+            background-color: orange;
+        }
+
+        .floornav ul {
+            list-style: none;
+        }
+
+        .floornav ul li {
+            width: 80px;
+            height: 40px;
+            font-size: 26px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .floornav ul li.current {
+            background-color: purple;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="floornav">
+        <ul id="list">
+            <li data-n="科技" class="current">科技</li>
+            <li data-n="体育">体育</li>
+            <li data-n="新闻">新闻</li>
+            <li data-n="娱乐">娱乐</li>
+            <li data-n="视频">视频</li>
+        </ul>
+    </div>
+    <section class="content-part" style="height: 674px;" data-n="科技">
+        科技栏目
+    </section>
+
+    <section class="content-part" style="height: 567px;" data-n="体育">
+        体育栏目
+    </section>
+
+    <section class="content-part" style="height: 739px;" data-n="新闻">
+        新闻栏目
+    </section>
+
+    <section class="content-part" style="height: 274px;" data-n="娱乐">
+        娱乐栏目
+    </section>
+
+    <section class="content-part" style="height: 894px;" data-n="视频">
+        视频栏目
+    </section>
+
+    <script>
+        var list = document.getElementById('list');
+        var contentParts = document.querySelectorAll('.content-part');
+        var lis = document.querySelectorAll('#list li');
+
+        // 使用事件委托给li添加监听
+        list.onclick = function (e) {
+            if (e.target.tagName.toLowerCase() == 'li') {
+                // getAttribute得到标签的上的某个属性值
+                var n = e.target.getAttribute('data-n');
+
+                // 属性选择器（就是方括号选择器）来寻找带有相同data-n的content-part
+                var contentPart = document.querySelector('.content-part[data-n = ' + n + ']');
+                console.log(contentPart.offsetTop);
+                document.documentElement.scrollTop = contentPart.offsetTop;
+            }
+        }
+
+        // 在页面加载好后，将所有的content-part盒子offsetTop值推入数组
+        var offsetTopArr = [];
+
+        // 遍历所有的contentParts,将它们的净位置推入数组
+        for (var i = 0; i < contentParts.length; i++) {
+            offsetTopArr.push(contentParts[i].offsetTop);
+        }
+
+        // 为了最后一项可以方便比较，可以推入一个无穷大
+        offsetTopArr.push(Infinity);
+        console.log(offsetTopArr);
+
+        // 函数节流
+        var nowfloor = -1;
+
+        // 窗口的滚动事件
+        window.onscroll = function () {
+            var scrollTop = window.scrollY;
+            // 遍历offsetTopArr数组，看看当前的scollTop值在哪两个楼层之间
+            for (var i = 0; i < offsetTopArr.length; i++) {
+                if (scrollTop >= offsetTopArr[i] && scrollTop < offsetTopArr[i + 1]) {
+                    break;
+                }
+            }
+            //退出循环的时候，i是几就表示当前楼层是几
+            // 如果当前所在楼层不是i，表示换楼了
+            // 函数节流方法
+            if (nowfloor != i) {
+                console.log(i);
+                // 让全局变量改变为这个楼层号
+                nowfloor = i;
+
+                // 设置下标为i的项有cur
+                for (var j = 0; j < lis.length; j++) {
+                    if(j == i) {
+                        lis[j].className = 'current';
+                    }else{
+                        lis[j].className = '';
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

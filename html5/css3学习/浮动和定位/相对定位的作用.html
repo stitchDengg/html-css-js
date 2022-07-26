@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin-left: 0;
+        padding: 0;
+    }
+    nav{
+        width: 960px;
+        height: 40px;
+
+    }
+    nav ul{
+        list-style: none;
+    }
+    nav ul li{
+        width: 120px;
+        height: 40px;
+        float: left;
+        text-align: center;
+        line-height: 40px;
+    }
+    nav ul li a{
+        text-decoration: none;
+        display: block;
+        width: 120px;
+        height: 40px;
+        background-color: orange;
+        color: white;
+    }
+    nav ul li a:hover{
+        border-top: 10px solid red;
+        /* 解决鼠标放上面会向上移动三像素的问题 */
+        position: relative;
+        bottom: 10px;
+    }
+</style>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="">导航标题</a>
+            </li>
+            <li>
+                <a href="">导航标题</a>
+            </li>
+            <li>
+                <a href="">导航标题</a>
+            </li>
+            <li>
+                <a href="">导航标题</a>
+            </li> <li>
+                <a href="">导航标题</a>
+            </li> <li>
+                <a href="">导航标题</a>
+            </li> <li>
+                <a href="">导航标题</a>
+            </li> <li>
+                <a href="">导航标题</a>
+            </li>
+            
+        </ul>
+    </nav>
+</body>
+</html>

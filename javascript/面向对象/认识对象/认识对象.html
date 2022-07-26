@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var xiaoming = {
+            name: '小明',
+            age: 12,
+            sex: '男',
+            hobbies: ['足球','编程'],
+            // 不符合js命命规范的属性规定方法
+            'favorite-book': '舒克和贝塔',
+        }
+        // 属性访问
+        console.log(xiaoming.name);
+        console.log(xiaoming.sex);
+        console.log(xiaoming.hobbies);
+
+        // 不符合js命命规范的属性调用方法
+        console.log(xiaoming['favorite-book']);
+
+        var key = 'sex';
+        // 将属性用变量保存的调用属性方法
+        console.log(xiaoming[key]);
+
+
+        // 属性更改
+        xiaoming.age = 18;
+        console.log(xiaoming.age);
+        // 如果对象本身没有这个属性值，这个属性会被创建出来
+        xiaoming.height = 180;
+        console.log(xiaoming.height);
+    </script>
+</body>
+</html>

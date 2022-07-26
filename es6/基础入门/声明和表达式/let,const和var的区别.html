@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.重复声明
+        // 已经存在的变量或者常量，又声明了一遍
+        // var允许重复声明 let和const不行
+        //var a = 1;
+        // ....
+        //var a = 2;  //var允许重复声明 不报错
+
+        //let b  = 1;
+        // let b = 2;  //let不允许重复声明 报错
+        // function fuc(a){
+        //     let a = 1; 
+        // }
+        // fuc();  //报错 a' has already been declared
+
+
+        // 2.变量提升
+        // var会提升变量的声明到当前作用域的顶部
+        // console.log(a);  //不会报错打印defined 变量声明提升
+        // var a = 1;   
+        // const和let是没有变量声明提升的
+        // 养成良好的编程习惯，先声明后使用
+
+
+        // 3.暂时性死区
+        // 暂时性死区是指只要作用域内存在let、const，他们所声明的变量或常量就自动绑定在区域内，不再受外部作用域影响
+        // let a = 2;
+        // let b =1;
+        // function fun(){
+        //     console.log(b);   //1
+        //     console.log(a);  //报错，因为a已经在函数作用域声明了就绑定在函数作用域不能再去外部作用域寻找，没找到就是不存在
+        //     let a = 1;
+        // };
+        // fun();
+
+        // 4.window对象属性和方法
+        // 在全局作用域中，var声明的变量，通过function声明的函数
+        // 会自动变成window对象的属性或方法
+        // let和const就不会
+        // var function
+        var age = 18;
+        function add() { }
+        console.log(window.age);  //18 
+        console.log(window.add === add); //true
+
+
+        // 5.块级作用域
+        // 5.1 什么是块级作用域
+        // var 没有块级作用域
+        // for(var i = 0;i < 3; i++){
+        //     // console.log(i);
+        // }
+        // console.log(i);  //3
+
+        // for (let a = 0; a < 3; a++) {
+        //     console.log(a);
+        // }
+        // console.log(a);  //a is not defined
+
+        // 5.2作用域链
+        // function func() {
+        //     for (var i = 0; i < 3; i++) {
+        //         console.log(i);
+        //     }
+        // }
+        // 函数被调用的时候有函数作用域
+        // func();
+        // // 函数调用结束以后函数作用域销毁
+        // console.log(i);  //i is not defined 
+        // 作用域链：内层 -> 外层 -> 全局作用域
+        // 5.3  有哪些块级作用域
+        // {}
+    </script>
+</body>
+
+</html>

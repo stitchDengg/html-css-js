@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.箭头函数中的this指向
+        // 箭头函数没有自己的this
+        // 通过作用域链往外寻找
+        // const calc = {
+        //     add: () => {
+        //         console.log(this);
+        //     }
+        // };
+        // calc.add();  //window
+
+
+        // 2.练习
+        const calc = {
+            add: function () {
+                const adder = () => {
+                    console.log(this);
+                }
+                adder();
+            }
+        }
+        // calc.add();  // 指向clac对象
+
+        const addFn = calc.add;
+        addFn();      //指向window对象
+
+        // 总结
+        // 1.当我们使用箭头函数的时候，箭头函数会默认帮我们绑定外层 this 的值，所以在箭头函数中 this 的值和外层的 this 是一样的。
+        // 2.箭头函数中的this引用的就是最近作用域中的this
+        // 3.向外层作用域中，一层一层查找this，直到有this的定义
+        // 4.有的箭头函数都没有自己的this 不适合定义一个对象的方法。
+
+    </script>
+</body>
+
+</html>

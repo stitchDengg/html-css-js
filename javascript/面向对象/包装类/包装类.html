@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = new Number(123);
+        var b = new String('好好学习');
+        var c = new Boolean(true);
+
+        console.log(a);
+        console.log(typeof a);
+        console.log(b);
+        console.log(typeof b);
+        console.log(c);
+        console.log(typeof c);  //obj
+
+        // 包装类实例化的对象也能和基本类型值一样进行运算
+        console.log(5 + a);             //128
+        console.log(b.slice(0,2));       //好好
+        console.log(c && true);     //true
+
+        // 基本类型也是包装类的实例
+        var d = 123;
+        console.log(d.__proto__ == Number.prototype);  //true
+        var e = '好好学习'
+        console.log(e.__proto__ == String.prototype);  //true
+        console.log(String.prototype.hasOwnProperty('toLowerCase')); //true
+        console.log(String.prototype.hasOwnProperty('slice')); //true
+        console.log(String.prototype.hasOwnProperty('substr')); //true
+    </script>
+</body>
+</html>

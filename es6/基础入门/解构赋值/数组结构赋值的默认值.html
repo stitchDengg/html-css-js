@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.默认值的基本用法
+        // const [a,b] = [];
+        // //const [a,b] = [undefined,undefined];
+        // console.log(a,b);  //undefined undefined
+
+
+        // 设置默认值
+        // const [a = 1,b = 2] = [];
+        // console.log(a,b);  //1,2
+
+        // 2默认值的生效条件
+        // 只有当一个数组成员严格等于（===）undefined时间，对应的默认值才会生效
+        //const [a = 1,b = 2] = [3,0];
+        //const [a = 1,b = 2] = [3,null];
+        // const [a = 1,b = 2] = [3];
+        // console.log(a,b);  // 3 2
+
+
+        // 3.默认值表达式
+        // 如果默认值是表达式，默认值是惰性求值的
+        const func = () => {
+            console.log('我被执行了');
+            return 2;
+        };
+        const [x = func()] = [1];
+        console.log(x);  //1 表达式不执行
+    </script>
+</body>
+</html>

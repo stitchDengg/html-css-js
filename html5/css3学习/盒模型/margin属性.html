@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    span{
+        border: 1px solid #000;
+    }
+    .span1{
+        margin-right: 30px;
+    }
+    .span2{
+        margin-left: 40px;
+    }
+    /* 在垂直方向会有塌陷现象 margin在垂直方向会服从于大的数值 */
+    .box1{
+        width: 200px;
+        height: 200px;
+        background-color: orange;
+        margin-bottom: 30px;
+    }
+    .box2{
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+        margin-top: 40px;
+    }
+    /* 有一些元素有天生的margin需要使用并集选择器手工去掉 例如body 列表 p标签 */
+    body,ul,p{
+        margin: 0;
+    }
+    section{
+        width: 600px;
+        height: 200px;
+        background-color: red;
+        /* 上下外边距是0  左右auto是居中 */
+        margin: 0 auto;
+        /* 文字居中需要使用下面两个元素 */
+        text-align: center;
+        line-height: 200px;
+    }
+</style>
+<body>
+    <span class="span1">我是一个span</span><span class="span2">我是一个span</span>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <ul>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+    </ul>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+
+    <section>
+        行胜于言
+    </section>
+</body>
+</html>

@@ -1,0 +1,53 @@
+/* 放置公共类和一些原子类 */
+
+/* 版心 */
+.center-wrap {
+    width: 1152px;
+    margin: 0 auto;
+}
+
+/* 利用继承性设置为方正字体 */
+body {
+    font-family: "PiFangScRegular";
+}
+/* 清楚浮动 */
+.clearfix {
+    overflow: hidden;
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+
+.tac {
+    text-align: center;
+}
+
+.dp {
+    display: block;
+}
+
+.dib {
+    display: inline-block;
+}
+
+@font-face {
+    font-family: "PiFangScRegular";
+    src: url(../fonts/PingFangSCRegular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'iconfont';
+    src: url('../fonts/iconfont.ttf') format('truetype');
+}
+/* 这个类名可以使用字体图标 */
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

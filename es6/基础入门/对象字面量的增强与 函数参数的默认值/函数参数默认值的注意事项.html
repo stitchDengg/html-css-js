@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.默认值的生效条件
+        // 不传参数或者明确传递undefined作为参数，默认值才会生效
+
+
+        // 2.默认值表达式
+        // 如果默认值是表达式，默认值表达式是惰性求值的
+
+
+        // 3.设置默认值的小技巧
+        // 设置默认值的时候，最好从参数列表右边开始设置
+        const multiply = (x = 1,y) => x * y;
+        // 这样写就很复杂
+        console.log(multiply(undefined,2));
+    </script>
+</body>
+</html>

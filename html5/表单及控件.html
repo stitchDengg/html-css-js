@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- action元素表示表单要提交到后台程序的网址 method方法表示表单提交的方式-->
+    <form action="" method="post">
+        <!-- type属性表示输入的类型 placeholder属性表示提示文本 value属性表示填好的值 -->
+        <!-- disabled属性表示不能交互 -->
+        <input type="text" placeholder="789" disabled>
+        <p>
+            请输入你的姓名<input type="text">
+        </p>
+        <p>
+            报考院校<input type="text" value="清华大学" disabled>
+        </p>
+        <p>
+            毕业学校<input type="text" placeholder="请输入真实学校">
+        </p>
+        
+
+
+        <!-- 单选框 -->
+        <!-- type属性为radio时为单选按钮 单选按钮 要有value属性值  name属性值相同会互斥-->
+        <p>
+            性别：
+            <!-- label标签可以让文字和单选框绑定 注意html5和html4的区别-->
+            <label>
+                <input type="radio" name="123" value="男" checked>男
+            </label>
+           <label >
+                <input type="radio" name="123" value="女">女
+           </label>
+        </p>
+        <p>
+            血型：
+            <label>
+                <input type="radio" name="blood" checked>A
+            </label>
+           <label>
+                <input type="radio" name="blood">B
+           </label>
+            <label>
+               <input type="radio" name="blood">C
+            </label>
+            <label>
+                <input type="radio" name="blood">D
+            </label>
+            <label>
+                <input type="radio" name="blood">O
+            </label>
+        </p>
+
+        <!-- 多选框 -->
+        <p>
+            爱好：
+            <label>
+                <input type="checkbox" name="hobby" value="足球">足球
+            </label>
+            <label>
+                <input type="checkbox" name="hobby" value="篮球">篮球
+            </label>
+            <label>
+                <input type="checkbox" name="hobby" value="排球">排球
+            </label>
+            <label>
+                <input type="checkbox" name="hobby" value="乒乓球">乒乓球
+            </label>
+        </p>
+
+        <!-- 密码框 -->
+        <p>
+            密码：
+            <input type="password">
+        </p>
+
+        <!-- 下拉菜单select option内部选项-->
+        <p>
+            支付方式：
+            <select>
+                <option value="alipay">支付宝</option>
+                <option value="wx">微信</option>
+                <option value="bank">网银</option>
+            </select>
+        </p>
+
+        <!-- 多行文本框 -->
+        <p>
+            留言：
+            <textarea  cols="30" rows="10"></textarea>
+        </p>
+
+        <!-- 三种按钮 -->
+        <p>
+            <button>我是一个按钮</button>
+        </p>
+
+        <p>
+            <input type="button" value="我是一个按钮">
+        </p>
+        <p>
+            <input type="submit" value="提交">
+        </p>
+        <!-- 重置所有表单 -->
+        <p>
+            <input type="reset" value="重置表单">
+        </p>
+    </form>
+</body>
+</html>

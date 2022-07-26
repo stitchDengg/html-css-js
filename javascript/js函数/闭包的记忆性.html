@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建体温检测函数checkTemp(n)，可以检测体温n是否正常，返回布尔值
+        // 不同小区有不同检测标准，a小区体温合格线是37.1，b小区是37.3，应该怎么编程
+        function createChecktemp(standardTemp) {
+            function checkTemp(n) {
+                if(n <= standardTemp){
+                    alert('体温正常');
+                }
+                else{
+                    alert('体温偏高');
+                }
+            }
+            return checkTemp;
+        }
+        
+        // 闭包的使用  
+        var checkTemp_A = createChecktemp(37.1);
+        var checkTemp_B = createChecktemp(37.3);
+        // checkTemp_A(37.2);
+        // checkTemp_A(37.0);
+        checkTemp_B(37.2);
+        checkTemp_B(37.0);  
+    </script>
+</body>
+</html>

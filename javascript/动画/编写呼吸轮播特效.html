@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .carousel {
+            width: 650px;
+            height: 360px;
+            border: 1px solid #000;
+            /* 居中 */
+            margin: 50px auto;
+            position: relative;
+        }
+
+        .carousel ul {
+            list-style: none;
+        }
+
+        .carousel ul li {
+            /* 所有图片堆叠在一起 */
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* 所有li透明度都是0 */
+            opacity: 0;
+            transition: opacity 1s ease 0s;
+        }
+
+        .carousel ul li:first-child {
+            opacity: 1;
+        }
+
+        .carousel .btn {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: rgb(18, 140, 185);
+            border-radius: 50%;
+            top: 50%;
+            margin-top: -25px;
+        }
+
+        .carousel .leftbtn {
+            left: 20px;
+        }
+
+        .carousel .rightbtn {
+            right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="carousel">
+        <ul id="list">
+            <li><img src="../images/beijing/0.jpg" alt=""></li>
+            <li><img src="../images/beijing/1.jpg" alt=""></li>
+            <li><img src="../images/beijing/2.jpg" alt=""></li>
+            <li><img src="../images/beijing/3.jpg" alt=""></li>
+            <li><img src="../images/beijing/4.jpg" alt=""></li>
+        </ul>
+        <a href="javascript:" class="leftbtn btn"></a>
+        <a href="javascript:" class="rightbtn btn"></a>
+    </div>
+
+    <script>
+        // 得到按钮和ul
+        var leftbtn = document.querySelector('.carousel .leftbtn');
+        var rightbtn = document.querySelector('.carousel .rightbtn');
+        var list = document.getElementById('list');
+        var lis = document.getElementsByTagName('li');
+
+        // 设置节流锁
+        var lock = true;
+
+        // 设置全局变量
+        var idx = 0;
+
+        // 右按钮的监听
+        rightbtn.onclick = function () {
+            // 判断节流锁状态
+            if (!lock) return;
+            lock = false;
+
+            // 还没有改itx，此时id是老图
+            lis[idx].style.opacity = 0;
+            idx++;
+            if (idx > 4) idx = 0;
+            // 改了idx，此时图片是新图，老图淡入
+            lis[idx].style.opacity = 1;
+
+            // 设置延时器解开锁
+            setTimeout(function () {
+                lock = true;
+            }, 1000);
+        };
+
+        leftbtn.onclick = function () {
+            // 判断节流锁状态
+            if (!lock) return;
+            lock = false;
+
+            // 还没有改itx，此时id是老图
+            lis[idx].style.opacity = 0;
+            idx--;
+            if (idx < 0) idx = 4;
+            // 改了idx，此时图片是新图，老图淡入
+            lis[idx].style.opacity = 1;
+
+            // 设置延时器解开锁
+            setTimeout(function () {
+                lock = true;
+            }, 1000);
+        };
+    </script>

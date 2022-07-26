@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = 'abc123def4567';
+        var regexp = /\d+/g;
+
+        // search方法
+        var result1 = str.search(regexp);
+        console.log(result1);  //3 返回首次查询到位置的下标
+        console.log(str.search(/m/g));  //-1
+
+        // match方法
+        var result2 = str.match(regexp);
+        console.log(result2);   //返回匹配成功的字符串数组
+
+        // replace方法 替换掉匹配成功的字符串
+        var result3 = str.replace(/[a-z]+/g,'*');  //+表示贪婪的，尽可能多的匹配小写字母
+        console.log(result3);   //*123*4567
+
+        // split方法  把字符串分割为字符串数组。
+
+        var result4 = str.split(regexp);
+        console.log(result4);    //将匹配成功的字符串分割为字符串数组
+    </script>
+</body>
+</html>

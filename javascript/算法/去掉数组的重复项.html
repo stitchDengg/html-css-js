@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 原本数组
+        var arr = [1,1,1,2,2,3,3,4,2,1]
+        // 结果数组
+        var res = [1];
+        
+        // 遍历原数组
+        // 自己的方法没用includes函数
+        // for(var i = 0; i < arr.length; i ++){
+        //     // 遍历结果数组看是否有重复的
+        //     var term = false;
+        //     for(var a = 0; a < res.length; a ++){
+        //         if(res[a] == arr[i]){   
+        //             term = true;
+        //             break;
+        //         }
+        //     }
+        //     if(term == false){
+        //         res.push(arr[i]);
+        //     }
+        // }
+        // console.log(res);
+        for(var i = 0; i < arr.length; i++){
+            if(!res.includes(arr[i])){
+                res.push(arr[i]);
+            }
+        }    
+        console.log(res);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //do while 循环是先循环后判断条件 至少执行一次循环
+        // do {
+        //     console.log('☆');
+        // } while (false);
+
+
+        // // 输出1到100
+        // var i = 1;
+        // do {
+        //     console.log(i);
+        //     i++;
+        // } while (i <= 100);
+
+
+        // 随机数公式 得到a到b区间的随机数
+        // parseInt(Math.random() * (b - a + 1)) + a
+        // 5到12的随机整数
+        //console.log(parseInt(Math.random() * 8) + 5);
+
+
+        //do while 小案例
+        // 请编写程序随机生成两个变量dx和dy,他们均在-4和4之间随机取值,但要求dx和dy不能同时为0
+       do {
+           var dx = parseInt(Math.random() * 9) - 4;
+           var dy = parseInt(Math.random() * 9) - 4;
+       } while (dx == 0 && dy == 0);
+       console.log(dx,dy);
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 水仙花数是指一个三位数的值刚好等于其三位数的阶乘和
+        // 找出所有的水仙花数
+
+
+        // 阶乘函数
+        function jieCheng(a){
+            for(var i = 1,res = 1; i <= a; i ++){
+                res *= i;
+            }
+            return res;
+        }
+        // 主函数
+        function main(){
+            // 遍历所有的三位数
+            for(var i = 100; i < 1000; i ++){
+                // 将三位数拆分 abc分别表示百位十位个位
+                var a = Number(i.toString()[0]);
+                var b = Number(i.toString()[1]);
+                var c = Number(i.toString()[2]);
+                if(jieCheng(a) + jieCheng(b) + jieCheng(c) == i){
+                    console.log(i);
+                }
+            }
+        }
+
+        main();
+    </script>
+</body>
+</html>

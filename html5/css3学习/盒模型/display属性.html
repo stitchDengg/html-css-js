@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box1{
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+    }
+    .box2{
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+    }
+    /* 行内元素无法设置宽高  */
+    span{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        padding: 8px 10px;
+    }
+    /* img和表单元素是特殊的行内块 既能够设置高度宽度也能并排显示 */
+    img{
+        width: 200px;
+    }
+    input{
+        width: 200px;
+        height: 300px;
+    }
+</style>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <span>我是span</span>
+    <span>我是span</span>
+    <div>
+        <img src="../images/beijing/1.jpg" alt=""><img src="../images/beijing/1.jpg" alt="">
+    </div>
+    <div>
+        <input type="text" ><input type="text" >
+    </div>
+</body>
+</html>

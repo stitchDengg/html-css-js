@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 算数表达式和运算符 + - * / %
+        // 过于简单不想写例子了
+        var term = 0.1 + 0.2 ;
+        console.log(term);  //因为ieee754标准会对小数造成一定的误差 结果为0.30000000000000004
+        console.log(term.toFixed(1));  //可以用toFixed方法来保留小数前几位 来解决
+
+
+        // 关系表达式
+        //基本都知道
+
+        //逻辑表达式 或与非  优先级  非大于与大于或
+        // 短路计算 ☆
+        console.log(3 && 6);  //表达式中 a && b  如果a是真那么结果就为b a假的话表达式就是a
+        console.log(0 && 6);
+
+        console.log(3 || 6);  //表达式中 a || b  如果a真不用看b直接短路结果是a  a假就为b
+        console.log(0 || 6);  
+
+        //赋值表达式
+        //都知道
+
+        // 综合表达式  运算顺序 非运算大于数学运算大于关系运算大于逻辑运算
+        console.log(5 < 3 + 3);  //true
+        console.log(3 < 2 && 8 > 3 + 4); //true
+        console.log(3 > 2 && 8 > 3 + 5); //false
+        console.log(!13 < 5 - 3);  //true
+        console.log(!13 < 5 - 5);  //false
+
+        //变量的范围表示
+        //判断闰年的方法 根据两个条件进行判断
+        // 1.能被4整除且不能被100整除
+        // 2.能被100整除也能被400整除
+        var year = Number(prompt('请输入年份'));
+        if(year % 4 == 0 && year % 100 != 0 || year % 100 == 0 && year % 400 == 0){
+            alert(year + '年是闰年');
+        }
+        else{
+            alert(year + '年不是闰年');
+        }
+    </script>
+</body>
+</html>

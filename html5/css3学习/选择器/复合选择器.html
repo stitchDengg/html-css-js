@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 后代选择器 不一定是子元素*/
+        .box .spec em{
+            color: red;
+        }
+        /* 交集选择器 */
+        h3.spec{
+            font-style: italic;
+        }
+        /* 并集选择器 同时消除有序和无序列表的前缀*/
+        ul,ol{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li>
+                <p>我是段落</p>
+            </li>
+            <li>
+                <p>我是段落</p>
+            </li>
+            <li>
+                <p class="spec">我是段落<em>强调文字</em></p>
+            </li>
+        </ul>
+    </div>
+
+    <p>我是段落</p>
+    <p>我是段落</p>
+    <p>我是段落</p>
+
+    <h3 class="spec">
+        我是三级标题
+    </h3>
+
+    <ul>
+        <li>无序列表的列表项</li>
+        <li>无序列表的列表项</li>
+        <li>无序列表的列表项</li>
+        <li>无序列表的列表项</li>
+        <li>无序列表的列表项</li>
+    </ul>
+    <ol>
+        <li>有序列表的列表项</li>
+        <li>有序列表的列表项</li>
+        <li>有序列表的列表项</li>
+        <li>有序列表的列表项</li>
+        <li>有序列表的列表项</li>
+    </ol>
+</body>
+</html>

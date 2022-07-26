@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            a: 1,
+            b: 2,
+            c: [33, 44, {
+                m: 55,
+                n: 66,
+                p: [77, 88]
+            }]
+        };
+
+        function deepClone(o) {
+            // 要判断o是对象还是数组
+            // 数组也能通过typeof o == 'object'，所以讲数组判断写前面，数组就不会经过else if判断
+            if (Array.isArray(o)) {
+                // 数组类型
+                var result = [];
+                for(var i = 0; i < o.length; i++){
+                    result.push(deepClone(o[i]));
+                }
+            }else if (typeof o == 'object') {
+                // 对象
+                var result = {};
+                for(var k in o){
+                    result[k] = deepClone(o[k]);
+                }
+            }else {
+                // 基本类型值
+                var result =  o;
+            }
+            return result;
+        }
+
+        // 测试深克隆
+        var newObj = deepClone(obj);
+        console.log(newObj);
+        console.log(newObj == obj);  //false
+    </script>
+</body>
+
+</html>

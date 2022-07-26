@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        /* padding: 0; */
+    }
+    .box{
+        width: 400px;
+        height: 300px;
+        padding: 10px;
+        border: 6px solid blue;
+        margin: 40px auto;
+    }
+    .box .box1{
+        /* 老大实际占有宽度是400px 实际占有的高度是200px 并且向下踹20px */
+        border: 6px solid green;
+        width: 388px;
+        height: 188px;
+        /* 文字居中 */
+        text-align: center;
+        line-height: 188px;
+        margin-bottom: 40px;
+    }
+    /* 老二实际剩余400px宽度 80px高度总空间 */
+    .box .box2{
+        width: 388px;
+        height: 68px;
+        border: 6px solid orange;
+    }
+</style>
+<body>
+    <div class="box">
+        <div class="box1">老大</div>
+        <div class="box2"></div>
+    </div>
+    
+</body>
+</html>

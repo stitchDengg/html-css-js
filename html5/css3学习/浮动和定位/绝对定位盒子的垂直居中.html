@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    div{
+        width: 400px;
+        height: 300px;
+        border: 1px solid #000;
+        margin: 40px auto;
+        position: relative;
+    }
+    p{
+        width: 80px;
+        height: 80px;
+        background-color: orange;
+        position: absolute;
+        /* 以下为实现绝对定位盒子垂直居中的方法 */
+        /* 左边线居中 */
+        top: 50%;
+        margin-top: -40px;
+        /* 以下为实现绝对定位盒子水平居中的方法 */
+        left: 50%;
+        margin-left: -40px;
+    }
+</style>
+<body>
+    <div>
+        <p></p>
+    </div>
+</body>
+</html>

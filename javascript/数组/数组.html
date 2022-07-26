@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 第一种定义数组方式
+        var arr1 = ['A','B','C','D'];
+        // 第二种
+        var arr2 = new Array('A','B','C','D');
+        // 第三种
+        var arr3 = new Array(4);
+
+        console.log(arr1);
+        console.log(arr2);
+        console.log(arr3);
+        console.log(arr3[1000]);  //下标越界不会报错，会返回undefined
+        console.log(arr1.length);  //数字的长度属性
+
+        //数组的改变
+        var arr4 = ['l','o','v','e'];
+        arr4[2] = arr4[2].toUpperCase(); //将小写字符转换为大写
+        arr4[6] = 'm';           //将下标为6的值赋值以后数组会边长，中间会变成空
+        console.log(arr4);
+
+        // 数组类型的检测
+        console.log(typeof(arr4));  //返回结果是object
+        console.log(Array.isArray(arr4)); //返回结果是true则是数组 兼容到ie8
+
+
+        // 数组的常用方法
+        // push pop unshift shift
+        var arr4 = [1,2,3,4,5];
+        arr4.push(6);       //尾部插入6
+        console.log(arr4); 
+        var item = arr4.pop();         //尾部排出最后一个元素,且返回排出的值
+        console.log(arr4,item); 
+        arr4.unshift(0);    //首部添加一个0
+        console.log(arr4);
+        var term = arr4.shift();       //首部排出第一个元素，且返回排出的值
+        console.log(arr4,term);
+
+
+        // splice方法 用于替换数组指定的项
+        var arr5 =['A','B','C','D','E','F','G'];
+        var items = arr5.splice(3,2,'X','Y','Z');  //前两个参数表示从下标为3开始替换2个元素
+        console.log(arr5);
+        console.log(items);  //返回被替代的值
+        
+        // 用于在指定位置插入新项
+        var arr6 = [0,1,2,3,4,5];
+        arr6.splice(2,0,44,55,66,77);       //指从下标为2元素后面插入新的元素
+        console.log(arr6);
+        
+        // 删除指定项
+        arr6.splice(2,4);       //指从下标为2开始删除4个元素
+        console.log(arr6);  
+
+
+        // 数组和字符串的相互转化
+        var arr7 = [1,2,3,4,5,6];
+        //join()方法 将数组转化为字符串 参数表示以什么字符作为连接符
+        console.log(arr7.join());  //默认不填为逗号 和toString方法一样
+        console.log(arr7.join('☆'));
+        console.log(arr7.join('')); //不想有任何连接用空字符串
+
+        //split()方法 将字符串转化为数组 参数表示以什么当分隔符 通常用空字符串
+        var str = 'abcdefg';
+        console.log(str.split('')); //需要给split写参数不然无效
+
+
+        // 字符串和数组的相关性
+        console.log(str[0]);
+        console.log(str.charAt(0)); //两种方法等价
+
+        // concat()方法 将数组合并
+        var arr8 = [1,2,3];
+        var arr9 = [4,5,6];
+        var arr10 = [7,8,9];
+        console.log(arr8.concat(arr9,arr10));  //将数组合并 不会改变原数组
+
+        // reverse()方法 将数组置反 直接改变数组
+        arr8.reverse();
+        console.log(arr8);
+
+        // 如何让字符串倒置
+        var str1 = '123456789';
+        var x = str1.split('').reverse().join('');      //字符串无法调用reverse方法
+        console.log(x);
+
+        // indexOf()方法搜索数组的元素并返回下标，如果元素不存在则返回-1和includes()方法元素是否存在在数组返回布尔值  
+        var index = arr8.indexOf(2);
+        console.log(index);
+        index = arr8.includes(0);
+        console.log(index);
+    </script>
+</body>
+</html>

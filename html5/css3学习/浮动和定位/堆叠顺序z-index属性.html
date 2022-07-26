@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box1{
+        width: 300px;
+        height: 300px;
+        border: 1px solid #000;
+        background-color: orange;
+        position: absolute;
+        top: 100px;
+        left: 100px;
+        z-index: 999;
+    }
+    /* 二号盒子压住一号盒子是因为写在后面 自由调整谁盖谁使用z-index*/
+    .box2{
+        width: 300px;
+        height: 300px;
+        border: 1px solid #000;
+        background-color: blue;
+        position: absolute;
+        top: 200px;
+        left: 200px;
+        z-index: 99;
+    }
+</style>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = '111111'
+        // 创建正则表达式1
+        var regexp1 = /^\d{6}$/; 
+
+        // 创建正则表达式2
+        // 字符串\表示转译所以要用两个斜杠 用这种方式会有点困扰
+        var regexp2 = new RegExp('^\\d{6}$');
+
+        // 测试正则表达式
+        console.log(regexp1.test(str));  //true
+        console.log(regexp2.test(str));  //true
+
+        console.log(typeof regexp1);   //obj
+    </script>
+</body>
+</html>

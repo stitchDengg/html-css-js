@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <p id="fpara">我是段落A</p>
+        <p id="para">
+            我是段落c
+            <span></span>
+            <span></span>
+            <span></span>
+        </p>
+        <p>我是段落C</p>
+        <p>我是段落C</p>
+        <p>我是段落C</p>
+        <p>我是段落C</p>
+        <p>我是段落C</p>
+        <p id="lpara">我是段落C</p>
+    </div>
+    <script>
+        // 节点的一些属性 
+        var box = document.getElementById('box');
+        var para = document.getElementById('para');
+
+        // 封装一个函数，这个函数可以返回元素所有的子元素节点(兼容到ie6)，类似children功能
+        function getChildren(node){
+            //结果数组
+            var children = [];
+            // 遍历这个node所有子节点
+            for(var i = 0; i < node.childNodes.length; i++){
+                //判断每一个节点nodetype是不是1即否为element节点
+                if(node.childNodes[i].nodeType == 1){
+                    children.push(node.childNodes[i]);
+                }
+            }
+            return children;
+        }
+        // 测试getChildren函数
+        console.log(getChildren(box));
+        console.log(getChildren(para));
+
+
+        // 封装一个函数，这个函数可以返回元素前一个元素兄弟节点（兼容到ie6），类似于previousElmentSibling
+        function getElementPreSibling(node){
+            var o = node;
+            // 使用while语句来寻找
+            while(o.previousSibling != null){
+                if(o.previousSibling.nodeType == 1){
+                    // 结束循环
+                    return o.previousSibling;
+                }
+                o = o.previousSibling;
+            }
+            return null;
+        }
+
+        // 测试getElementPreSibling函数
+        console.log(getElementPreSibling(para));
+        console.log(getElementPreSibling(fpara));  //返回undefined 找不到前一个节点
+
+        // 封装一个函数，这个函数可以返回元素的所有兄弟节点
+        function getAllElementSibling(node){
+            // 前兄弟数组
+            var prevs = [];
+            // 后兄弟数组
+            var nexts = [];
+
+            var o = node;
+            while(o.previousSibling != null){
+                if(o.previousSibling.nodeType == 1){
+                    prevs.unshift(o.previousSibling);
+                }
+                o = o.previousSibling;
+            }
+
+            // 将局部变量重新获取
+            o = node;
+            while(o.nextSibling != null){
+                if(o.nextSibling.nodeType == 1){
+                    nexts.push(o.nextSibling);
+                }
+                o = o.nextSibling;
+            }
+
+            // 将两个数组合并
+            return prevs.concat(nexts);
+        }
+
+        // 测试getAllElementSibling方法
+        console.log(getAllElementSibling(para),'getAllElementSibling');
+    </script>
+</body>
+</html>

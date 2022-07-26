@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 全局变量会成为window对象的属性
+        // 多个js文件之间是共享作用域的，js文件没有作用域隔离功能
+        var a = 3;
+        console.log(window.a == a);
+        // window对象确实拥有a这个属性
+        console.log(window.hasOwnProperty('a'));
+        console.log(window.a);
+
+        // 内置函数普遍是window对象方法
+        console.log(window.hasOwnProperty('alert'));
+        console.log(window.hasOwnProperty('setInterval'));
+    </script>
+
+    <!-- 引入两个js 能输出全局变量m-->
+    <script src="js1.js"></script>
+    <script src="js2.js"></script>
+</body>
+</html>

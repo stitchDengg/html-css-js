@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 50px 0 0 300px;
+            font-size: 22px;
+        }
+        ul{
+            padding: 0;
+        }
+        p{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p>学生信息表</p>
+    <ul id="list">
+        <li style="list-style: none;">信息加载中........</li>
+    </ul>
+
+
+    <script>
+        // 数据
+        const students = [
+        {
+            userName:'Alex',
+            age:18,
+            sex:'male',
+        },
+        {
+            userName:'ZhangSan',
+            age:20,
+            sex:'male',
+        },
+        {
+            userName:'LiSi',
+            age:22,
+            sex:'female',
+        }
+        ];
+
+        const list = document.getElementById('list');
+
+        let html = '';
+
+        // 通过for循环重新赋值
+        for (let index = 0; index < students.length; index++) {
+            html += `<li>我的名字是：${students[index].userName},${students[index].age},${students[index].sex}</li>`;
+        }
+        list.innerHTML = html;
+    </script>
+</body>
+</html>

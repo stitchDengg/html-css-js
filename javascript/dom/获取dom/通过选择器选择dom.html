@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <p>我是段落</p>
+        <p class="spec">我是段落</p>
+        <p>我是段落</p>
+    </div>
+
+    <ul id="list1">
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ul>
+
+    <ul id="list2">
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ul>
+
+    <ul id="list3">
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ul>
+    <script>
+        //通过选择器选择
+        // querySelector只能选一个
+        var the_p = document.querySelector('#box .spec');
+        console.log(the_p);
+
+
+        // querySelectorAll选择全部符合选择器的节点对象数组
+        var lis_inlist1 = document.querySelectorAll('#list1 li');
+        console.log(lis_inlist1);
+    </script>
+</body>
+
+</html>

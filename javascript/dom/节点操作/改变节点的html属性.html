@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+
+    <script>
+        var oBox = document.getElementById('box');
+        // 不是w3c标准的属性只能使用setAttribute属性设置
+        oBox.setAttribute('data-n',10);
+        // 可以使用getAttribute拿到设置的属性
+        console.log( oBox.getAttribute('data-n'));
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 1000px;
+            height: 130px;
+            border: 1px solid #000;
+            /* 居中 */
+            margin: 50px auto;
+            /* 溢出的看不见 */
+            overflow: hidden;
+        }
+
+        #box ul {
+            list-style: none;
+            /* 设置大一点，这样li才能浮动 */
+            width: 5000px;
+            position: relative;
+        }
+
+        #box ul li {
+            float: left;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <ul id="list">
+            <li><img src="../images/number/0.png" alt=""></li>
+            <li><img src="../images/number/1.png" alt=""></li>
+            <li><img src="../images/number/2.png" alt=""></li>
+            <li><img src="../images/number/3.png" alt=""></li>
+            <li><img src="../images/number/4.png" alt=""></li>
+            <li><img src="../images/number/5.png" alt=""></li>
+        </ul>
+    </div>
+
+
+    <script>
+        var box = document.getElementById('box');
+        var list = document.getElementById('list');
+
+        //复制一遍li
+        list.innerHTML += list.innerHTML;
+
+        // 设置全局变量，表示当前list的left值
+        var left = 0;
+        var timer;
+        
+        // 将动画封装成函数
+        function move() {
+            // 设表先关，防止动画积累
+            clearInterval(timer);
+            // 定时器
+            timer = setInterval(function () {
+                left -= 4;
+                // 验收
+                if (left <= -1260) {
+                    left = 0;
+                }
+                list.style.left = left + 'px';
+            }, 10);
+        }
+        // 函数执行
+        move();
+        // 鼠标进入事件 停止定时器
+        box.onmouseenter = function () {
+            clearInterval(timer);
+        }
+
+        // 鼠标离开事件 继续定时器
+        box.onmouseleave = function () {
+            move();
+        }
+    </script>
+</body>
+
+</html>

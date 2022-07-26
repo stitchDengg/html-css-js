@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.对象解构赋值的默认值生效条件
+        // 对象的属性值严格等于undefined时，对应的默认值才会生效
+        // const {userName = 'zhangsan',age = 0}  = {userName:'alex'}
+        // console.log(userName,age);  //alex 0
+
+        // 2.默认值表达式
+        // 如果默认值是表达式，默认值表达式是惰性求值的
+
+
+        // 3.将一个已经声明的变量用于解构赋值
+        // let {x} = {x:1}
+        // console.log(x);  //1
+
+        let x = 2;
+        // 防止浏览器的误解，在{}前面加上(),就可以成功赋值
+        ({x}  =  {x:1});
+        console.log(x);  //1
+
+
+        // 4.可以取到继承的属性
+        //const {a = 1} = {};
+        const {toString} = {};
+        console.log(toString);  //toString()
+        // 不光可以取到自定义的属性，还可以取到继承的属性
+        // Object.prototype
+        console.log(Object.prototype);
+    </script>
+</body>
+</html>

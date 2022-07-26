@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- tr表示table row   td表示table data -->
+    <!-- border属性边框宽度 caption是表格的标题通常作为table的第一个子元素出现-->
+    <!-- th是表格的标题小格 -->
+    <!-- colspan属性设置td或者th的列跨度 -->
+    <table border="1" width="600">
+        <caption>表格1</caption>
+        <tr>
+            <td colspan="2">A</td>
+            <td>B</td>
+            <td>C</td>
+        </tr>
+        <tr>
+            <td>D</td>
+            <td colspan="3">E</td>
+        </tr>
+        <tr>
+            <td>F</td>
+            <td>G</td>
+            <td>H</td>
+            <td>I</td>
+        </tr>
+    </table>
+    <table border="1" width="600">
+        <caption>表格2</caption>
+        <tr>
+            <td>A</td>
+            <td>B</td>
+            <td>C</td>
+            <td>D</td>
+        </tr>
+        <tr>
+            <td>E</td>
+            <td rowspan="2">F</td>
+            <td>G</td>
+            <td rowspan="3">H</td>
+        </tr>
+        <tr>
+            <td>I</td>
+            <td>J</td>
+        </tr>
+        <tr>
+            <td>K</td>
+            <td>L</td>
+            <td>M</td>
+        </tr>
+    </table>
+
+    <table border="1" width="600">
+        <caption>表格3</caption>
+        <thead>
+            <tr>
+                <th></th>
+                <th colspan="2">第一季度</th>
+                <th colspan="2">第二季度</th>
+                <th colspan="2">第三季度</th>
+                <th colspan="2">第四季度</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th>国内</th>
+                <th>国外</th>
+                <th>国内</th>
+                <th>国外</th>
+                <th>国内</th>
+                <th>国外</th>
+                <th>国内</th>
+                <th>国外</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>手机</th>
+                <td>123</td>
+                <td>123</td>
+                <td>123</td>
+                <td>123</td>
+                <td>123</td>
+                <td>123</td>
+                <td>123</td>
+                <td>123</td>
+            </tr>
+            <tr>
+                <th>电脑</th>
+                <td>123</td>
+                <td>123</td>
+                <td>123</td>
+                <td>123</td>
+                <td>123</td>
+                <td>123</td>
+                <td>123</td>
+                <td>123</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>汇总</th>
+                <td>123</td>
+                <td>123</td>
+                <td>123</td>
+                <td>123</td>
+                <td>123</td>
+                <td>123</td>
+                <td>123</td>
+                <td>123</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

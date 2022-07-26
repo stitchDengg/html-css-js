@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid #000;
+        }
+        #box1 {
+            width: 202px;
+            height: 202px;
+            padding: 50px;
+        }
+        #box2 {
+            width: 100px;
+            height: 100px;
+            padding: 50px;
+        }
+        #box3 {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1" class="">
+        <div id="box2">
+            <div id="box3"></div>
+        </div>
+    </div>
+
+
+    <script>
+        var oBox1 = document.getElementById('box1');
+        var oBox2 = document.getElementById('box2');
+        var oBox3 = document.getElementById('box3');
+
+        oBox1.onclick = function(){
+            console.log('我是box1的onclick');
+        };
+        
+        oBox2.onclick = function(){
+            console.log('我是box2的onclick');
+        };
+
+        oBox3.onclick = function(){
+            console.log('我是box3的onclick');
+        };
+
+        // 测试结果（不成熟）
+        // 事件的传播是从内到外的
+
+        // 事件的实际传播
+        // 捕获阶段（从外到内) -> 冒泡阶段（从内到外）
+        // onxxx这样的写法是dom0级监听只能监听到冒泡阶段
+
+        // dom2级事件监听
+        // addEventListener三个参数，1：字符串click不加on，2：事件处理函数，3：true监听捕获阶段，false捕获冒泡阶段
+        oBox1.addEventListener('click',function(){ 
+            console.log('我是box1的捕获阶段');
+        },true);
+        oBox2.addEventListener('click',function(){ 
+            console.log('我是box2的捕获阶段');
+        },true);
+        oBox3.addEventListener('click',function(){ 
+            console.log('我是box3的捕获阶段');
+        },true);
+
+
+        oBox1.addEventListener('click',function(){ 
+            console.log('我是box1的冒泡阶段');
+        },false);
+        oBox2.addEventListener('click',function(){ 
+            console.log('我是box2的冒泡阶段');
+        },false);
+        oBox3.addEventListener('click',function(){ 
+            console.log('我是box3的冒泡阶段');
+        },false);
+        // 实验证明了事件传播是分为捕获和冒泡两个阶段
+
+        /* 注意事项 */
+        // 最内部元素不再区分捕获和冒泡阶段，会先执行写在前面的监听，然后执行后写的监听
+
+        // 同名函数的dom0级的监听 后面的函数会覆盖掉前面的函数
+        // 同名函数的dom2级的监听 会按先后顺序弹出
+    </script>
+</body>
+</html>

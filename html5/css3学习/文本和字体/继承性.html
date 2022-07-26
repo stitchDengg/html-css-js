@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+       font-size: 25px; 
+       line-height: 1.5;
+       font-weight: bold;
+       font-family: '宋体';
+       text-align: center;
+       text-decoration: none;
+       font-style: italic;
+       color: red;
+    }
+    #box1 #box2 #box3{
+        color: red;
+    }
+    /* 继承的优先级不如已经选择的选择器 如同为继承谁描述的近听谁的*/
+    p{
+        color: green;
+    }
+</style>
+<body>
+     <!-- 文本相关的属性都有继承性 color font list text line开头的 祖先标签设置后代所有标签都生效 -->
+    <div class="box">
+        <ul>
+            <li>列表项</li>
+            <li>列表项</li>
+            <li>列表项</li>
+            <li>列表项</li>
+            <li>列表项</li>
+        </ul>
+    </div>
+    <div id="box1" class="box1">
+        <div class="box2" id="box2">
+            <div class="box3" id="box3">
+                <p>我是文字</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

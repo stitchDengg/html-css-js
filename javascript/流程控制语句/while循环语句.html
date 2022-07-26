@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 遍历1到100
+        var i = 1;
+        while(i <= 100){
+            console.log(i);
+            i++;
+        }
+
+        // 寻找最小的满足n的平方大于456789的整数
+        var term = 100;
+        while(Math.pow(term,2) < 456789){
+            term++;
+        }
+        console.log(term);
+
+        //小兔子拔萝卜，第一天拔一个，第二天拔2个，第三天拔三个，以此类推，多少天才能把500个萝卜拔完
+        var m = 0 , sum = 0;
+        while(sum < 500){
+            m ++;
+            sum += m;
+        }
+        console.log(m);
+    </script>
+</body>
+</html>

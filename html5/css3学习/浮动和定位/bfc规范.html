@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        width: 400px;
+        border: 10px solid #000;
+        /* 浮动行成bfc不靠谱 */
+        /* float: left; */
+        /* 变成行内块元素也不靠谱 */
+        /* display: inline-block; */
+        /* 使用overflow:hidden 溢出盒子边框的内容会被隐藏 是非常好用让盒子行成bfc的方法 */
+        overflow: hidden;
+    }
+    .box .c1{
+        width: 200px;
+        height: 200px;
+        background-color: orange;
+        float: left;
+    }
+    .box .c2{
+        float: left;
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+    }
+</style>
+<body>
+    <div class="box">
+        <div class="c1"></div>
+        <div class="c2"></div>
+    </div>
+</body>
+</html>

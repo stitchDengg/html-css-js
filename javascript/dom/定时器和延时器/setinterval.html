@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定时器
+        // 两个参数，前面这个参数是一个函数，后面的数值代表延迟事件单位是ms
+        // 从第三个参数开始就开始按顺序传入函数，形参a的值是1，形参b的值是2
+        // 具名函数也能传入setInterval函数的
+        setInterval(function(a,b){
+            console.log(a + b);
+        },1000,1,2);
+    </script>
+</body>
+</html>

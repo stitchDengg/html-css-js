@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .carousel {
+            width: 650px;
+            height: 360px;
+            border: 1px solid #000;
+            /* 居中 */
+            margin: 50px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel ul {
+            list-style: none;
+            width: 5000px;
+            position: relative;
+            left: 0;
+            transition: left .5s ease 0s;
+        }
+
+        .carousel ul li {
+            float: left;
+        }
+
+        .carousel .btn {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: rgb(18, 140, 185);
+            border-radius: 50%;
+            top: 50%;
+            margin-top: -25px;
+        }
+
+        .carousel .leftbtn {
+            left: 20px;
+        }
+
+        .carousel .rightbtn {
+            right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="carousel">
+        <ul id="list">
+            <li><img src="../images/beijing/0.jpg" alt=""></li>
+            <li><img src="../images/beijing/1.jpg" alt=""></li>
+            <li><img src="../images/beijing/2.jpg" alt=""></li>
+            <li><img src="../images/beijing/3.jpg" alt=""></li>
+            <li><img src="../images/beijing/4.jpg" alt=""></li>
+        </ul>
+        <a href="javascript:" class="leftbtn btn"></a>
+        <a href="javascript:" class="rightbtn btn"></a>
+    </div>
+
+    <script>
+        // 得到按钮和ul
+        var leftbtn = document.querySelector('.carousel .leftbtn');
+        var rightbtn = document.querySelector('.carousel .rightbtn');
+        var list = document.getElementById('list');
+        // 克隆第一张图片
+        var cloneLi = list.firstElementChild.cloneNode(true);
+        list.append(cloneLi);
+        // 当前ul显示到第几张了
+        var idx = 0;
+
+        // 添加节流锁
+        var lock = true;
+
+        //右边按钮监听
+        rightbtn.onclick = function () {
+            // 判断锁的状态
+            if(!lock) return;
+            lock = false;
+
+            // 给list加过渡，为什么要加？？css不是已经加了吗？？因为最后一张图片会把过渡去掉
+            list.style.transition = 'left .5s ease 0s';
+            idx++;
+            if (idx > 4) {
+                // 设置一个延时器，延时器进行一个拉动，将ul瞬间拉回0的位置,延时器的目的就是让过渡动画之后拉回去
+                setTimeout(function () {
+                    // 取消掉过渡，因为要瞬间移动，不是“咕噜”回去
+                    list.style.transition = 'none';
+                    list.style.left = 0;
+                    idx = 0;
+                }, 500);
+            }
+            list.style.left = -idx * 650 + 'px';
+            
+            setTimeout(function(){
+                lock = true;
+            },500);
+        }
+
+        //左边按钮监听
+        leftbtn.onclick = function () {
+             // 判断锁的状态
+            if(!lock) return;
+            lock = false;
+
+            // 判断是不是第0张，如果是，就要瞬间用假的替换真的
+            if (idx == 0) {
+                // 取消掉过渡，因为要瞬间移动，不是“咕噜”回去
+                list.style.transition = 'none';
+                // 瞬间移动到假图片上
+                list.style.left = -5 * 650 + 'px';
+                // 设置一个延时器，这个延时器的时间可以是0ms，虽然是0ms，但是可以让过渡先瞬间取消，然后再加上
+                setTimeout(function () {
+                    // 加过渡
+                    list.style.transition = 'left .5s ease 0s';
+                    // idx改为最后一张图片的编号
+                    idx = 4;
+                    list.style.left = -idx * 650 + 'px';
+                }, 0);
+            } else {
+                idx--;
+                list.style.left = -idx * 650 + 'px';
+            }
+
+            // 函数节流
+            setTimeout(function(){
+                lock = true;
+            },500);
+        }
+    </script>
+</body>
+
+</html>

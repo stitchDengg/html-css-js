@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head> 
+<style>
+    /* 不给行标签width属性的话会自动撑满 不具有继承性 */
+
+    .box1{
+        height: 100px;
+        background-color: red;
+    }
+    /* 行内元素就没有这种性质 */
+    a{
+        height: 100px;
+        background-color: red;
+    }
+    /* 如果height属性不设置默认为0 会被内容自动撑开 */
+    .box2{
+        background-color: green;
+        width: 200px;
+    }
+</style>
+<body>
+    <div class="box1"></div>
+    <a href="">我是超级链接</a>
+    <div class="box2">
+        内容内容内容内容内容内容内容内容内容内
+        容内容内容内容内容内容内容内容内容内容
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    a:link{
+        color: aqua;
+    }
+    a:visited{
+        color: tomato;
+    }
+    /* 悬停的状态 */
+    a:hover{
+        /* 背景颜色 */
+        background-color: aquamarine;
+    }
+    /* 没有松手的状态 */
+    a:active{
+        font-size: 50px;
+    }
+</style>
+</head>
+<body>
+    <!-- 伪类是添加到选择器的描述性词语，指定选择元素的特殊状态 -->
+    <!-- a标签的伪类书写要按照“爱恨准则”的顺序 否则伪类不生效LOVE HATE -->
+    <!-- link visited hover active -->
+    <p>
+        <a href="https://www.baidu.com/" class="a1">前往百度</a>
+    </p>
+    <p>
+        <a href="http://yz.cuc.edu.cn/listWYFHY/list_2_1.htm">前往中传</a>
+    </p>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: #333;
+            margin: 100px;
+            padding: 50px;
+        }
+        body{
+            /* 添加垂直滚动条 */
+            height: 2000px;
+        }
+        #info{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+    </div>
+    <div id="info"></div>
+
+    <script>
+        // 什么是事件对象
+        // 事件处理函数提供了一个形式参数。它是一个对象，封装了本次函数的细节通常用e或者event来表示
+        var box = document.getElementById('box');
+        var info = document.getElementById('info');
+        box.onmousemove = function(e) {
+            // offsetX和offsetY是计算的盒子最内部的元素的值
+            // offestX/Y表示的是鼠标距元素的距离 
+            // clientX/Y表示的是鼠标距浏览器窗口的距离
+            // pageX/Y表示的是鼠标距document的距离
+            info.innerHTML = 'offestX/Y' + ':' + e.offsetX +',' + e.offsetY + '<br>'
+                            + 'clientX/Y' + ':' + e.clientX + ',' + e.clientY + '<br>'
+                            +'pageX/Y' + ':' + e.pageX + ',' + e.pageY;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.模式（解构）匹配
+        // {} = {}
+
+
+        
+        // 2.属性名字相同完成赋值
+        // const {age,userName} = {userName:'alex',age:18};
+        // 前面的字符串是键名，冒号后面的键值，可以缩写成去掉引号
+        // const {'age' : age,'userName':userName} = {userName:'alex',age:18};
+        const {age:age,userName:uname} = {userName:'alex',age:18};
+        // 键值对一样可以缩写成只有键名
+        console.log(age,uname);  //18 'alex'
+
+        
+    </script>
+</body>
+</html>

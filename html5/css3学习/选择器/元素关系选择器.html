@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* 子标签 只会选择box的子p标签 */
+    .box>p{
+        color: red;
+    }
+
+
+    /* 选择跟在img之后的span标签 */
+    img+span{
+        color: green;
+    }
+    h3+span{
+        font-style: italic;
+    }
+
+    /*选择同一级的后面的标签  */
+    h3~span{
+        color: blueviolet;
+    }
+    img{
+        width: 300px;
+    }
+</style>
+<body>
+    <div class="box">
+        <p>我是段落</p>
+        <p>我是段落</p>
+        <div>
+            <p>我是段落</p>
+            <p>我是段落</p>
+        </div>
+    </div>
+    <p>
+        <img src="../images/gugong.jpg" alt="">
+        <span>这是北京故宫</span> 
+        <span>这是北京故宫</span>    
+    </p>
+    <p>
+        <img src="../images/niaochao.jpg" alt="">
+        <span>这是北京鸟巢</span>
+        <span>这是北京鸟巢</span>
+    </p>
+    <span>你好</span>
+    <span>你好</span>
+    <span>你好</span>
+    <span>你好</span>
+
+    <h3>我是一个三级标题</h3>
+    <span>我是后面的span</span>
+    <span>我是后面的span</span>
+    <span>我是后面的span</span>
+    <div>
+        <span>多了一个级别</span>
+        <span>多了一个级别</span>
+    </div>
+</body>
+</html>

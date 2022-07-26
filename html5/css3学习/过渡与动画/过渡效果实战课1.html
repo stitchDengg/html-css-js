@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .box {
+        width: 1200px;
+        overflow: hidden;
+    }
+    .box ul{
+        list-style: none;
+    }
+    .box ul li {
+        width: 380px;
+        margin-left: 20px;
+        float: left;
+        position: relative;
+        height: 214px;
+    }
+    .box ul li img{
+        width: 380px;
+        height: 214px;
+    }
+    .box ul li .info{
+        width: 370px;
+        padding-left: 10px;
+        background-color: rgba(255, 255, 255, 0.3);
+        position: absolute;
+        bottom: 0;
+        color: white;
+        /* 透明度设置为0 */
+        opacity: 0;
+        /* 过渡 */
+        transition: opacity 1s ease 0s;
+    }
+    .box ul li:hover .info{
+        opacity: 1;
+    }
+</style>
+<body>
+    <div class="box">
+        <ul>
+            <li>
+                <img src="../../images/beijing/1.jpg">
+                <div class="info">北京的鸟巢</div>
+            </li>
+            <li>
+                <img src="../../images/beijing/2.jpg">
+                <div class="info">北京的桥</div>
+            </li>
+            <li>
+                <img src="../../images/beijing/3.jpg">
+                <div class="info">国家大剧院</div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

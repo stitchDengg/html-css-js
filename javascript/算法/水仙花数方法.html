@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //要求用户输入一个三位数
+        var n = Number(prompt('请输入一个三位数'));
+
+        //对用户输入的值进行合法性的验证
+        if(!isNaN(n) &&  100 <= n && n <= 999){
+            //当用户输入的内容是合法是
+
+            //数学方法
+            // //百位
+            // var a = Math.floor(n / 100);  //除以100取整
+            // //十位
+            // var b = Math.floor(n / 10) % 10;   //除以10取整再和10求膜
+            // //个位
+            // var c = n % 10;
+            // // console.log(a,b,c);
+
+            //字符串方法
+            var n_str = n.toString();
+            var a = Number(n_str.charAt(0)); 
+            var b = Number(n_str.charAt(1)); 
+            var c = Number(n_str.charAt(2)); 
+
+            if(Math.pow(a,3) + Math.pow(b,3) + Math.pow(c,3) == n){
+                alert('您输入的数字是水仙花数');
+            }
+            else{
+                alert('您输入的数字不是水仙花数');
+            }
+        }
+        else{
+            //输入不合法
+            alert('您输入的数字是不合法的');
+        }
+    </script>
+</body>
+</html>

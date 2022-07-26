@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sum(b1,b2){
+            alert(this.c + this.m + this.e + b1 + b2);
+        };
+
+        var xiaoming = {
+            c:100,
+            m:90,
+            e:80,
+        };
+
+        // 有参数时两个方法的给参数的方式不同
+        sum.call(xiaoming,5,3);
+        sum.apply(xiaoming,[5,3]);
+    </script>
+</body>
+</html>

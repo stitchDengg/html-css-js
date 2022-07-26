@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 某快递公司运单号形式是这样的：123-4567-890，请使用正则表达式来检查某某字符串是否符合这种形式
+
+        // 正则表达式
+        var regexp1 = /^\d{3}-\d{4}-\d{3}$/
+        // 测试
+        var str1 = '444-5555-666';
+        console.log(regexp1.test(str1));  //true
+
+
+
+
+        // 某产品的验证秘钥形式是这样的：□□□-□□□□-□□□，其中□表示字母数字或者下换线，请使用正则表达式检查某字符串是否符合格式
+        var regexp2 = /^\w{3}-\w{4}-\w{3}$/;
+        var str2 = '1a1-asd5-45a';
+        console.log(regexp2.test(str2));  //true
+
+        // 在特殊字符之前加入反斜杠\表示下一个字符不是特殊字符，应该按照字面理解
+        // 不管一个符号有没有特殊含义，都可以加一个反斜杠\以确保他表达的是这个符号本身
+        //举例:某产品的批号形式为123.45^67#89
+        var regexp3 = /^\d{3}\.\d{2}\^\d{2}\#\d{2}$/
+        var str3 = '123.45^67#89';
+        console.log(regexp3.test(str3));  //true
+    </script>
+</body>
+</html>

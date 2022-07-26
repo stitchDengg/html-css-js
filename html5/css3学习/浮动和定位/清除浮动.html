@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    p{
+        float: left;
+        width: 100px;
+        height: 100px;
+        margin-right: 20px;
+        background-color: orange;
+    }
+    div{
+         /* 清除浮动方法1 讲父盒子行成BFC */
+         /* overflow: hidden; */
+    }
+    .box2{
+        /* clear可清除其他盒子对自己的影响 both指左右全部清除 */
+        clear: both;
+        /* 使用clear会让margin失效 不推荐使用 */
+        margin-top: 20px;
+    }
+</style>
+<body>
+    <div class="box1">
+        <p></p>
+        <p></p>
+    </div>
+    <div class="box2">
+        <p></p>
+        <p></p>
+    </div>
+</body>
+</html>

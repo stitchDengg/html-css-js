@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //test方法 正则表达式的test方法用来测试某字符串是否能够匹配正则表达式，返回true或者false
+
+        // execf方法，在一个指定字符串中执行一个搜索匹配查找，返回一个数组或者null；
+        var str = 'abc123def456ghi789';
+        var regexp = /\d+/g;    //贪婪的，尽可能多的匹配  修饰符g表示进行全局匹配（查找所有匹配而非在找到第一个匹配后停止）。
+        // var result1 = regexp.exec(str);  //123
+        // var result2 = regexp.exec(str);     //456
+        // var result3 = regexp.exec(str);     //789
+        // var result4 = regexp.exec(str);      //null 找到最后会为空
+        // console.log(result1);
+        // console.log(result2);
+        // console.log(result3);
+        // console.log(result4);
+        // 用循环语句优化这个过程
+        var result;
+        while(result = regexp.exec(str)){
+            console.log(result);
+            console.log(result[0]);
+        }
+    </script>
+</body>
+</html>

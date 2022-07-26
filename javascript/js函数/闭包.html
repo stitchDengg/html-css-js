@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 闭包就是函数能够“记忆住”其定义是所处的环境，即函数不在其定义的环境中被调用，也能访问定义时所处环境的变量
+        function fun() {
+            var name = '好好学习，天天向上';
+            function innerFun(){
+                alert(name);
+            }
+            return innerFun;
+        }
+        var inn = fun();
+        inn();   //打印出好好学习天天向上
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        margin-bottom: 20px;
+    }
+    .box1{
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+        border-radius: 10px;
+    }
+    .box2{
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+        border-radius: 20px;
+    }
+    .box3{
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+        /* 半径是正方形边长一半  用这个方法来做圆形 */
+        border-radius: 100px;
+    }
+    .box4{
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+        /* 可用四个值来设置分别左上右上右下左下的圆角值 */
+        border-radius: 20px 40px 60px 80px;
+    }
+    .box5{
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+        border-radius: 40px;
+        /* 小属性层叠大属性 */
+        border-bottom-right-radius: 0px;
+    }
+</style>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+</body>
+</html>
