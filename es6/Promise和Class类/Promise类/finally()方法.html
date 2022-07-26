@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.什么时候执行
+        // 当Prpmise状态发生变化的时候，不论如何变化都会执行，不变化不执行
+        new Promise((resolve,reject) =>{
+            // resolve(123);
+            reject('reason'); 
+        }).finally(data => {
+            console.log(data)  //undefined
+        }).catch(error => console.log(error))   //reason
+
+
+        // 前端一般用不上  了解为主
+        // finally()也是then方法的特例
+        //不管promise最后的状态，在执行完then或catch指定的回调函数以后，都会执行finally方法指定的回调函数。
+    </script>
+</body>
+</html>

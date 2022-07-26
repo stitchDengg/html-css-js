@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 判断数组中是否含有某个成员
+        console.log([1,2,3].includes(1));  //true
+        console.log([1,2,3].includes(1,0));  //true
+        console.log([1,2,3].includes(1,1));  //false
+
+        // 基本遵循严格相等，但是对于NaN判断和===不同
+        //includes认为NaN === NaN
+        console.log([NaN,1].includes(NaN));  //true
+
+
+        // 应用
+        // 去重
+        // [1,2,1]
+        const arr = [];
+        for (const item of [1,2,1]) {
+            if(!arr.includes(item)){
+                arr.push(item);
+            }
+        }
+        console.log(arr);  //(2) [1, 2]
+    </script>
+</body>
+</html>

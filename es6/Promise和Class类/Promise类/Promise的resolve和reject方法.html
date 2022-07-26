@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.Promise.resolve();
+        // 是成功状态的Promise的一种简写形式
+        //new promise(resolve => resolve('foo'));
+        // 简写
+        //Promise.resolve('foo');
+
+        // 参数
+        // 一般参数
+        //Promise.resolve('foo').then(data => console.log(data)); //foo
+
+        // Promise
+        // const p1 = new Promise(resolve => {
+        //     setTimeout(resolve, 1000,'我执行了');
+        // });
+        // Promise.resolve(p1).then(data => console.log(data)); 
+        // // 等价于
+        // p1.then(data => console.log(data));    
+        // 如果参数是 Promise 实例，那么Promise.resolve将不做任何修改、原封不动地返回这个实例。
+
+        // 具有then方法的一般对象
+        const thenable = {
+            then(){
+                console.log('then');
+            }
+        };
+        Promise.resolve(thenable).then(
+            data => console.log(data),  //then
+            error => console.log(error)
+        );  
+
+        // Promise.resolve()方法会将这个对象转为 Promise 对象，然后就立即执行thenable对象的then()方法。
+
+
+        // 2.Promise.reject方法
+        // 失败状态下的Promise的一种简写形式
+        new Promise((resolve,reject) => {
+            reject('reason');
+        });
+        // 可以简写为
+        Promise.reject('reason');
+
+        // 参数
+        // 不管什么参数都原封不动的向后传递
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.认识map
+        // 映射
+
+        // map和对象都是就键值对的集合
+        // const person = {
+        //     userName: 'alex',
+        //     age:18,
+        // };
+
+        // const m = new Map();
+        // m.set('name','alex');
+        // console.log(m);  //Map(1) {'name' => 'alex'}
+
+        // 2.map和对象之间的区别
+        // 对象
+        // const obj = {
+        //     name:'alex',
+        //     true: 'true',
+        //     [{}]:'object',
+        // };
+        // console.log(obj);  //{name: 'alex', true: 'true', [object Object]: 'object'}
+        // console.log({}.toString());  //[object Object]
+        // 键值只能使用字符串，即使使用引用类型也是转化为字符串
+
+        // map
+        // 以下都可以当做Map的键
+        // 基本数据类型 数字、字符串、布尔值、undefined、null
+        // 引用数据类型L对象（{},[],函数,set,Map）
+
+        
+        const m = new Map();
+        m.set('name','alex');
+        m.set(true,'true');
+        m.set({},'object');
+        m.set(new Set([1,2]),'set');
+        m.set(undefined,'undefined');
+        console.log(m);  //Map(5) {'name' => 'alex', true => 'true', {…} => 'object', Set(2) => 'set', undefined => 'undefined'}
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 将其他数据类型转化为数组
+
+        // 1.基本用法
+        console.log(Array.from('str'));  //(3) ['s', 't', 'r']
+
+        // 2.那些可以通过Array.from()转化为数组
+        // 2.所有可遍历的
+        // Arrary数组
+        // String字符串
+        // arguments
+        // Set
+        // Map
+        // NodeList
+
+        console.log(Array.from(new Set([1,2,3])));  //(3) [1, 2, 3]
+        // 这种方式更加直观
+        console.log([...new Set([1,2,3])]);   //(3) [1, 2, 3]
+
+        // 2.2拥有length属性的任意对象
+        const obj = {
+            length:3,
+            '0':'a',
+            '1':'b',
+            name:'alex'
+        };
+        console.log(Array.from(obj));  //(2) ['a', 'b']
+
+
+        // 3.第二个参数
+        // 作用类似于数组的map方法，用来对每个元素进行处理，将处理后的值放入返回的数组
+        console.log([1,2].map((value) =>{
+            return value*2;
+        }));   //(2) [2, 4]
+
+
+        console.log(Array.from('12',value => value *2));   // [2, 4]
+
+        // 4.第三个参数
+        // 修改this指向
+        Array.from('12',function(value) {
+            console.log(this);  //document
+        },document)
+    </script>
+</body>
+</html>

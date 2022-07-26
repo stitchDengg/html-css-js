@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.方法
+        // add
+        const s = new Set();
+        s.add(1).add(2).add(2);
+        //console.log(s);  //Set(2) {1, 2}
+
+        //has
+        // 判断是否含有某个成员
+        console.log(s.has(1));  //true
+        console.log(s.has(3));   //false
+
+        //delete
+        // 删除指定成员
+        // s.delete(1)
+        // console.log(s);   //Set(1) {2}
+        // 使用delete删除不存在的成员什么都不会发生也不会报错
+
+        // clear
+        // 删除set对象所有成员
+        // s.clear();
+        // console.log(s);   //Set(0) {size: 0}
+
+        // forEach
+        // 按照成员添加进集合顺序遍历
+        s.forEach(function(value,key,set){
+            // set中的value == key
+            // set代表set本身
+            // 第二个参数是指this指向的改变
+            console.log(value,key,set);
+            console.log(this);  //#document
+        },document);
+
+        // 数组也有类似的遍历方法
+        const a = [1,2,3,4];
+        a.forEach(function(value,key,Array){
+            console.log(value,key,Array);
+            console.log(this);
+        },document);
+
+        // 属性 size
+        console.log(s.size); //2
+    </script>
+</body>
+</html>

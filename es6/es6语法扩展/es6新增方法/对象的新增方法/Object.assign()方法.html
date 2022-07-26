@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 用来合并对象
+        const apple = {
+            color:'red',
+            shape:'球形',
+            taste:'甜',
+        };
+
+        const pen = {
+            color:'black',
+            shape:'yuanzhuxing',
+            use:'xiezi',
+        };
+        // // 相当于把后面的对象合并到前面的对象了 不会产生新对象
+        // console.log(Object.assign(apple,pen));  //{color: 'black', shape: 'yuanzhuxing', taste: '甜', use: 'xiezi'}
+        // console.log(Object.assign(apple,pen) === apple);  //true
+
+        // // 可以合并多个对象
+        // console.log(Object.assign({},apple,pen));   //这样合并就不会修改原对象
+
+        // // 是将两个对象合在一起的一个新对象
+        // console.log({...apple,...pen});  //{color: 'black', shape: 'yuanzhuxing', taste: '甜', use: 'xiezi'}
+        // console.log({...apple,...pen} === apple);   //false
+
+        // 2.注意事项
+        // 2.1基本数据类型作为源对象(source)
+        // 与对象展开类似，先转换为对象，再合并
+        // console.log(Object.assign({},undefined));  //{}
+        // console.log(Object.assign({},null));        //{}
+        // console.log(Object.assign({},1));       //{}
+        // console.log(Object.assign({},true));        //{}
+        // console.log(Object.assign({},'str'));        //{0: 's', 1: 't', 2: 'r'}    
+
+        // 3.应用
+        // 合并默认参与和用户参数
+        const logUser =  UserOptions => {
+            const DEFAULTS = {
+                useName:'zhangsan',
+                sex:'male',
+                age:18,
+            }
+            const options = Object.assign({},DEFAULTS,UserOptions);
+            console.log(options);
+        };
+        logUser({
+            useName:'lisi',
+                sex:'female',
+                age:18,
+        });  //{useName: 'lisi', sex: 'female', age: 18}
+    </script>
+</body>
+</html>

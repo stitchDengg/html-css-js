@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="userName">
+    <input type="submit"  id="btn" value="提交">
+    <script>
+        // 清除字符串的首尾空格
+        const s = ' a b c ';
+        console.log(s);               // a b c
+        // 去掉了头部的空格
+        console.log(s.trimStart());   //a b c
+        console.log(s.trimLeft());   //a b c
+
+        // 去除尾的空格
+        console.log(s.trimEnd());     //a b c
+        console.log(s.trimRight());     //a b c
+
+        // 首尾一起去掉空格
+        console.log(s.trim());  
+
+        // 2.应用 表单提交
+        const userName = document.getElementById('userName');
+        const btn = document.getElementById('btn');
+
+        btn.addEventListener('click',() =>{
+            // 验证
+            if(userName.value.trim() !== ''){
+                // 可以提交
+                console.log('可以提交');
+            }else{
+                // 不能提交
+                console.log('不能提交');
+            }
+            // 手动提交
+        },false)
+    </script>  
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 原生可遍历的
+        // Arrary数组
+        // String字符串
+        // arguments
+        // Set
+        // Map
+        // NodeList
+
+        // for of
+
+        // 还有哪些地方用到了
+        // 1.数组的展开运算符
+        //console.log(...[1,2,3]);
+        //console.log(...'str');
+        //console.log(...new Set([1,2]));   //1 2
+        //console.log(...{});   //Uncaught TypeError: Found non-callable @@iterator
+        
+        // 2.数组的解构赋值
+        // const [a,b] = [1,2];
+        // const [a,b] = [...[1,2]];
+        // const [a,b] = 'ab';
+        // const [a,b] = [...'ab'];
+        const [a,b] = new Set([1,2]);
+        console.log(a,b);
+    </script>
+</body>
+</html>

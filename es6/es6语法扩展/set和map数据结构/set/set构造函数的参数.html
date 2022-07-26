@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        // 1.数组
+        // const a = [1,2,3,4,5]
+        // const s = new Set(a);
+        // console.log(s);   //Set(5) {1, 2, 3, 4, 5}
+
+        // 2.字符串、arguments  NodeList Set等
+        //字符串
+        console.log(new Set('hi'));  //Set(2) {'h', 'i'}
+        
+        //arguments
+        function func(){
+            console.log(new Set(arguments));
+        };
+        func(1,2,3);  //Set(3) {1, 2, 3}
+
+        //nodeList
+        const list = document.getElementsByTagName('li');
+        console.log(new Set(list));  //Set(3) {li, li, li}
+
+        const s = new Set([1,2,1]);
+        console.log(new Set(s));  //Set(2) {1, 2}
+    </script>
+</body>
+</html>

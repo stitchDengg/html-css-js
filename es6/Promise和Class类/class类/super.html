@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.作为函数调用
+        // 代表父类的构造方法，只能用在子类的构造方法中，在其他地方就会报错
+        // class Person{
+        //     constructor(name) {
+        //         this.name = name;
+
+        //         console.log(this);
+        //     }
+        // }
+
+        // class Programmer extends Person{
+        //     constructor(name,sex) {
+        //         super(name);
+        //         this.sex = sex;
+        //     }
+        // }
+
+        // 2.作为对象来使用
+        // 2.1在一般方法中使用
+        // super代表父类的原型对象 Person.protoype
+        // 通过super调用父类方法时，方法内部的this指向当前的子类实例
+        // class Person{
+        //     constructor(name) {
+        //         this.name = name;
+        //         console.log(this);
+        //     }
+
+        //     speak(){
+        //         console.log('speak',this.name);
+        //     }
+        // }
+
+        // class Programmer extends Person{
+        //     constructor(name,sex) {
+        //         super(name);
+        //         this.sex = sex
+
+        //         //super代表父类的原型对象 Person.protoype 可以调用原型上的方法
+        //         super.speak();
+
+        //         // 定义在父类的实例的方法和属性是无法通过super调用的
+        //         console.log(super.name);//undefined
+        //     }
+
+        //     // 函数的重写
+        //     speak(){
+        //         super.speak();
+        //         // 添加自己的代码
+        //         console.log('Programmer speak');
+        //     }
+        // }
+
+        // new Programmer('denghao').speak();
+
+
+        //2.2在静态方法的使用
+        // class Person{
+        //     constructor(name) {
+        //         this.name = name;
+        //         console.log(this);
+        //     }
+
+        //     speak(){
+        //         console.log('speak',this.name);
+        //     }
+
+        //     static speak(){
+        //         console.log('Person static speak');
+        //         console.log(this);
+        //     }
+        // }
+
+        // class Programmer extends Person{
+        //     constructor(name,sex) {
+        //         super(name,sex);
+        //     }
+
+        //     speak(){
+        //         super.speak();
+        //         console.log('Programmer speak');
+        //     }
+
+        //     // 在静态方法中的使用
+        //     // super指向父类Person
+        //     // 通过super调用父类的方法时，方法内部的this指向当前的子类而不是子类的实例
+        //     static speak(){
+        //         super.speak();
+        //         console.log('Programmer static speak');
+        //     }
+        // }
+
+        // new Programmer('denghao').speak();
+        // Programmer.speak();   //Person static  speak          Programmer static speak
+
+        // 注意事项
+        // 使用super的时候，必须显示指定是作为函数用还是作为对象用
+
+        class Person{
+            constructor(name) {
+                this.name = name;
+                console.log(this);
+            }
+
+            speak(){
+                console.log('speak');
+            }
+        }
+
+        class Programmer extends Person{
+            constructor(name,sex) {
+                super(name);
+                //console.log(super);
+                //console.log(super());
+                console.log(super.speak);
+            }
+        }
+        new Programmer('denghao');
+    </script>
+</body>
+</html>

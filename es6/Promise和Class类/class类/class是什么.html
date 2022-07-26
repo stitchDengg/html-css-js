@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.认识calss
+        // 人类：类
+        // 具体的人：实例 对象
+        // 类可以看成是对象的模板，用一个类可以可以创造不同的对象
+
+        // 2.calss的基本用法
+        // 类名一般首字母大写
+        // class Person {
+        //     // 实例化时执行构造函数，所以必须有构造函数，但是可以不写
+        //     constructor(name,age){
+        //         //console.log('实例化时执行构造函数');
+        //         // this指向实例化生成的对象
+        //         this.name = name;
+        //         this.age = age;
+        //     }
+            
+        //     // 方法定义在这里
+        //     // 各个实例共享的方法
+        //     speak(){
+        //         console.log(this.name,this.age);
+        //     }
+        // }
+
+        // const p = new Person('zs',18);
+        // const p1 = new Person('ls',20);
+        // p.speak();   //zs 18
+        // p1.speak();   //ls 20
+        // console.log(p.speak ===  p1.speak);  //true
+
+        // 3.class与构造函数
+        class Person {
+            // 实例化时执行构造函数，所以必须有构造函数，但是可以不写
+            constructor(name,age){
+                //console.log('实例化时执行构造函数');
+                // this指向实例化生成的对象
+                this.name = name;
+                this.age = age;
+            }
+            // 方法定义在这里
+            // 各个实例共享的方法
+            speak(){
+                console.log(this.name,this.age);
+            }
+        }
+        const p = new Person('zs',18);
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.认识剩余参数
+        //const add = (x,y,z,...args) => {};
+
+
+        // 2.剩余参数的本质
+        const add = (x,y,...args) => {
+            console.log(x,y,args);
+        };
+        add(); //undefined undefined Array(0)
+        add(1);  //1 undefined []
+        add(1,2);//1 2 []
+        add(1,2,3,4,5); //1 2 (3) [3, 4, 5]
+
+    </script>
+</body>
+</html>

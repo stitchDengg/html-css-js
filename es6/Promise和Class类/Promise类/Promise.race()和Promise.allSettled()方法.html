@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const delay = ms => {
+            return new Promise(resolve => {
+                setTimeout(resolve, ms);
+            });
+        };
+
+        const p1 = delay(1000).then(() => {
+            console.log('p1完成了');
+            return 'p1';
+        });
+
+        const p2 = delay(2000).then(() => {
+            console.log('p2完成了');
+            //return new Promise((resolve,reject) => reject('error'));
+            //return Promise.reject('reason');
+            return 'p2';
+        });
+        // 1.Promise.race()
+
+        //上面代码中，只要p1、p2、p3之中有一个实例率先改变状态，racePromise的状态就跟着改变。
+        //那个率先改变的 Promise 实例的返回值，就传递给racePromise的回调函数。
+        // const racePromise = Promise.race([p1, p2]);
+        // racePromise.then(data => {
+        //     console.log(data);  
+        // }, error => {
+        //     console.log(error);
+        // });
+        // // 执行过程是打印p1完成了打印了data1s后打印p2完成了
+
+        
+
+        // 2.Promise.allSettled()
+        
+        const allSettledPromise = Promise.allSettled([p1, p2]);
+        allSettledPromise.then(data => {
+            console.log('succ',data);  
+        });
+        ///Promise.allSettled()方法接受一个数组作为参数，数组的每个成员都是一个 Promise 对象，
+        //并返回一个新的 Promise 对象。只有等到参数数组的所有 Promise 对象都发生状态变更
+        //（不管是fulfilled还是rejected），返回的 Promise 对象才会发生状态变更。
+    </script>
+</body>
+
+</html>

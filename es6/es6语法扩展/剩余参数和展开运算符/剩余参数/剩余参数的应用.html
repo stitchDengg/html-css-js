@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.完成add函数
+        // const add = (...args) => {
+        //     let sum = 0;
+        //     for (let index = 0; index < args.length; index++) {
+        //         sum += args[index];
+        //     }
+        //     return sum;
+        // };
+        // console.log(add());  //0
+        // console.log(add(1,2,3,4,5,6));  //21
+
+
+        // 2.与解构赋值结合使用
+        // 必须是最后一个参数
+        // const [num,...args] = [1,2,3];
+        // console.log(num,args);   //1 (2) [2, 3]
+
+        // 数组解构赋值
+        // const func = ([num,...args]) => {
+        //     console.log(num,args);  //1 (2) [2, 3]
+        // };
+        // func([1,2,3])
+
+        // 对象的解构赋值
+        const {x,y,...args} = { a:3,x: 1,y:2,b:4};
+        console.log(x,y,args);  //1 2 {a: 3, b: 4}
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const person = {
+            name:'alex',
+            age:18,
+        }
+        console.log(Object.keys(person));  //(2) ['name', 'age']D
+        console.log(Object.values(person));  //(2) ['alex', 18]
+        console.log(Object.entries(person));  //0: (2) ['name', 'alex']   1: (2) ['age', 18]
+
+        // 2.与数组方法的区别
+        console.log([1,2].keys());   //Array Iterator {}
+        console.log([1,2].values());  //Array Iterator {}
+        console.log([1,2].entries());  //Array Iterator {}
+
+        // 区别1：一个是构造函数的方法 一个是实例的方法
+        // 区别2：返回值一个是数组，一个是可遍历对象
+        
+
+        // 3.使用for of循环遍历对象
+        for (const item of Object.keys(person)) {
+            console.log(item);   //name age
+        }
+
+        for (const item of Object.values(person)) {
+            console.log(item);   //alex 18
+        }
+
+        for (const [key,value] of Object.entries(person)) {
+            console.log(key,value);   //(2) ['name', 'alex']  (2) ['age', 18]
+        }
+        
+        // 这样的遍历方式并不保证顺序 这一点和for in 是一样的
+    </script> 
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // find():找到满足条件的一个立即返回
+        // findindex():找到满足条件的一个 立马返回索引值clg
+
+        // console.log([1,5,10,15].find((value,index,arr) => {
+        //     // 条件函数
+        //        // 类似于map方法
+        //     // console.log(value,index,arr);
+        //     // 
+        //     return value > 9;
+        // }));   //10
+
+
+        console.log([1,5,10,15].findIndex((value,index,arr) => {
+            // 条件函数
+            // 类似于map方法
+            //第二个参数也能修改this指向
+            // console.log(value,index,arr);
+            // 
+            return value > 9;
+        }));   //2
+
+
+
+        // 2.应用
+        const students = [
+            {
+                name:'张三',
+                sex:'男',
+                age:18
+            },
+            {
+                name:'李四',
+                sex:'女',
+                age:18
+            },
+            {
+                name:'王二麻子',
+                sex:'男',
+                age:18
+            },
+        ];
+
+    console.log( students.find(value => value.sex === '女'));  //{name: '李四', sex: '女', age: 18}
+    </script>
+</body>
+</html>

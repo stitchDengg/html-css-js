@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 判断某些字符串是否含有某些字符
+
+        // 1.基本用法
+        // console.log('abc'.includes('a'));  //true
+        // console.log('abc'.includes('ab')); //true
+        // console.log('abc'.includes('ac')); //false
+
+
+        // 2.第二个参数
+        // console.log('abc'.includes('a')); //true
+        // console.log('abc'.includes('a',0)); //true
+        // console.log('abc'.includes('a',1)); //false
+
+
+        // 3.应用
+        //https://www.imooc.com/course/list
+        //https://www.imooc.com/course/list?c=fe&et=1
+        // name = value
+        
+        let url = 'https://www.imooc.com/course/list';
+
+        const addURLparam = (url,name,value) => {
+            url += url.includes('?') ? '&' : '?'; 
+            url += `${name} = ${value}`;
+            return url;
+        }
+        url = addURLparam(url,'c','fe');
+        console.log(url);  //https://www.imooc.com/course/list?c = fe
+        url  = addURLparam(url,'et',1);
+        console.log(url);  //https://www.imooc.com/course/list?c = fe&et = 1
+    </script>
+</body>
+</html>

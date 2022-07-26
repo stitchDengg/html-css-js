@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 80%;
+            padding: 10%;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="img" src="https://img2.baidu.com/it/u=1814268193,3619863984&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1658336400&t=4e76b6808c5aa8d3bedf0e5f44f59162'"
+        alt="">
+    <script>
+        // 1.异步加载图片
+        const loadImgAsync = url => {
+            return new Promise((resolve,reject) => {
+                const image = new Image();
+                // 图片加载成功的时候
+                img.onload = () => {
+                    resolve(img);
+                };
+
+                // 图片加载失败的时候
+                img.onerror = () => {
+                    reject(new Error(`colud not load image at ${url}`));
+                };
+
+                img.src = url;
+            })
+        };
+        const imgDom  = document.getElementById('img');
+        loadImgAsync('htt://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2Ftp09%2F210F2130512J47-0-lp.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1660831907&t=9bf56b43a2399c8a8bdc23ebca2a3dbd').then(
+            img => {
+                console.log(img);
+                // 替换dom的src
+                setTimeout(() => {
+                    imgDom.src = img.src;
+                },1000)
+            }
+        ).catch(error => {
+            console.log(error);
+        });
+    </script>
+</body>
+
+</html>

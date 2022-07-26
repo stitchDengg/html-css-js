@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.子类继承父类
+        class Person{
+            constructor(name,sex) {
+                this.name = name;
+                this.sex = sex;
+                this.say = function(){
+                    console.log('say');
+                };
+            }
+            speak(){
+                console.log('speak');
+            }
+
+            static speak(){
+                console.log('static speak');
+            }
+        }
+        Person.version = '1.0';
+
+        // 使用关键字extends继承
+        // class Programmer extends Person {
+        //     constructor(name,sex) {
+        //         // super指代父类的构造方法
+        //         super(name,sex);
+        //     }
+        // }
+
+        // const zs = new Programmer('zs','male');
+        // console.log(zs.name,zs.sex);  //zs male
+        // zs.say();   //say
+        // zs.speak();   //speak
+        // Programmer.speak();   //static speak
+        // console.log(Programmer.version);   //1.0
+
+        // 2.改写继承的方法和属性
+        class Programmer extends Person {
+            constructor(name,sex,feature) {
+                // super指代父类的构造方法
+                super(name,sex);
+
+                // 添加属性
+                // this操作不能放在super前面
+                this.feature = feature;
+            }
+            
+            // 同名覆盖
+            speak(){
+                console.log('Programmer speak');
+            }
+            static speak(){
+                console.log('Programmer  static speak');
+            }
+
+            // 添加新方法
+            hi(){
+                console.log('hi');
+            }
+        }
+        Programmer.version = '2.0';
+        const zs = new Programmer('zs','male','秃头');
+        console.log(zs.name,zs.sex);  //zs male
+        zs.say();   //say
+        zs.speak();   //Programmer speak
+        Programmer.speak();   //Programmer static speak
+        console.log(Programmer.version);   //2.0
+        console.log(zs.feature);    //秃头
+        zs.hi();   //hi
+    </script>
+</body>
+</html>

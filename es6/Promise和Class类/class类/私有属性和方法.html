@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.为什么需要私有属性和方法
+        // 一般情况下，类的属性和方法都是公开的
+        // 公有的属性和方法可以被外界修改，造成意想不到的错误
+        // class Person{
+        //     constructor(name) {
+        //         this.name = name;
+        //     }
+        //     speak(){
+        //         console.log('speak');
+        //     }
+        // }
+
+        // const p = new Person('alex');
+        // console.log(p.name);   //alex
+        // p.speak();  //speak
+
+
+        // 2.模拟私有属性和方法
+        // 2.1 _下划线开头表示私有
+        // class Person{
+        //     constructor(name) {
+        //         // 私有属性
+        //         this._name = name;
+        //     }
+
+        //     // 公有方法
+        //     speak(){
+        //         console.log('speak');
+        //     }
+
+        //     getName(){
+        //         return this._name;
+        //     }
+        // }
+
+        // const p = new Person('alex');
+        // console.log(p.name);   //undefined
+        // console.log(p.getName());   //alex
+        // p.speak();  //speak
+
+        // 2.2将私有属性和方法移出类
+        (function() {
+            let name = '';
+            class Person{
+            constructor(userName) {
+                // 私有属性
+                //this.name = name;
+                name = userName;
+            }
+            // 公有方法
+            speak(){
+                console.log('speak');
+            }
+
+            getName(){
+                return name;
+            }
+        }
+        // 将模块暴露出去
+        window.Person = Person;
+        })();
+
+
+        (function(){
+            const p = new Person('alex');
+            console.log(p.name);  //undefined
+            console.log(p.getName());  //alex
+        })()
+    </script>
+</body>
+</html>

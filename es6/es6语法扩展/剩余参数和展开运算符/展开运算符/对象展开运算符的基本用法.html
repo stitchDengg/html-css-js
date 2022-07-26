@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.展开对象
+        // const apple = {
+        //     color:'red',
+        //     shape:'球形',
+        //     taste:'甜',
+        // };
+
+        //console.log(...apple);  //Uncaught TypeError: Found non-callable @@iterator
+        //console.log([...apple]);  //ncaught TypeError: apple is not iterable
+        // 对象的展开：把属性罗列出来，用逗号分隔 ，放到一个{}中，构成新对象
+        //console.log({...apple});  //{color: 'red', shape: '球形', taste: '甜'}
+        // console.log({...apple} === apple);  //false
+
+        // 2.合并对象
+        const apple = {
+            color:'red',
+            shape:'球形',
+            taste:'甜',
+        };
+
+        const pen = {
+            color:'black',
+            shape:'yuanzhuxing',
+            use:'xiezi',
+        };
+
+        console.log({...apple,...pen});  //{color: 'black', shape: 'yuanzhuxing', taste: '甜', use: 'xiezi'}
+        console.log({...pen,...apple});  //{color: 'red', shape: '球形', use: 'xiezi', taste: '甜'}
+        // 相当于
+        console.log(object);
+    </script> 
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.实例化构造函数生成实例对象
+        console.log(Promise);
+        // Promise解决的不是回调函数，而是回调地狱
+        // const p = new Promise(() => {
+
+        // });
+
+        // 2.Promise的状态
+        const p = new Promise((resolve,reject) => {
+            // pending -> fulfilled
+            //resolve('succ');
+            
+            // 传的值在then方法中接收
+            //resolve({userName:'zhangsan'});
+
+            // fulfilled -> rejected
+            reject(new Error('reason'));
+
+            // Promise有三种状态，一开始是pending(未完成)，执行resolve，变成fufiled(resolved),已成功
+            // 执行reject以后会变成失败态
+
+            // 状态改变以后状态会凝固 就不会再变
+        });
+        console.log(p);
+
+        // 3.then方法
+        // 第一个回调函数是状态变为成功的时候执行
+        // 第二个回调函数是状态由成功变为失败的时候执行
+        p.then(data => {
+            console.log('sucess',data);   //sucess {userName: 'zhangsan'}
+        },error => {
+            console.log('error',error);
+        });
+    </script>
+</body>
+
+</html>

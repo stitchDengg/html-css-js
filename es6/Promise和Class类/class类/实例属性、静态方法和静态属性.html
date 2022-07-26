@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.实例属性
+        // class person{
+        //     // 可以把所有实例的属性都列出来
+        //     // 方法就是值为函数的特殊属性
+        //     name = 'zhansan';
+        //     age = 18;
+        //     sex = 'male';
+        //     getSex = function(){
+        //         return this.sex;
+        //     }
+        //     constructor(name) {
+        //         this.name = name;
+        //     }
+        // }
+
+
+        // const p = new person('alex');
+        // console.log(p.name,p.sex);   //alex male
+
+           // 2.静态方法
+        // class Person{
+        //     // 可以把所有实例的属性都列出来
+        //     // 方法就是值为函数的特殊属性
+        //     name = 'zhansan';
+        //     age = 18;
+        //     sex = 'male';
+        //     getSex(){
+        //         return this.sex;
+        //     }
+        //     constructor(name) {
+        //         this.name = name;
+        //     }
+        //     speak() {
+        //         console.log('speak');
+        //         //指向实例化对象
+        //         console.log(this);
+        //     }
+
+
+        //     static speak() {
+        //         console.log('人类可以说话');
+        //         // this指向的Person这个类本身
+        //         console.log(this);
+        //     }
+        // }
+        // const p = new Person('alex');
+        // console.log(p.getSex());  //male
+
+        // // 调用实例的方法
+        // p.speak();
+
+        // // 调用类的方法
+        // Person.speak();  //人类可以说话
+
+
+        // 3.静态属性
+        // 类的属性
+        class Person{
+            constructor(name) {
+                this.name = name;
+            }
+            speak(){
+                console.log('speak');
+            }
+
+            // 提案 不推荐这样写 有兼容性问题 
+            //static verison = '1.0'
+
+            // 推荐写成方法的形式
+            static getVersion = function(){
+                return '1.0';
+            }
+        }
+        // 违反了封装的思想
+        //Person.verison = '1.0';
+        const p = new Person('alex');
+
+        console.log(Person.getVersion());  //1.0
+    </script>   
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <script>
+        const p = document.querySelectorAll('p');
+        // 获取三个p元素
+        const [p1,p2,p3] = p;
+        
+        // m.set[p1,'red'].set[p2,'green'].set[p3,'blue'];
+        const m = new Map([
+            [p1,{
+                color:'red',
+                backGroundColor:'yellow',
+                fontSize: '40px',
+            }],
+            [p2,{
+                color:'green',
+                backGroundColor:'pink',
+                fontSize: '40px',
+            }],
+            [p3,{
+                color:'blue',
+                backGroundColor:'orange',
+                fontSize: '40px',
+            }]
+        ]);
+        console.log(m);
+        m.forEach((color,element) => {
+            element.style.color = color.color;
+            element.style.backgroundColor = color.backGroundColor;
+            element.style.fontSize = color.fontSize;
+        })
+    </script>
+</body>
+</html>

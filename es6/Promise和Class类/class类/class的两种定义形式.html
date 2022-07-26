@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.声明形式
+        // class Person{
+        //     constructor() {
+                
+        //     }
+        // }
+
+
+        // 2.表达式的形式
+        // 2.1构造函数的声明的形式
+        //function Person() {};
+        //2.2构造函数的表达式的形式
+        //const person = function() {}
+
+        // 类的表达式的形式
+        const Person = class{
+            constructor(params) {
+                
+            }
+        }   
+        
+        new Person();
+
+        // 立即执行匿名函数
+        // (function(params) {
+        //     console.log('立即执行的');
+        // })()
+
+
+        // 立即执行的匿名类
+        new (class{
+            constructor(params) {
+                console.log('constructor');   //constructor
+            }
+        })()
+    </script>
+</body>
+</html>

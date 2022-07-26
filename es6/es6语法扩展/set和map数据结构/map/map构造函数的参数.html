@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.数组
+        // 只能传二维数组必须体现键和值
+        const m = new Map([
+            ['name', 'alex'],
+            ['age', 18],
+            [true, 'true']
+        ]);
+        console.log(m);  // {'name' => 'alex', 'age' => 18, true => 'true'}
+
+        // 2.set  map等
+        const s = new Set([
+            ['name', 'alex'],
+            ['age', 18],
+            [true, 'true']
+        ]);
+        console.log(s);  //Set(3) {Array(2), Array(2), Array(2)}
+        console.log(new Map(s));  //Map(3) {'name' => 'alex', 'age' => 18, true => 'true'}
+
+        // Map
+    </script>
+</body>
+
+</html>

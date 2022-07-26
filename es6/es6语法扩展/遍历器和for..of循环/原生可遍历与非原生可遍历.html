@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.什么是可遍历
+        // 只要有Symbol.iterator方法，并且在这个方法可以生成可遍历对象就是可遍历的
+
+
+        // 只要可遍历，就可以使用for of循环统一遍历
+
+        // 2.原生可遍历有哪些
+        // 数组
+        // 字符串
+        // set
+        // Map
+        // argumenes
+        // Nodelist
+        for (const iterator of new Set([1, 2, 3]).entries()) {
+            console.log(iterator);
+        }
+
+        // 3.非原生可遍历有哪些
+        // 一般的对象
+        const person = {
+            sex: 'male',
+            age: 18
+        };
+        // for (const iterator of person) {
+        //     console.log(iterator);  //Uncaught TypeError: person is not iterable
+        // }
+
+        // 遍历对象方法
+        // 1.for...in循环
+        // 2.添加Symbol.iterator方法
+
+        // {next(){value,done}}
+        person[Symbol.iterator] = () => {
+            let index = 0;
+            return {
+                next() {
+                    index++;
+                    if (index === 1) {
+                        return {
+                            value:person.age,
+                            done:false,
+                        }
+                    }
+                    else if(index === 2){
+                        return {
+                            value:person.sex,
+                            done:false,
+                        }
+                    }
+                    else{
+                        return{
+                            done:true,
+                        }
+                    }
+                }
+            }
+        }
+
+        // for (const iterator of person) {
+        //     console.log(iterator);  //18  male
+        // }
+        const it = person[Symbol.iterator]();
+        console.log(it.next());  //{value: 18, done: false}
+        console.log(it.next());  //{value: 'male', done: false}
+        
+        
+        // 有length和索引属性的对象
+        const obj = {
+            0:'alex',
+            1:'male',
+            length:2
+        };
+
+        // 自己写
+        // obj[Symbol.iterator] = () => {
+        //     let index = 0;
+        //     return {
+        //         next(){
+        //             let value,index;
+        //             if(index < obj.length){
+        //                 value = obj[index];
+        //                 done = false;
+        //             }
+        //             else{
+        //                 value = undefined;
+        //                 done = true;
+        //             }
+        //             index ++;
+        //             return{
+        //                 value,
+        //                 done,
+        //             }
+        //         }
+        //     }
+        // }
+
+        // 可以不自己写 拿数组的方法
+        obj[Symbol.iterator] = Array.prototype[Symbol.iterator];
+
+        
+        for (const iterator of obj) {
+            console.log(iterator);  //alex  male
+        }
+    </script>
+</body>
+
+</html>

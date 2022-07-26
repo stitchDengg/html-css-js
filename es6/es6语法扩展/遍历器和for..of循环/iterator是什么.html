@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.lterator
+        // lterator：遍历器（迭代器）
+        // for()
+        // [1,2] set map  forEach方法
+
+        // 2.寻找lterator
+        //console.log([1,2][Symbol.iterator]());
+
+        const it = [1,2][Symbol.iterator]();
+        console.log(it); 
+
+        // 3.使用iterator
+        // value表示具体的值 ,done表示是否完成遍历
+        console.log(it.next());  //{value: 1, done: false}
+        console.log(it.next());  //{value: 2, done: false}
+        console.log(it.next());  //{value: undefined, done: true}
+
+        // it：可遍历对象·
+        // Symbol.iterator:可遍历对象的生成方法
+    </script>
+</body>
+</html>

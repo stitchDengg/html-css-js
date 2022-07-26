@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.认识for of
+        //const arr = [1,2,3];
+        //获取可遍历对象
+        //const it  = arr[Symbol.iterator]();
+        // 手动遍历
+        // console.log(it.next());
+        // console.log(it.next());
+        // console.log(it.next());
+        // console.log(it.next());
+
+        // // 自动遍历
+        // let next = it.next();
+        // while(!next.done){
+        //     console.log(next.value);  
+        //     next = it.next();
+        // }
+
+        // for of循环
+        // for(let item of arr){
+        //     console.log(item);
+        // }
+
+        // for of循环只会遍历出done为false的对应的value值
+
+
+        // 2.与break和continue一起使用的情况
+        // const arr = [1, 2, 3];
+        // for (const item of arr) {
+        //     if(item == 2){
+        //         break;
+        //     }
+        //     console.log(item);
+        // }
+
+        // 3.在for...of取得数组的索引
+        const arr = [1,2,3];
+        // 数组的keys方法可以得到数组下标的的可遍历对象
+        //console.log(arr.keys());  //Array Iterator {}
+        // for (const iterator of arr.keys()) {
+        //     console.log(iterator);  // 0 1 2
+        // }
+
+        // // 数组的values方法可以得到数组值的可遍历对象
+        // for (const iterator of arr.values()) {
+        //     console.log(iterator);  // 1 2 3
+        // }
+
+        // for (const iterator of arr) {
+        //     console.log(iterator);  // 1 2 3
+        // }
+
+        // entries方法 得到的是索引加值组成的数组的可遍历对象
+        for (const iterator of arr.entries()) {
+            console.log(iterator[0],iterator[1]);
+        }
+    </script>
+</body>
+
+</html>

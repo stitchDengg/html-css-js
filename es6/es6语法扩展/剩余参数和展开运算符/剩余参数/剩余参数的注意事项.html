@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.箭头函数的剩余参数
+        // 箭头函数的参数部分即使只有一个剩余参数，也不能省略圆括号
+        // const add = (...args)  => {};
+
+
+        // 2.使用剩余参数替代arguments获取实际参数
+        // const add = function() {
+        //     console.log(arguments);
+        // };
+        // add(1,2);  //Arguments(2)
+        // 
+        // const add = (...args) => {
+        //     console.log(args);
+        // };
+        // add(1,2)   //  [1, 2]
+
+
+        // 3.剩余参数的位置
+        // 剩余参数只能是最后一个参数，之后不能有其他参数，否则会报错
+
+    </script>
+</body>
+</html>

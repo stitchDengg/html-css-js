@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.set如何判断重复值
+        // set对重复值的判断基本遵循严格相等（===）
+        // 但是对于NaN的判断与 === 不同，set中的NaN 等于NaN
+        // const s = new Set([NaN,2,NaN]);
+        // console.log(s);  //Set(2) {NaN, 2}
+
+        const s = new Set();
+        s.add({}).add({});
+        // 两个对象不是一个东西 地址有区别
+        console.log(s);  //Set(2) {{…}, {…}}
+
+        // 2.什么时候使用set
+        //①数组或者字符串去重时
+        //②不需要通过下标去访问，只需要遍历时
+        // ③为了使用set提供的方法和属性时(add delete clear forEach size)
+    </script>
+</body>
+</html>

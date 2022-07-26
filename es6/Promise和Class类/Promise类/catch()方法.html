@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.有什么用
+        // then(
+        //     data => {},
+        //     error => {}
+        // );
+
+        // catch专门用来处理rejected状态
+        // catch本质是then的特例
+        new Promise((resolve,reject) => {
+            //resolve(123);
+            reject('reason')
+        }).then(data => {
+            console.log(data);  //123
+        }).catch(error => {
+            console.log(error);   //reason
+            // return new Promise(reject => {
+            //     reject('error-reason');
+            // });
+            // 简单的方法
+            throw new Error('error-reason');
+        }).then((data) => {
+            console.log(data);   //123
+        }).catch((error => {
+            console.log(error);   //Error: error-reason
+        }));
+
+        // catch()可以捕获它前面的错误
+        // 一般总是建议，Promise对象要跟catch方法，这样可以处理Promise对象内部发生的错误
+    </script>
+</body>
+</html>

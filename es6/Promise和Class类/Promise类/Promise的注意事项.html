@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.resolve和reject执行后的代码
+        // 推荐在调用resolve或者reject函数的时候加上return
+        // 不再执行后面的代码
+        new Promise((resolve, reject) => {
+            resolve(123);
+            //reject(123);
+            // 能执行 但是不推荐这么写
+            console.log('hi');  //hi
+        });
+
+        // 2.Promise.all/race/allSettled的参数问题
+        // 参数如果不是Promise数组，会将不是Promise数组元素转变成Promise对象
+        Promise.all([1,2,3]).then(datas => console.log(datas));  //(3) [1, 2, 3]
+        // 等价于
+        Promise.all([Promise.resolve(1),
+        Promise.resolve(2),
+        Promise.resolve(3)
+        ]).then(datas => console.log(datas));    //(3) [1, 2, 3]
+
+        // 不只是数组，任意可遍历的都可以作为参数
+        // 数组，字符串，Set，map，Nodelist，arguments
+
+
+        // 3.Promise.all/race/allSettled的错误处理
+        const delay = ms => {
+            return new Promise(resolve => {
+                setTimeout(resolve, ms);
+            });
+        };
+
+        const p1 = delay(1000).then(() => {
+            console.log('p1完成了');
+            //return 'p1';
+            return Promise.reject('reason');
+        })
+        //.catch(err => console.log(p1,'error'));
+
+        const p2 = delay(2000).then(() => {
+            console.log('p2完成了');
+            return 'p2';
+        });
+
+        const allPromise = Promise.all([p1,p2]);
+        allPromise.then(datas => {
+            console.log(datas);
+        }).catch(error => console.log('all',error));
+
+        // 错误既可以单独处理 也可以统一处理
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.方法
+        // set
+        const m = new Map();
+        m.set('name','denghao').set('age',18).set('age',120);
+        console.log(m);  //Map(2) {'name' => 'denghao', 'age' => 120}
+
+        //get
+        console.log(m.get('name'),m.get('age'));  //denghao 120
+        // get获取不存在的成员 返回undefined
+
+        // delete
+        // m.delete('age');
+        // console.log(m);  //Map(1) {'name' => 'denghao'}
+        // 使用delete删除不存在的成员，什么都不会发生，也不会报错
+
+        // clear
+        // m.clear();
+        // console.log(m);  //Map(0) {size: 0}
+
+        // forEach
+        m.forEach(function(value,key,map){
+            console.log(value,key,map,123,this);
+        },document)
+    </script>
+</body>
+</html>
