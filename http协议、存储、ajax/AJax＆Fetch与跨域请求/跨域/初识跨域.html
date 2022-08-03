@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 跨域是什么
+
+        // 同域 不是跨域
+        // const url = './index.html';
+
+        // 跨域报错 被浏览器禁止访问
+        // const url = 'https://www.imooc.com'; 
+        // const xhr = new XMLHttpRequest();
+        // //  向同一个域发送请求，如果请求的域和当前的域是不同域，就叫跨域
+        // // 不同域之间的请求，就是跨域请求
+
+        // xhr.onreadystatechange = () => {
+        //     if(xhr.readyState !==4) return;
+        //     if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+        //         console.log(xhr.responseText);
+        //     } else {
+        //         console.log('error');
+        //     }
+        // };
+
+        // xhr.open('GET',url,true);
+        
+        // xhr.send(null);
+
+
+        // 2.什么是不同域，什么是同域
+        // const url = 'https(协议部分)://www.imooc.com(域名部分)：443(端口号)/course/list(路径)';    
+
+        // 协议域名和端口号任何一个不一样就是跨域
+        // 与路径无关，路径不一样无所谓
+
+
+        // 3.跨域请求为什么被阻止
+        // 阻止跨域请求，其实是浏览器本身一种安全策略--同源策略
+
+
+        // 4.跨域解决方法
+        // ①CORS 跨域资源共享
+        // ②JSONP script
+    </script>
+</body>
+</html>

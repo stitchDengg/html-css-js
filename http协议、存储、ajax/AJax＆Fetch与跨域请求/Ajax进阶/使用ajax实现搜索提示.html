@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="search">
+    <ul id="result"></ul>
+
+
+    <script type="module">
+        import { getJSON } from './封装 Ajax/ajax/index.js';
+        const url = 'https://www.imooc.com/api/http/search/suggest?words=';
+        const searchInput = document.getElementById('search');
+        const resultList = document.getElementById('result');
+        let timer;
+        // input事件写入一个字符input框就会触发
+        searchInput.addEventListener('input', () => {
+            //handeleInputEvent();
+            // 不立即执行
+            if(timer){
+                clearTimeout(timer);
+            }
+            timer = setTimeout(handeleInputEvent, 300);
+        }, false)
+
+        
+        const handeleInputEvent = () => {
+            if (searchInput.value.trim() !== '') {
+                resultList.style.display = 'block';
+                // 如果去除空格还有值的话就发送请求
+                getJSON(`${url}${searchInput.value}`, {
+                }).then(response => {
+                    console.log(response);
+                    // resultList.innerHTML = '<li>jsp</li>';
+                    let html = '';
+                    for (const item of response.data) {
+                        html += `<li>${item.word}</li>`;
+                    }
+                    resultList.innerHTML = html;
+                    resultList.style.listStyle = 'none';
+                    
+                }).catch(res => {
+                    console.log(res);
+                });
+            } else {
+                resultList.innerHTML = '';
+                resultList.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>

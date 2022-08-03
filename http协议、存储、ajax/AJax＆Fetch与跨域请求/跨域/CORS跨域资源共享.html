@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.CORS是什么
+
+
+        //const url = 'https://www.imooc.com'; 
+        const url = "https://api.btstu.cn/bdsite/api.php?url=https://www.imooc.com"
+        const xhr = new XMLHttpRequest();
+        //  向同一个域发送请求，如果请求的域和当前的域是不同域，就叫跨域
+        // 不同域之间的请求，就是跨域请求
+
+        xhr.onreadystatechange = () => {
+            if(xhr.readyState !==4) return;
+            if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+                console.log(xhr.responseText);
+            } else {
+                console.log('error');
+            }
+        };
+
+        xhr.open('GET',url,true);
+        
+        xhr.send(null);
+
+
+        // access-control-allow-origin: *
+        // 表面所有域名来跨域请求它，*是通配符，没有任何限制
+
+        // 只允许特定域名跨域请求
+        //access-control-allow-origin: http://127.0.0.1:5501/ 
+
+
+        // 2.使用CORS跨域的过程
+        // ①浏览器发送跨域请求
+        // ②后端 在响应头中添加access-control-allow-origin信息
+        // ③浏览器接收到响应
+        // ④如果是同域下的请求，浏览器就不会额外做什么，这次前后端通信就圆满完成了
+        // ⑤如果是跨域请求，浏览器就会从响应头中查找是否允许跨域访问
+        // ⑥如果允许，通信圆满完成
+        // ⑦如果内找到或不包含想要跨域的域名，则丢掉响应结果 
+
+
+        // 3.CORS的兼容性问题
+        // IE10以上版本的浏览器才可以正常使用CORS
+
+        // 关于兼容性
+        // https://caniuse.com
+    </script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* css reset */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        /* menu */
+        .menu {
+            width: 100px;
+            background-color: rgba(0, 0, 0, 0.1);
+            margin: 10px;
+        }
+
+        .menu-item {
+            position: relative;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .menu-content {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            width: 200px;
+            height: 100px;
+            padding: 0 5px;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-item:hover {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .menu-item:hover .menu-content {
+            display: block;
+        }
+
+        .menu-loading {
+            margin: 45px 0 0 92px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="menu" class="menu">
+        <!-- <li class="menu-item" data-key="hot" data-done="done">
+            <span>热门</span>
+            <div class="menu-content">
+                <p><img class="menu-loading" src="./loading.gif" alt="加载中"></p>
+            </div>
+        </li> -->
+    </ul>
+
+
+    <script type="module">
+        // http://www.imooc.com/api/mall-PC/index/menu/hot
+        // http://www.imooc.com/api/mall-PC/index/menu/
+        import { ajax, get, getJSON, post } from './封装 Ajax/ajax/index.js';
+        const menuUrl = 'http://www.imooc.com/api/mall-PC/index/menu';
+        const menuEl = document.getElementById('menu');
+        getJSON(menuUrl).then(response => {
+            // 获取一级菜单
+            let html = '';
+            console.log(response); //{key: 'hot', title: '热门出发地', subTitles: Array(5)}
+            for (const item of response.data) {
+                html += `<li class="menu-item" data-key="${item.key}">
+                            <span>${item.title}</span>
+                            <div class="menu-content">
+                                <p><img class="menu-loading" src="./loading.gif" alt="加载中"></p>
+                            </div>
+                        </li>`;
+            }
+            menuEl.innerHTML = html;
+        }).then(() => {
+            // 获取二级菜单
+            const items = menuEl.querySelectorAll('.menu-item');
+            for (const item of items) {
+                item.addEventListener('mouseenter',() => {
+                    // 发送请求前判断一下
+                    // if(item.getAttribute('data-done')){
+                          // 新方法可以直接使用dataset.的方式拿到节点的data-属性
+                    // console.log(item.dataset.key);
+                    // }
+                    if(item.dataset.done === 'done') return;
+
+                    getJSON(`${menuUrl}/${item.dataset.key}`).then(response => {
+                        // 获取到数据将 data-done属性设置为done
+                        //title: '新马泰', cities: Array(22)
+                        console.log(response);
+                        item.dataset.done = 'done';
+                        let html = '';
+                        for (const itme of response.data) {
+                            html += `<p>${itme.title}</p>`;
+                        }
+                        // 替换掉内容div的html结构
+                        item.querySelector('.menu-content').innerHTML = html;
+                    }).catch(err => {
+                        console.log(err);
+                    });
+                },false)
+            }
+        }).catch(err => {
+            console.log(err);
+        });
+    </script>
+</body>
+
+</html>

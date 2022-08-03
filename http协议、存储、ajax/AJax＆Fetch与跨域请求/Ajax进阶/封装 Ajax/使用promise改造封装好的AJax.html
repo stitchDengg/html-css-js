@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="module">
+        import { ajax, get, getJSON, post } from './ajax/index.js';
+        const url = 'https://www.imooc.com/api/http/search/suggest?words=js';
+        const p = getJSON(url, {
+            params: {
+                username: 'denghao',
+            },
+            data: {
+                age: 18
+            },
+        });
+        const {ERROR_HTTP_CODE, ERROR_REQUEST, ERROR_TIMEOUT, ERROR_ABORT } = p;
+        // 请求终止
+        // p.xhr.abort();
+        p.then(response => {
+            console.log(response);
+        }).catch(err => {
+            //分别处理不同错误
+            switch (err.type) {
+                case ERROR_HTTP_CODE:
+                    console.log(err.text);
+                    break;
+                case ERROR_REQUEST:
+                    console.log(err.text);
+                    break;
+                case ERROR_TIMEOUT:
+                    console.log(err.text);
+                    break;
+                case ERROR_ABORT:
+                    console.log(err.text);
+                    break;
+            }
+        });
+    </script>
+</body>
+
+</html>

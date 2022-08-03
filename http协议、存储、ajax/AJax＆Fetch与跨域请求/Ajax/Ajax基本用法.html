@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.XMLHttpRequest
+
+        //Ajax想实现浏览器和服务器之间的异步通信，需要依靠XMLHttpRequest，他是一个构造函数
+
+
+        // 不论是XMLHttpRequest，还是Ajax，都没有和具体的某种数据格式绑定
+
+
+        // 2.AJax使用步骤
+        // 2.1创建xhr对象
+        // const xhr  = new XMLHttpRequest();
+
+        
+        // 2.4监听事件，处理响应
+        // 当获取事件响应后，会触发xhr的readystatechange事件，可以在该事件中对响应进行处理
+
+        // 也可以使用addEvenListener
+        // xhr.addEventListener('readystage',() => {
+
+        // },false);
+
+        // 事件监听最好放在open之前
+        // xhr.onreadystatechange = () => {
+        //     // 当数据没完全收到，直接返回
+        //     if(xhr.readyState !== 4) return;
+
+        //     // HTTP CODE
+        //     // 获取到响应以后，响应的内容会自动填充到xhr对象的属性
+        //     if((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304){
+        //         console.log('正常使用响应数据');
+        //         console.log(xhr.responseText);
+        //     }else{
+        //         // 对错误情况的处理
+        //     }
+        // }
+
+        // onreadystatechange监听readystate这个状态的变化
+        // 他的值从0-4一共五个状态
+        // 0：未初始化。尚未调用open
+        // 1:启动，已经调用open，尚未调用send
+        // 2:发送。已经调用send，但未收到响应
+        // 3:接收，已经接收部分响应数据
+        // 4:完成。已经接收到全部相应数据，可以在浏览器中使用了
+        
+        
+        // 2.1准备发送请求
+        //xhr.open('HTTP方法GET、POST,地址,是否使用异步的方法发送请求');
+        // 调用 open并不会真正的发送请求，而只是做好发送请求前的准备工作
+
+        
+        // 2.3send正式发送请求
+        // send()的参数时通过请求体携带的数据
+        //xhr.send('携带的参数');
+
+        // 3.使用Ajax完成前后端通信
+        const url = 'https://api.btstu.cn/qqol/api.php?qq=1051766345';
+        //const url = 'https://api.btstu.cn/dmover/api.php?domain=baidu.com';
+
+        // 创建xhr对象
+        const xhr = new XMLHttpRequest();
+
+        // 监听一下事件
+        xhr.onreadystatechange = () => {
+            if(xhr.readyState !== 4) return;
+
+            if((xhr.status >=200 && xhr.status < 300) || xhr.status === 304){
+                console.log(xhr.responseText);
+                console.log(typeof xhr.responseText);
+            }else{
+                console.log('error');
+            }
+        };
+
+        xhr.open('get',url,true);
+        xhr.send('baidu.com');
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.abort()方法
+        // 终止当前请求
+        // 一般配合abort事件一起使用
+        // const url = `https://api.btstu.cn/dmover/api.php?domain=btstu.cn`;
+        // const xhr = new XMLHttpRequest();
+
+        // // 监听一下事件
+        // xhr.onreadystatechange = () => {
+        //     if (xhr.readyState !== 4) return;
+
+        //     if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+        //         // 文本形式的响应内容
+        //         // 只能在responseType没设置或者设置为text的时候使用
+        //         //console.log('responseTest',JSON.parse(xhr.responseText));
+        //         console.log('response',xhr.response);
+        //     } else {
+        //         console.log('error');
+        //     }
+        // };
+
+        // xhr.open('GET', url, true);
+        // xhr.send(null);
+
+        // xhr.abort();
+
+
+        // 2.setRequestHeader()
+
+        const url = `https://api.btstu.cn/dmover/api.php?domain=btstu.cn`;
+        const xhr = new XMLHttpRequest();
+
+        // 监听一下事件
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState !== 4) return;
+
+            if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+                // 文本形式的响应内容
+                // 只能在responseType没设置或者设置为text的时候使用
+                //console.log('responseTest',JSON.parse(xhr.responseText));
+                console.log('response',xhr.response);
+            } else {
+                console.log('error');
+            }
+        };
+
+        xhr.open('POST', url, true);
+
+        // 设置头信息
+        // 请求头中Content-Type字段用于告诉服务器，浏览器发送的数据是什么样的
+        xhr.setRequestHeader('Content-Type','appication/x-www-form-urlencoded')
+        xhr.send('username=alex&age=18');
+    </script>
+</body>
+</html>

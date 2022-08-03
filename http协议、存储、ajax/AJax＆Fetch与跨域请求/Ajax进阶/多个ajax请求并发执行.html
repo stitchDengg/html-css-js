@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>多个 Ajax 请求的并发执行</title>
+    <style>
+        /* css reset */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        /* menu */
+        .menu {
+            width: 100px;
+            background-color: rgba(0, 0, 0, 0.1);
+            margin: 10px;
+        }
+
+        .menu-item {
+            position: relative;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .menu-content {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            width: 200px;
+            height: 100px;
+            padding: 0 5px;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-item:hover {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .menu-item:hover .menu-content {
+            display: block;
+        }
+
+        .menu-loading {
+            margin: 45px 0 0 92px;
+        }
+
+        /* loading-page */
+        .loading-page {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
+            background-color: #eee;
+            text-align: center;
+        }
+
+        .loading-img {
+            position: absolute;
+            top: 50%;
+        }
+
+        .ad img {
+            display: inline-block;
+            width: 25%;
+        }
+
+        .none {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loading-page" class="loading-page">
+        <img class="loading-img" src="./loading.gif" alt="加载中" />
+    </div>
+
+    <div id="ad" class="ad"></div>
+
+    <ul id="menu" class="menu">
+        <!-- <li class="menu-item" data-key="hot" data-done="done">
+            <span>热门</span>
+            <div class="menu-content">
+                <p><img class="menu-loading" src="./loading.gif" alt="加载中" /></p>
+            </div>
+        </li> -->
+    </ul>
+
+
+    <script type="module">
+        import {getJSON} from './封装 Ajax/ajax/index.js';
+        const menuUrl = 'http://www.imooc.com/api/mall-PC/index/menu';
+        const adUrl = 'http://www.imooc.com/api/mall-PC/index/ad';
+
+        const loadingPageEl  = document.getElementById('loading-page');
+        const adEl  = document.getElementById('ad');
+        const menuEl  = document.getElementById('menu');
+
+        const p1 = getJSON(menuUrl).then(response => {
+            console.log(response);
+             // 获取一级菜单
+            let html = '';
+            console.log(response); //{key: 'hot', title: '热门出发地', subTitles: Array(5)}
+            for (const item of response.data) {
+                html += `<li class="menu-item" data-key="${item.key}">
+                            <span>${item.title}</span>
+                            <div class="menu-content">
+                                <p><img class="menu-loading" src="./loading.gif" alt="加载中"></p>
+                            </div>
+                        </li>`;
+            }
+            menuEl.innerHTML = html;
+        }).then(() => {
+            // 获取二级菜单
+            const items = menuEl.querySelectorAll('.menu-item');
+            for (const item of items) {
+                item.addEventListener('mouseenter',() => {
+                    // 发送请求前判断一下
+                    // if(item.getAttribute('data-done')){
+                          // 新方法可以直接使用dataset.的方式拿到节点的data-属性
+                    // console.log(item.dataset.key);
+                    // }
+                    if(item.dataset.done === 'done') return;
+
+                    getJSON(`${menuUrl}/${item.dataset.key}`).then(response => {
+                        // 获取到数据将 data-done属性设置为done
+                        //title: '新马泰', cities: Array(22)
+                        console.log(response);
+                        item.dataset.done = 'done';
+                        let html = '';
+                        for (const itme of response.data) {
+                            html += `<p>${itme.title}</p>`;
+                        }
+                        // 替换掉内容div的html结构
+                        item.querySelector('.menu-content').innerHTML = html;
+                    }).catch(err => {
+                        console.log(err);
+                    });
+                },false)
+            }
+        }).catch(err => {
+            console.log(err);
+        });
+
+
+        const p2 = getJSON(adUrl).then(response => {
+            console.log(response);
+            // {url: 'http://alimc.img.imooc.com/class/muyun/mall-PC/advertisement/small01.png'
+            let html = '';
+            for (const item of response.data) {
+                html += `<img class="menu-loading" src="${item.url}" alt="加载中"/>`
+            }
+            adEl.innerHTML = html;
+        }).catch(err => {
+            console.log(err);
+        });
+
+        //  Promise.all()方法只有两个都成功时才会执行
+        Promise.all([p1,p2]).then(() => {
+            // loadingPageEl.style.display = 'none';
+            //loadingPageEl.className = 'none loading-page';
+            // 新方法添加clss样式
+
+
+            // ie10开始支持
+            setTimeout(() => {
+                loadingPageEl.classList.add('none');
+            }, 1000);
+            // 移除
+            //loadingPageEl.classList.remove('none');
+        });
+    </script>
+</body>
+
+</html>

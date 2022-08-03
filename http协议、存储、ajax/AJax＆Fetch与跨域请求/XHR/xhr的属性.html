@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.responseType和response属性
+        // const url = `https://api.btstu.cn/dmover/api.php?domain=btstu.cn`;
+        // const xhr = new XMLHttpRequest();
+
+        // // 监听一下事件
+        // xhr.onreadystatechange = () => {
+        //     if (xhr.readyState !== 4) return;
+
+        //     if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+        //         // 文本形式的响应内容
+        //         // 只能在responseType没设置或者设置为text的时候使用
+        //         //console.log('responseTest',JSON.parse(xhr.responseText));
+            
+            
+        //         console.log('response',xhr.response);
+        //     } else {
+        //         console.log('error');
+        //     }
+        // };
+
+        // xhr.open('GET', url, true);
+        // // 默认为空或者text
+        // // 指定response返回的结果类型
+        // // xhr.responseType = '';
+        // // xhr.responseType = 'text';
+        // // JSON格式自动转化为对象
+        // xhr.responseType = 'json';
+        // xhr.send(null);
+
+
+        // ie6-ie9不支持这两个属性
+
+        // 2.timeout属性
+        // 设置请求的超时时间
+        // const url = `https://api.btstu.cn/dmover/api.php?domain=btstu.cn`;
+        // const xhr = new XMLHttpRequest();
+
+        // // 监听一下事件
+        // xhr.onreadystatechange = () => {
+        //     if (xhr.readyState !== 4) return;
+
+        //     if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+        //         // 文本形式的响应内容
+        //         // 只能在responseType没设置或者设置为text的时候使用
+        //         //console.log('responseTest',JSON.parse(xhr.responseText));
+        //         console.log('response',xhr.response);
+        //     } else {
+        //         console.log('error');
+        //     }
+        // };
+
+        // xhr.open('GET', url, true);
+
+        // //如果请求没有在设置时间内完成(单位ms)，会触发一个事件
+        // xhr.timeout = 10;
+        // // 超时事件
+        // xhr.ontimeout = () => {
+        //     console.log('请求超时');
+        // }
+        // xhr.send(null);
+
+        // 3.withCredentilals属性
+        // 设置在使用AJAX发送请求的时候是否要设置cookie
+        // 使用AJAX发送请求的时候，默认情况下，同域时会携带Cookie，跨域时不会携带
+        const url = `https://api.btstu.cn/dmover/api.php?domain=btstu.cn`;
+        const xhr = new XMLHttpRequest();
+
+        // 监听一下事件
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState !== 4) return;
+
+            if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+                // 文本形式的响应内容
+                // 只能在responseType没设置或者设置为text的时候使用
+                //console.log('responseTest',JSON.parse(xhr.responseText));
+                console.log('response',xhr.response);
+            } else {
+                console.log('error');
+            }
+        };
+
+        xhr.open('GET', url, true);
+        // 这个设置是否成功还得看服务器端是否让你完成，否则报错
+        //xhr.withCredentials = true;
+        xhr.send(null);
+    </script>
+</body>
+</html>

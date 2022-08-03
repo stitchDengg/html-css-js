@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="module">
+        // 1.JSON.parse()
+        // JSON.parse()可以将JSON格式中的字符串解析为JS中对应值
+        // 一定是要合法的JSON字符串，否则会报错
+
+
+
+
+        // const xhr = new XMLHttpRequest();
+
+        // // 监听一下事件
+        // xhr.onreadystatechange = () => {
+        //     if (xhr.readyState !== 4) return;
+
+        //     if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+        //         console.log(xhr.responseText);
+        //         console.log(typeof xhr.responseText);
+
+        //         // 使用JSON.parse()方法转化为js对应的值
+        //         console.log(JSON.parse(xhr.responseText));
+        //     } else {
+        //         console.log('error');
+        //     }
+        // };
+
+        // xhr.open('GET', './obj.json', true);
+        // xhr.send(null);
+
+        // 2.jSON.stringify()
+        // jSON.stringify()方法可以将js的基本类型值转化为对应的JSOn文件格式的字符串
+        const xhr = new XMLHttpRequest();
+
+        xhr.open('POST', 'https://www.imooc/api/http/search/suggest?words=js', true);
+        
+        // 无法直接传过去
+        // xhr.send({
+        //     username:'alex',
+        //     age:18
+        // });
+        
+
+        xhr.send(JSON.stringify({
+            username:'alex',
+            age:18
+        }));
+
+
+        // 3.使用JSON.parse()和jSON.stringify()封装localStroage
+
+        import {set,get,remove,clear} from './stroage.js'
+
+        set('username','alex');
+        console.log(get('username'));
+
+
+        set('zs',{
+            name:'zhangsan',
+            age:18
+        })
+        console.log(get('zs'));
+    </script>
+</body>
+
+</html>

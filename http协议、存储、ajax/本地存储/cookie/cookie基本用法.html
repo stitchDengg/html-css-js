@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 写入Cookie
+        document.cookie = 'userName = zs';
+        document.cookie = 'age = 18';
+
+        // 不能一起设置，只能一个个设置
+        //document.cookie = 'username=zs;agg=18'
+
+
+        // 读取cookie
+        console.log(document.cookie);
+
+        // 读取的是由名值对构成的字符串，每个名值对之间由；链接(一个分号和一个空格)隔开
+        //userName=zs; age=18
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // fetch是什么
+        // fetch也是前后端通信的一种方式
+        // fetch是ajax的一种替代方案，它是基于promise的
+
+        // ajax兼容性比fetch好
+
+        // 没有abort timeout
+
+        // Fetch基本用法
+        // // Fetch调用后返回promise对象
+        // body: (...)
+        // bodyUsed: false
+        // headers: Headers { }
+        // ok: true
+        // redirected: false
+        // status: 200
+        // statusText: "OK"
+        // type: "cors"
+        //url: "https://www.imooc.com/api/http/search/suggest?words=js"
+        
+        const url = 'https://www.imooc.com/api/http/search/suggest?words=js';
+        // fetch第二个参数是对象，用来配置fetch
+        fetch(url,{
+            method:'post',
+            body:'username=denghao&age=18'
+        }).then(res => {
+            //没有直接获取数据的地方
+            console.log(res);
+            // body/bodyUsed
+            // 就是数据本身 是可读流
+            // body只能读一次，读过以后就不让再读了
+            //ok
+            // 如果为true表示可以读取数据，不用判断http状态码
+            if(res.ok){
+                //console.log(res.json());
+                return res.json();
+            }else{
+                throw new Error('http code 异常')
+            }
+        }).then(data => {
+            console.log(data);
+        }).catch(err => {
+            console.log(err);
+        });
+    </script>
+</body>
+
+</html>

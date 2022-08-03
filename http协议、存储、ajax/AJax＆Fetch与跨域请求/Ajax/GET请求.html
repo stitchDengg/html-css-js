@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // GET请求通过url携带数据
+        // // const url = 'https://api.btstu.cn/qqol/api.php?qq=1051766345';
+        // // 可以通过&实现多参数
+        // const url = 'https://api.btstu.cn/qqol/api.php?qq=1051766345&qq=1205670535';
+        // const xhr = new XMLHttpRequest();
+
+        // // 监听一下事件
+        // xhr.onreadystatechange = () => {
+        //     if (xhr.readyState !== 4) return;
+
+        //     if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+        //         console.log(xhr.responseText);
+        //         console.log(typeof xhr.responseText);
+        //     } else {
+        //         console.log('error');
+        //     }
+        // };
+
+        // xhr.open('GET', url, true);
+        // xhr.send('baidu.com');
+
+
+        // 2.数据编码
+        // 如果携带的数据是非英文字母，就需要编码以后再发给服务器端
+        // 可以使用encodeURLComponent()编码
+
+        //const url = 'https://yz.lol.qq.com/v1/zh_cn/featured-modules/index.json';
+        // 可以通过&实现多参数
+        const url = `https://www.imooc.com/search/?words=${encodeURIComponent('前端')}`;
+        const xhr = new XMLHttpRequest();
+
+        // 监听一下事件
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState !== 4) return;
+
+            if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+                console.log(xhr.responseText);
+                console.log(typeof xhr.responseText);
+            } else {
+                console.log('error');
+            }
+        };
+
+        xhr.open('GET', url, true);
+        xhr.send(null);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.load事件
+        // 当响应数据可用的时候触发(代替onreadystatechange事件)
+        // const url = `https://api.btstu.cn/dmover/api.php?domain=btstu.cn`;
+        // const xhr = new XMLHttpRequest();
+
+        // 监听一下事件
+        // xhr.onreadystatechange = () => {
+        //     if (xhr.readyState !== 4) return;
+
+        //     if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+        //         // 文本形式的响应内容
+        //         // 只能在responseType没设置或者设置为text的时候使用
+        //         //console.log('responseTest',JSON.parse(xhr.responseText));
+        //         console.log('response', xhr.response);
+        //     } else {
+        //         console.log('error');
+        //     }
+        // };
+
+        // 使用load事件代替
+        // xhr.onload = () => {
+        //     if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+        //         // 文本形式的响应内容
+        //         // 只能在responseType没设置或者设置为text的时候使用
+        //         //console.log('responseTest',JSON.parse(xhr.responseText));
+        //         console.log('response', xhr.response);
+        //     } else {
+        //         console.log('error');
+        //     }
+        // };
+
+        // xhr.open('GET', url, true);
+        // xhr.send(null);
+
+
+        // 2.error事件
+        // 请求失败时触发
+        //const url = `https://api.btstu.cn/dmover/api.php?domain=btstu.cn`;
+        // const url = `https://ap.btstu.cn/dmover/api.php?domain=btstu.cn`;
+        
+        // const xhr = new XMLHttpRequest();
+
+        // xhr.onerror = () => {
+        //     console.log('getError');//getError
+        // }
+
+        // xhr.open('GET', url, true);
+
+        // xhr.send(null);
+
+        // IE10开始支持
+
+
+        // 3.abort事件
+        const url = `https://api.btstu.cn/dmover/api.php?domain=btstu.cn`;
+        const xhr = new XMLHttpRequest();
+
+        xhr.onload = () => {
+            if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+                // 文本形式的响应内容
+                // 只能在responseType没设置或者设置为text的时候使用
+                //console.log('responseTest',JSON.parse(xhr.responseText));
+                console.log('response', xhr.response);
+            } else {
+                console.log('error');
+            }
+        };
+
+        xhr.addEventListener('abort',() =>{
+            console.log('abort');   //abort
+        });
+        xhr.open('GET', url, true);
+        xhr.send(null);
+        xhr.abort();
+
+
+        // 4.timeout事件
+        // 请求超时时触发
+    </script>
+</body>
+
+</html>

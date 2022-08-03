@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.简单值形式
+        // JSON的简单值形式就对应这JS中基础的数据类型值
+        // 数字、字符串、bool、null
+
+        // 1.1注意事项
+        // ①JSON中没有undefined
+        // ②JSON中必须使用双引号
+        // ③JSON中不能注释
+
+
+        // 2.对象形式
+        // JSON对象形式对应着js中的对象
+
+        // *2.1注意事项
+        // JSON中对象的属性名必须使用双引号，属性值是字符串也必须使用双引号
+        // JSON中只要涉及字符串，就必须使用双引号
+        // 不支持undefined
+
+
+        // 2.数组的形式
+        // JSON数组形式对应着js中的数组
+        
+        const xhr = new XMLHttpRequest();
+
+        // 监听一下事件
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState !== 4) return;
+
+            if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+                console.log(xhr.responseText);
+                console.log(typeof xhr.responseText);
+            } else {
+                console.log('error');
+            }
+        };
+
+        // ajax可以获取本地的json
+        //xhr.open('GET', './plain.json', true);
+        // xhr.open('GET', './obj.json', true);
+        xhr.open('GET', './arr.json', true);
+        // 如果想发送数据，直接写在send()的参数位置，一般是字符串
+        //xhr.send('usename=alex&age=18')
+
+
+        // 不能直接传递对象，需要先将对象转化为字符串的形式
+        // 可以直接传JSON格式
+        xhr.send({
+            "username":'alex',
+            "age":"18"
+        });
+    </script>
+</body>
+</html>

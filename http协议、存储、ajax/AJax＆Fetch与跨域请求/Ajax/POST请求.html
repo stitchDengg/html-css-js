@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.携带数据
+        // POST请求既可以通过请求体携带数据，同时也可以通过请求头携带数据
+        const url = `https://api.btstu.cn/dmover/api.php?domain=btstu.cn`;
+        const xhr = new XMLHttpRequest();
+
+        // 监听一下事件
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState !== 4) return;
+
+            if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+                console.log(xhr.responseText);
+                console.log(typeof xhr.responseText);
+            } else {
+                console.log('error');
+            }
+        };
+
+        xhr.open('POST', url, true);
+        // 如果想发送数据，直接写在send()的参数位置，一般是字符串
+        //xhr.send('usename=alex&age=18')
+
+
+        // 不能直接传递对象，需要先将对象转化为字符串的形式
+        // xhr.send({
+        //     username:'alex',
+        //     age:18
+        // });
+        // [object Object]
+
+
+        // 2.数据编码
+        xhr.send(`usename=${encodeURIComponent('张三')}&age=18`)
+    </script>
+</body>
+</html>

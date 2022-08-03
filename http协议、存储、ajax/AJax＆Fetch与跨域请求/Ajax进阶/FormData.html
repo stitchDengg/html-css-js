@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="https://api.btstu.cn/dmover/api.php?domain=btstu.cn" method="post"
+        enctype="application/x-www-form-urlencoded" id="login">
+        <input type="text" name="username" placeholder="用户名">
+        <input type="password" name="password" placeholder="密码">
+        <input type="submit" value="登陆" id="submit">
+    </form>
+    <script>
+        // 表单提交会自动跳转
+        // 1.使用ajax提交表单
+
+        // 2.FormData的基本用法
+        //const fd = new FormData(表单元素);
+        // xhr.send(fd);
+
+        //可以通过append方法添加数据
+        //fd.append('age',18);
+        //fd.append('bane','denghao');
+
+
+        const login = document.getElementById('login');
+        // console.log(login.username);
+        // console.log(login.password);
+        // 解构赋值
+        const { username, password } = login;
+        const url = 'https://api.btstu.cn/dmover/api.php?domain=btstu.cn';
+        const btn = document.getElementById('submit');
+        btn.onclick = function (e) {
+            // 阻止表单的默认提交
+            e.preventDefault();
+
+            // 表单的数据验证
+
+            // 发送ajax请求
+            const xhr = new XMLHttpRequest();
+
+            xhr.onload = () => {
+                if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+                    console.log(xhr.response);
+                } else {
+                    console.log("response error", status);
+                }
+            }
+
+            xhr.open("POST", url, false);
+            // 设置请求头
+
+            // // 组装数据
+            // const data = `username=${username.value}&password=${password.value}`;
+
+            // 组装数据使用FormData代替
+            // 直接将表单数据传给xhr请求
+            // 不需要自己添加Content-Type
+            const data = new FormData(login);
+            data.append('age', 18);
+            for (const iterator of data) {
+                console.log(iterator);
+            }
+            xhr.send(data);
+        }
+    </script>
+</body>
+
+</html>
