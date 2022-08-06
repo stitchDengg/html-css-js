@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>学生信息表</p>
+    <ul id="list"></ul>
+    <script src="https://unpkg.com/art-template/lib/template-web.js"></script>
+    <!-- 准备模板 -->
+    <script type="text/html" id="tpl-students">
+        {{each students}}
+            <li>{{$value.name}}{{$value.age}}{{$value.sex}}</li>
+        {{/each}}
+    </script>
+    <script>
+        // 学生数据
+        const students = [
+            {
+                name:'邓浩',
+                age:18,
+                sex:'male'
+            },
+            {
+                name:'张三',
+                age:17,
+                sex:'female'
+            },
+            {
+                name:'李四',
+                age:15,
+                sex:'male'
+            }
+        ];
+        
+        // 1.使用模板字符串
+        // const list = document.getElementById('list');
+        // let html = '';
+        // for (const iterator of students) {
+        //     html += `<li>姓名：${iterator.name}
+        //         年龄：${iterator.age} 性别：${iterator.sex}</li>`;
+        // }
+        // list.innerHTML = html;
+
+
+        // 2.使用模板引擎
+        // 2.1引入art-templete
+
+
+        // 2.2准备好模板
+
+        // 2.获取模板
+        // console.log(template('tpl-students',{
+        //     // 'students':students
+        //     // 可以省略为
+        //     students
+        // }));
+
+        const list = document.getElementById('list');
+        list.innerHTML = template('tpl-students',{
+            // 'students':students
+            // 可以省略为
+            students
+        });
+    </script>
+</body>
+</html>

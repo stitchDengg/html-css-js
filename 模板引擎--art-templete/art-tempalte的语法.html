@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="content"></div>
+    <br>
+    <div id="otherContent"></div>
+
+    <ul id="list"></ul>
+
+
+    <script src="https://unpkg.com/art-template/lib/template-web.js"></script>
+    <!-- 1.输出 -->
+    <script id="tpl-1" type="text/html">
+        {{value}}
+        <!-- 使用br换行 -->
+        <br>
+        {{data}}
+        <br>
+        {{data.key}}
+        <br>
+        {{data['key']}}
+        <br>
+        {{a + b}}
+        <br>
+        <!-- 能获取到传过来的所有数据 -->
+        {{$data}}
+        <br>
+        {{$data.value}}<br>
+        <!-- 会被转译 -->
+        {{text}}<br>
+        <!-- 不会被转译，原文输出 -->
+        {{@ text}}<br>
+    </script>
+
+    <!-- 2.条件 -->
+    <script id="tpl-2" type="text/html">
+        {{if sex === 'male'}}
+        男
+        {{else if sex === 'female'}}
+        女
+        {{else}}
+        其他
+        {{/if}}
+    </script>
+
+    <!-- 3.循环-->
+    <script type="text/html" id="tpl-students">
+        {{each students}}
+            <li>{{$index}}:{{$value.name}}{{$value.age}}{{$value.sex}}</li>
+        {{/each}}
+    </script>
+
+    <!-- 4.子模板 -->
+    <script type="text/html" id="tpl-3">
+        {{include 'tpl-3-header'}}
+        <p>首页</p>
+        {{include 'tpl-3-footer'}}
+    </script>
+
+    <script type="text/html" id="tpl-3-header">
+        <p>我是公共头部</p>
+    </script>
+
+    <script type="text/html" id="tpl-3-footer">
+        <p>我是公共尾部</p>
+    </script>
+
+
+    <!-- 向子模板传参 -->
+    <script type="text/html" id="tpl-3-2-header">
+        <p>我是{{page}}公共头部</p>
+    </script>
+
+    <script type="text/html" id="tpl-3-2-footer">
+        <p>我是{{page}}公共尾部</p>
+    </script>
+
+    <script type="text/html" id="tpl-3-2-index">
+        {{include 'tpl-3-2-header'}}
+        <% include('tpl-3-2-header',{page:'首页'})%>
+        <p>首页</p>
+        {{include 'tpl-3-2-footer'}}
+        <% include('tpl-3-2-footer',{page:'首页'})%>
+    </script>
+
+    <script type="text/html" id="tpl-3-2-list">
+        {{include 'tpl-3-2-header'}}
+        <% include('tpl-3-2-header',{page:'列表页'})%>
+        <p>首页</p>
+        {{include 'tpl-3-2-footer'}}
+        <% include('tpl-3-2-footer',{page:'列表页'})%>
+    </script>
+
+
+    <script>
+        // 官方文档
+        // http://aui.github.io/art-template/zh-cn/docs/
+
+        // 1.输出
+        // const content = document.getElementById('content');
+        // content.innerHTML = template('tpl-1',{
+        //     value:1,
+        //     data:{
+        //         key:2
+        //     },
+        //     a:3,
+        //     b:4,
+        //     text:'<strong>重点内容</strong>'
+        // });
+
+        // console.log(template('tpl-1',{
+        //     value:1,
+        //     data:{
+        //         key:2
+        //     },
+        //     a:3,
+        //     b:4,
+        //     text:'<strong>重点内容</strong>'
+        // }));
+        // 优先使用标准语法，标准语法不能解决的再使用原始语法
+
+
+        // 2.条件
+        // const content = document.getElementById('content');
+        // content.innerHTML = template('tpl-2',{
+        //     sex:'male'
+        // });
+
+
+        // 3.循环
+        // const students = [
+
+        //     {
+        //         name:'邓浩',
+        //         age:18,
+        //         sex:'male'
+        //     },
+        //     {
+        //         name:'张三',
+        //         age:17,
+        //         sex:'female'
+        //     },
+        //     {
+        //         name:'李四',
+        //         age:15,
+        //         sex:'male'
+        //     }
+        // ];
+        // const list = document.getElementById('list');
+        // list.innerHTML = template('tpl-students',{
+        //     // 'students':students
+        //     // 可以省略为
+        //     students
+        // });
+
+        //4.子模板
+        // const content = document.getElementById('content');
+        // content.innerHTML = template('tpl-3',{
+        //     // 即使没有参数，也需要传空对象
+        // });
+        
+
+        // 向字模板传参
+        // 如果需要向字模板传参，请使用原始语法
+        const content = document.getElementById('content');
+        content.innerHTML = template('tpl-3-2-index',{
+            // 即使没有参数，也需要传空对象
+        });
+
+        const otherContent = document.getElementById('otherContent');
+        otherContent.innerHTML = template('tpl-3-2-list',{
+            // 即使没有参数，也需要传空对象
+        });
+    </script>
+</body>
+</html>
