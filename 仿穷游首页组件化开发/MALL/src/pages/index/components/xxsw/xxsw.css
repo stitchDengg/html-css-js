@@ -1,0 +1,41 @@
+.xxsw {
+    background: #F7F7F7;
+    height: 698px;
+    padding: 40px 0;
+}
+
+.xxsw .hd h2 {
+    float: left;
+}
+
+.xxsw .hd em {
+    float: left;
+}
+
+.xxsw .hd {
+    margin-bottom: 32px;
+}
+
+.xxsw ul li {
+    float: left;
+    width: 264px;
+    height: 270px;
+    margin-right: 32px;
+    margin-bottom: 32px;
+}
+
+/* 倍数选择器 */
+.xxsw ul li:nth-child(4n) {
+    margin-right: 0;
+}
+
+.xxsw ul li .wordbox {
+    font-size: 14px;
+    color: #1C1F21;
+    line-height: 22px;
+    padding: 15px;
+}
+
+.xxsw ul li:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.20);
+}

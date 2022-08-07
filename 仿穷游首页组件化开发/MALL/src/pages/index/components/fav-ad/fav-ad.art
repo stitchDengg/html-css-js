@@ -1,0 +1,26 @@
+<section class="hot-ads">
+    <div class="center-wrap clearfix">
+        <ul>
+            <li>
+                <a href="">
+                    <img src="./images/small01.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./images/small02.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./images/small03.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./images/small04.png" alt="">
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>

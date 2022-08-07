@@ -1,0 +1,88 @@
+/* 首页样式表 */
+.site-head {
+    height: 150px;
+    min-width: 1152px;
+}
+
+.common-style {
+    height: 698px;
+    padding-top: 40px;
+}
+
+/* h2公共类 统一设置字体 */
+.content-part h2 {
+    font-size: 36px;
+    color: #000000;
+    text-align: justify;
+    line-height: 54px;
+    font-weight: bold;
+}
+
+/* em公共类 统一设置字体 */
+.content-part em {
+    font-size: 12px;
+    color: #1C1F21;
+    text-align: justify;
+    line-height: 18px;
+    position: relative;
+    top: 22px;
+    left: 22px;
+    font-weight: bolder;
+}
+
+
+
+/* 公共的特效 鼠标触碰图片有放大效果*/
+.content-part img:hover {
+    transform: scale(1.1);
+}
+
+.content-part li {
+    overflow: hidden;
+}
+
+.content-part li .picbox {
+    height: 184px;
+    overflow: hidden;
+}
+
+.content-part .grid {
+    overflow: hidden;
+}
+
+.content-part img {
+    transition: transform .4s ease 0s;
+}
+
+.common-style .bd ul li.big-grid .info {
+    position: absolute;
+    bottom: 30px;
+    left: 26px;
+    width: 508px;
+    height: 22px;
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 22px;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.common-style .bd ul li.big-grid .yuan {
+    width: 106px;
+    height: 106px;
+    box-sizing: border-box;
+    border: 1px solid #FFFFFF;
+    border-radius: 50%;
+    position: absolute;
+    left: 227px;
+    top: 62px;
+    text-align: center;
+    font-size: 16px;
+    color: #Ffffff;
+    font-weight: bold;
+}
+
+.common-style .bd ul li.big-grid .yuan p {
+    position: relative;
+    top: 26px;
+}

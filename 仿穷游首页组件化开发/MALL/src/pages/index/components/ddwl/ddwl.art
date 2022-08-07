@@ -1,0 +1,103 @@
+<div class="hd clearfix">
+    <h2>当地玩乐</h2>
+    <em>像当地人一样，体验本土的吃喝玩乐</em>
+    <nav>
+        <ul>
+            <li class="current">
+                <a href="#">国内</a>
+            </li>
+            <li>
+                <a href="#">日本</a>
+            </li>
+            <li>
+                <a href="#">瑞士</a>
+            </li>
+            <li>
+                <a href="#">新西兰</a>
+            </li>
+            <li>
+                <a href="#">澳大利亚</a>
+            </li>
+            <li>
+                <a href="#">柬埔寨</a>
+            </li>
+            <li>
+                <a href="#">泰国</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<div class="bd">
+    <div class="col">
+        <div class="bigpicbox">
+            <a href="#">
+                <img src="./images/ddwl01.png" alt="">
+            </a>
+            <div class="info">
+                <p>[亲子佳选]泰国清迈夜间动物园/Night Safari（可选接送；导游；长颈鹿餐厅）</p>
+                <div class="bottom clearfix">
+                    <p class="tag">城市玩乐</p>
+                    <p class="price"><i>199</i>元起</p>
+                </div>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="picbox">
+                <img src="./images/ddwl02.png" alt="">
+            </div>
+            <div class="wordbox">
+                [樱花季] 北京/天津直飞东京/大阪/名古屋/福冈/广岛/北海道/冲绳往返…
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="grid">
+            <div class="picbox">
+                <img src="./images/ddwl03.png" alt="">
+            </div>
+            <div class="wordbox">
+                [网红新选] 泰国清迈黑白蓝庙一日游清莱黑庙 白庙 蓝庙  温泉驿站中文导游+酒店接送+餐赠小…
+            </div>
+        </div>
+        <div class="grid">
+            <div class="picbox">
+                <img src="./images/ddwl04.png" alt="">
+            </div>
+            <div class="wordbox">
+                [全岛接送+中文导游] 泰国普吉岛+皇帝岛+珊瑚岛一日游双体帆船海钓 [帆船晚会+浮潜]…
+            </div>
+        </div>
+        <div class="grid">
+            <div class="picbox">
+                <img src="./images/ddwl05.png" alt="">
+            </div>
+            <div class="wordbox">
+                享行之旅|泰国苏梅岛一日游 越野车丛林环岛之旅 骑大象纳蒙瀑布
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="grid">
+            <div class="picbox">
+                <img src="./images/ddwl06.png" alt="">
+            </div>
+            <div class="wordbox">
+                [可接急单] 泰国普吉岛西蒙Simon人妖秀门票VIP专座近距离与人妖互动合影…
+            </div>
+        </div>
+        <div class="more-grid clearfix">
+            <div class="wordbox">
+                <p>查看更多</p>
+                <p>机酒自由行产品</p>
+            </div>
+            <span class="iconfont">&#xe662;</span>
+            <ul>
+                <li>WiFi/电话卡</li>
+                <li>交通票券</li>
+                <li>景点门票</li>
+                <li>特色体验</li>
+            </ul>
+        </div>
+    </div>
+</div>

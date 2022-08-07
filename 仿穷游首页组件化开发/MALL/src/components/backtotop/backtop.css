@@ -1,0 +1,13 @@
+.backtotop{
+    position: fixed;
+    bottom: 80px;
+    right: 80px;
+    width: 80px;
+    height: 80px;
+    background-color: #ccc;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 10px;
+    box-sizing: border-box;
+    color: #000;
+}

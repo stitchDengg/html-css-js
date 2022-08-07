@@ -1,0 +1,22 @@
+.banner .btn {
+    position: absolute;
+    width: 32px;
+    height: 44px;
+    top: 50%;
+    margin-top: -22px;
+}
+
+.banner .btn:hover {
+    /* 透明度 */
+    opacity: .8;
+}
+
+.banner .left-btn {
+    left: -42px;
+    background-image: url(./images/left-btn.png);
+}
+
+.banner .right-btn {
+    right: -42px;
+    background-image: url(./images/right-btn.png);
+}

@@ -1,0 +1,87 @@
+.site-head .main-nav {
+    height: 40px;
+    background: #20BD9A;
+    min-width: 1152px;
+}
+
+.site-head .main-nav ul li {
+    float: left;
+    margin-right: 18px;
+    line-height: 40px;
+}
+
+.site-head .main-nav ul li.have-menu {
+    padding-right: 16px;
+    position: relative;
+}
+
+.site-head .main-nav ul li a {
+    font-size: 16px;
+    color: #FFFFFF;
+    text-align: justify;
+}
+
+/* 制作三角形的方法2 */
+.site-head .main-nav ul li.have-menu::before {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    right: 0px;
+    top: 18px;
+    border: 5px solid transparent;
+    border-top-color: white;
+    transition: transform .2s ease 0s;
+}
+
+.site-head .main-nav .menu {
+    position: absolute;
+    top: 32px;
+    left: 0;
+    /* 防止被盖住 */
+    z-index: 9999;
+    /* 隐藏 */
+    display: none;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20);
+}
+
+.site-head .main-nav .have-menu:hover .menu {
+    display: block;
+}
+
+.site-head .main-nav ul li.have-menu dl dd {
+    line-height: 0;
+}
+
+.site-head .main-nav .menu dl dd a {
+    font-size: 12px;
+    color: #1C1F21;
+    text-align: justify;
+    line-height: 18px;
+}
+
+.site-head .main-nav .menu dl dd a:hover {
+    color: orange;
+}
+
+.site-head .main-nav .jjmenu {
+    width: 160px;
+}
+
+.site-head .main-nav .gtmenu {
+    width: 106px;
+}
+
+.site-head .main-nav .ddmenu {
+    width: 172px;
+}
+
+.site-head .main-nav .sdmenu {
+    width: 118px;
+}
+
+.site-head .main-nav ul li:hover.have-menu::before {
+    transform: rotate(180deg);
+}

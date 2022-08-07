@@ -1,0 +1,63 @@
+<div class="hd">
+    <h2>特色当地体验</h2>
+</div>
+<div class="bd">
+    <ul>
+        <li>
+            <a href="#">
+                <div class="picbox">
+                    <img src="./images/tsdd01.png" alt="">
+                </div>
+                <div class="wordbox">
+                    <p class="proname">香港迪士尼乐园门票(一日 / 两日) - 无需换票扫码入园）</p>
+                    <p>
+                        <span class="score">★4.8</span>
+                        <span class="comment">（92833评价)2334.69k 人参加过</span>
+                    </p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <div class="picbox">
+                    <img src="./images/tsdd02.png" alt="">
+                </div>
+                <div class="wordbox">
+                    <p class="proname">罗马金宫剧场人妖秀</p>
+                    <p>
+                        <span class="score">★4.6</span>
+                        <span class="comment">（440条评价)900K+ 人参加过</span>
+                    </p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <div class="picbox">
+                    <img src="./images/tsdd03.png" alt="">
+                </div>
+                <div class="wordbox">
+                    <p class="proname">京都和服体验 - 梦馆</p>
+                    <p>
+                        <span class="score">★4.7</span>
+                        <span class="comment">（4,293条评价)50K+ 人参加过</span>
+                    </p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <div class="picbox">
+                    <img src="./images/tsdd04.png" alt="">
+                </div>
+                <div class="wordbox">
+                    <p class="proname">英国巨石阵 & 温莎城堡 & 巴斯罗马浴场一日游</p>
+                    <p>
+                        <span class="score">★4.6</span>
+                        <span class="comment">（2,104条评价)20K+ 人参加过</span>
+                    </p>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>

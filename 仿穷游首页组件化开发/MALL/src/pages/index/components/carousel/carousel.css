@@ -1,0 +1,51 @@
+.banner .carousel_list{
+    width: 600%;
+    /* 清除浮动 */
+    overflow: hidden;
+    /* translateX的百分数表示相对于他本身的宽度的多少倍 */
+    /* 无法使用相对定位的left拉动情况比较复杂 */
+    /* transform: translateX(-16.667%); */
+    /* 动画 */
+    transition: transform .5s ease 0s;
+}
+
+.banner .carousel_list li{
+    width: 16.666%;
+    float: left;
+}
+.banner .carousel_list li img{
+    width: 100%;
+    /* 白边的处理方法 */
+    vertical-align:middle;
+}
+
+/* 小圆点 */
+.banner .circles {
+    width: 160px;
+    height: 20px;
+    position: absolute;
+    bottom: 10px;
+    left:50%;
+    margin-left: -75px;
+    /* 防止被盖住 */
+    z-index: 9999;
+    /* 鼠标指针变为小手装 */
+}
+.banner .circles li{
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: rgba(9, 204, 165, 0.307);
+    /* 宽度和背景颜色都改变了可以添加过渡属性 */
+    transition: all .5s ease 0s;
+    cursor: pointer;
+}
+.banner .circles li:last-child{
+    margin-right: 0;
+}
+.banner .circles li.current{
+    width: 40px;
+    background-color: #20BD9A;
+}

@@ -1,0 +1,95 @@
+<div class="hd clearfix">
+    <h2>跟团/半自助游</h2>
+    <em>旅游需要好的选择，踏实省心</em>
+    <nav>
+        <ul>
+            <li class="current">
+                <a href="#">半自助游</a>
+            </li>
+            <li>
+                <a href="#">城市CityWalk</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<div class="bd">
+    <ul>
+        <li class="big-grid">
+            <a href="">
+                <img src="./images/gt01.png" alt="">
+            </a>
+            <div class="info">
+                <p>天津直飞沙巴5-6天半自助游（自由活动+出海两岛游+市区游+多种星级酒店）</p>
+            </div>
+            <div class="yuan">
+                <p>半自</p>
+                <p>助游</p>
+            </div>
+        </li>
+        <li class="pro-grid">
+            <a href="">
+                <div class="picbox">
+                    <!-- <span class="tag">跟团游</span> -->
+                    <img src="./images/gt02.png" alt="">
+                </div>
+                <div class="wordbox">
+                    北京/上海/南京/杭州直飞巴厘岛5-7天往返含税机票（赠送旅游意外险…
+                </div>
+            </a>
+        </li>
+        <li class="pro-grid">
+            <a href="">
+                <div class="picbox">
+                    <!-- <span class="tag">机票</span> -->
+                    <img src="./images/gt03.png" alt="">
+                </div>
+                <div class="wordbox">
+                    北京/天津直飞日本东京/大阪/东阪/福冈/名古屋冲绳/北海道4-7天往返…
+                </div>
+            </a>
+        </li>
+        <li class="pro-grid">
+            <a href="">
+                <div class="picbox">
+                    <!-- <span class="tag">机票</span> -->
+                    <img src="./images/gt04.png" alt="">
+                </div>
+                <div class="wordbox">
+                    [樱花季] 北京/天津直飞东京/大阪/名古屋/福冈/广岛/北海道/冲绳往返…
+                </div>
+            </a>
+        </li>
+        <li class="pro-grid">
+            <a href="">
+                <div class="picbox">
+                    <!-- <span class="tag">机票</span> -->
+                    <img src="./images/gt05.png" alt="">
+                </div>
+                <div class="wordbox">
+                    杭州/上海/宁波/义乌直飞越南芽庄/岘港4-6天往返含税机票（20KG行…
+                </div>
+            </a>
+        </li>
+        <li class="pro-grid">
+            <a href="">
+                <div class="picbox">
+                    <!-- <span class="tag">机票</span> -->
+                    <img src="./images/gt06.png" alt="">
+                </div>
+                <div class="wordbox">
+                    杭州/上海/宁波/义乌直飞越南芽庄/岘港4-6天往返含税机票（20KG行…
+                </div>
+            </a>
+        </li>
+        <li class="more-grid">
+            <div class="wordbox">
+                <p>查看更多</p>
+                <p>精品跟团/半自助游</p>
+            </div>
+            <span class="iconfont">&#xe662;</span>
+            <ul>
+                <li>跟团游</li>
+                <li>半自助游</li>
+            </ul>
+        </li>
+    </ul>

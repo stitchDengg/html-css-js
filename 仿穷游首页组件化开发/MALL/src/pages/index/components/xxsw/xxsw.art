@@ -1,0 +1,90 @@
+<section class="xxsw content-part">
+    <div class="center-wrap">
+        <div class="hd clearfix">
+            <h2>新鲜甩尾</h2>
+            <em>每日不可不看的好货</em>
+        </div>
+        <ul>
+            <li>
+                <a href="">
+                    <div class="picbox">
+                        <img src="./images/xxsw01.png" alt="">
+                    </div>
+                    <div class="wordbox">
+                        北京直飞马尔代夫6-7天往返含税机票（首都航空/售完为止）…
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <div class="picbox">
+                        <img src="./images/xxsw02.png" alt="">
+                    </div>
+                    <div class="wordbox">
+                        [甩尾狂欢] 北京/天津直飞日本东京/大阪/冲绳/札幌/福冈4-7天往返含…
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <div class="picbox">
+                        <img src="./images/xxsw03.png" alt="">
+                    </div>
+                    <div class="wordbox">
+                        [拒签全退][全国25城联运] 北京往返格鲁吉亚+阿塞拜疆7-30天自由行…
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <div class="picbox">
+                        <img src="./images/xxsw04.png" alt="">
+                    </div>
+                    <div class="wordbox">
+                        [樱花季] 北京直飞东京/大阪/名古屋/冲绳/札幌/福冈/仙台2-30天往返
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <div class="picbox">
+                        <img src="./images/xxsw05.png" alt="">
+                    </div>
+                    <div class="wordbox">
+                        [品质小团/快速确认] 新西兰福克斯冰川直升机观光+冰川徒步（提供…
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <div class="picbox">
+                        <img src="./images/xxsw06.png" alt="">
+                    </div>
+                    <div class="wordbox">
+                        [北欧破冰船] 芬兰+瑞典极地探险号破冰船活动+冰上漂浮+瑞典小…
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <div class="picbox">
+                        <img src="./images/xxsw07.png" alt="">
+                    </div>
+                    <div class="wordbox">
+                        [指定班期特惠][全程中文伴游] 摩洛哥全景深度10日游（卡萨进出…
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <div class="picbox">
+                        <img src="./images/xxsw08.png" alt="">
+                    </div>
+                    <div class="wordbox">
+                        马来西亚天空之镜+河口赏鹰+夜游萤火虫+寻找蓝眼泪（马来西亚瓜拉雪…
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>

@@ -1,0 +1,92 @@
+<nav class="main-nav">
+    <div class="center-wrap">
+        <ul>
+            <li class="have-menu">
+                <a href="#">机酒自由行</a>
+                <div class="menu jjmenu">
+                    <dl>
+                        <dt>全部</dt>
+                        <dd>
+                            <a href="">自由行</a>
+                            <a href="">优惠机票</a>
+                            <a href="">酒店 </a>
+                            <a href="">邮轮</a>
+                            <a href="">定制游</a>
+                            <a href="">马尔代夫</a>
+                            <a href="">海岛游</a>
+                        </dd>
+                    </dl>
+                </div>
+            </li>
+            <li>
+                <a href="#">优惠选票</a>
+            </li>
+            <li class="have-menu">
+                <a href="#">跟团游</a>
+                <div class="menu gtmenu">
+                    <dl>
+                        <dt>全部</dt>
+                        <dd>
+                            <a href="">跟团游</a>
+                            <a href="">半自助游</a>
+                        </dd>
+                    </dl>
+                </div>
+            </li>
+            <li>
+                <a href="#">酒店</a>
+            </li>
+            <li class="have-menu">
+                <a href="#">当地玩乐</a>
+                <div class="menu ddmenu">
+                    <dl>
+                        <dt>全部</dt>
+                        <dd>
+                            <a href="">日游小团</a>
+                            <a href="">深度体验</a>
+                            <a href="">门票票券 </a>
+                            <a href="">餐饮美食</a>
+                            <a href="">WIFI电话卡</a>
+                            <a href="">购物</a>
+                            <a href="">交通票券</a>
+                        </dd>
+                    </dl>
+                </div>
+            </li>
+            <li>
+                <a href="#">签证</a>
+            </li>
+            <li>
+                <a href="#">游轮</a>
+            </li>
+            <li>
+                <a href="#">河轮</a>
+            </li>
+            <li>
+                <a href="#">保险</a>
+            </li>
+            <li>
+                <a href="#">租车自驾</a>
+            </li>
+            <li class="have-menu">
+                <a href="#">深度旅游</a>
+                <div class="menu sdmenu">
+                    <dl>
+                        <dt>全部</dt>
+                        <dd>
+                            <a href="">CityWalk</a>
+                            <a href="">特色长线</a>
+                            <a href="">Q-Home</a>
+                        </dd>
+                    </dl>
+                </div>
+            </li>
+            <li>
+                <a href="#">私人订制</a>
+            </li>
+        </ul>
+        </ul>
+        </ul>
+        </ul>
+    </div>
+</nav>

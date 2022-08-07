@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>慕云游 - 机票、酒店、旅游攻略</title>
+    <meta name="Keywords" content="机票，酒店，旅游攻略，签证，出国，自由行">
+    <meta name="Description" content="慕云游有10多年旅游行业经验，为您提供全方位旅游服务">
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header class="site-head">
+        <!-- top-bar -->
+        {{include '../../components/topbar/topbar.art'}}
+
+        <!-- main-nav -->
+        {{include '../../components/main-nav/mian-nav.art'}}
+
+        <!-- header-con -->
+        {{include '../../components/header-con/header-con.art'}}
+    </header>
+
+    <section class="banner" id="banner">
+        <!--slider -->
+        {{include './components/slider/slider.art'}}
+
+        <div class="center-wrap">
+            <!-- btns -->
+            {{include './components/slider/btn.art'}}
+        
+            <!-- menu -->
+            {{include './components/menu/menu.art'}}
+        </div>
+    </section>
+
+
+
+    <!-- 热门广告 -->
+    <!-- fav-ad -->
+    {{include './components/fav-ad/fav-ad.art'}}
+
+    <!-- 新鲜甩尾 -->
+    {{include './components/xxsw/xxsw.art'}}
+
+    <!-- 机酒自由行 -->
+    <section class="jjzyx content-part common-style">
+        <div class="center-wrap">
+            <!-- jjzyx -->
+            {{include './components/jjzyx/jjzyx.art'}}
+        </div>
+    </section>
+
+    <!-- 当地玩乐 -->
+    <section class="ddwl content-part">
+        <div class="center-wrap">
+            <!-- ddwl -->
+            {{include './components/ddwl/ddwl.art'}}
+        </div>
+    </section>
+
+    <!-- 特色当体体验 -->
+    <section class="tsddty content-part">
+        <div class="center-wrap">
+            <!-- ttddty -->
+            {{include './components/tsddty/tsddty.art'}}
+        </div>
+
+    </section>
+
+    <!-- 最世界深度旅行 -->
+    <section class="sdlx content-part common-style">
+        <div class="center-wrap clearfix">
+            <!-- zsj -->
+            {{include './components/zsj/zsj.art'}}
+        </div>
+    </section>
+
+    <!-- 跟团/半自助游 -->
+    <section class="gt content-part common-style">
+        <div class="center-wrap clearfix">
+            <!-- gt -->
+            {{include './components/gt/gt.art'}}
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部开发 -->
+    <footer>
+        <div class="center-wrap">
+            <!-- botoom-bar -->
+            {{include '../../components/bottom-bar/bottom-bar.art'}}
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <!-- backtotop -->
+    {{include '../../components/backtotop/backtop.art'}}
+</body>
+
+</html>

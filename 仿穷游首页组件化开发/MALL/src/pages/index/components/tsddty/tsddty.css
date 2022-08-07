@@ -1,0 +1,54 @@
+.tsddty {
+    height: 456px;
+}
+
+.tsddty .center-wrap {
+    padding-top: 40px;
+}
+
+.tsddty .center-wrap h2 {
+    text-align: center;
+}
+
+.tsddty .center-wrap .bd {
+    padding-top: 32px;
+}
+
+.tsddty .center-wrap .bd ul li {
+    float: left;
+    width: 264px;
+    height: 290px;
+    margin-right: 32px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+}
+
+.tsddty .center-wrap .bd ul li:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.tsddty .center-wrap .bd ul li:last-child {
+    margin-right: 0;
+}
+
+.tsddty .center-wrap .bd ul li .wordbox {
+    padding-left: 14px;
+    padding-top: 16px;
+}
+
+.tsddty .center-wrap .bd ul li .proname {
+    font-size: 16px;
+    color: #000000;
+    line-height: 24px;
+    font-weight: bold;
+}
+
+.tsddty .center-wrap .bd ul li span {
+    font-size: 12px;
+    color: #000000;
+    line-height: 18px;
+    font-weight: bold;
+}
+
+.tsddty .center-wrap .bd ul li span.score {
+    color: #FA6400;
+}
