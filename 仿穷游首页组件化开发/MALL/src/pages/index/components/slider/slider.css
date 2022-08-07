@@ -18,3 +18,35 @@
     transition-property: transform;
     transition-duration: 0ms;
 }
+
+
+/* 小圆点 */
+.circles {
+    width: 160px;
+    height: 20px;
+    position: absolute;
+    bottom: 10px;
+    left:50%;
+    margin-left: -75px;
+    /* 防止被盖住 */
+    z-index: 9999;
+    /* 鼠标指针变为小手装 */
+}
+.circles li{
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: rgba(9, 204, 165, 0.307);
+    /* 宽度和背景颜色都改变了可以添加过渡属性 */
+    transition: all .5s ease 0s;
+    cursor: pointer;
+}
+.circles li:last-child{
+    margin-right: 0;
+}
+.circles li.current{
+    width: 40px;
+    background-color: #20BD9A;
+}

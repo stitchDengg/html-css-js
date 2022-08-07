@@ -1,6 +1,5 @@
 // css
 import  'styles/reset.css';
-import  './css/css';
 import  'styles/base.css';
 import  'styles/layout.css';
 

@@ -13,11 +13,15 @@ class BaseSlider {
     const sliderEl = el;
     const sliderContentEl = sliderEl.querySelector('.slider-content');
     const sliderItemEls = sliderEl.querySelectorAll('.slider-item');
+    const circles = sliderEl.querySelector('.circles');
+    const circles_lis = circles.children;
 
     // 添加到this上，在方法中能够用到
     this.sliderEl = sliderEl;
     this.sliderContentEl = sliderContentEl;
     this.sliderItemEls = sliderItemEls;
+    this.circles_lis = circles_lis;
+    this.circles = circles;
 
     // 幻灯片的最大最小索引
     this.minIndex = 0;
@@ -41,7 +45,7 @@ class BaseSlider {
     this.setContentWidth();
 
     //切换到初始索引值initialIndex
-    this.move(this.getInstance());
+    this.move(this.getDistance());
 
     // 开启动画
     if (this.options.animation) {
@@ -54,11 +58,11 @@ class BaseSlider {
     }
   }
 
-  
+
   // 自动切换
-  autoplay(){
-    const {autoplay} = this.options;
-    if(autoplay <= 0) return;
+  autoplay() {
+    const { autoplay } = this.options;
+    if (autoplay <= 0) return;
     // 用计时器先停计时器
     this.pause();
     this.autoplayTimer = setInterval(() => {
@@ -67,37 +71,36 @@ class BaseSlider {
   }
 
   // 暂停自动切换
-  pause(){
+  pause() {
     // 清除定时器
     clearInterval(this.autoplayTimer);
   }
 
   //!切换到index索引对应的幻灯片
-  to(index){
+  to(index) {
     // 先矫正索引
     index = this.getCorrectedIndex(index);
-  
+
     // 如果传过来的索引和当前索引相等
-    if(this.currentIndex === index) return;
+    if (this.currentIndex === index) return;
     // 更新索引值
     this.currentIndex = index;
     // 得到要移动的距离
-    const distance = this.getInstance();
-    if(this.options.animation){
+    const distance = this.getDistance();
+    if (this.options.animation) {
       this.moveWithAnimation(distance);
-    }else{
+    } else {
       this.move(distance);
     }
-
   }
 
   // 切换上一张
-  prev(){
+  prev() {
     this.to(this.currentIndex - 1);
   }
 
   // 切换下一张
-  next(){
+  next() {
     this.to(this.currentIndex + 1);
   }
 
@@ -105,6 +108,7 @@ class BaseSlider {
   // 不带动画的移动
   move(distance) {
     this.sliderContentEl.style.transform = `translate3d(${distance}px,0px,0px)`;
+    this.setCycles();
   }
 
   // 带动画的移动
@@ -121,7 +125,7 @@ class BaseSlider {
   }
 
   // 获取要移动的距离
-  getInstance(index = this.currentIndex) {
+  getDistance(index = this.currentIndex) {
     // 返回移动的距离 是负值
     return -this.itemWidth * index;
   }
@@ -162,6 +166,18 @@ class BaseSlider {
     if (index > this.maxIndex) return this.minIndex;
 
     return index;
+  }
+
+  //设置小圆点
+  setCycles() {
+    const circles_lis = this.circles_lis;
+    for(let i = 0; i < circles_lis.length; i++){
+      if(i === this.currentIndex){
+        circles_lis[i].classList.add('current')
+      }else{
+        circles_lis[i].classList.remove('current');
+      }
+    }
   }
 }
 

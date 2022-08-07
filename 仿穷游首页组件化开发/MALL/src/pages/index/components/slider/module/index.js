@@ -6,12 +6,12 @@ import circle from './circle.js';
 class Slider extends BaseSlider {
   constructor(el, options) {
     super(el, options);
-
     this.bindEvent();
   }
 
   bindEvent() {
     keyboard.bindEvent(this);
+    circle.bindEvent(this);
   }
 }
 

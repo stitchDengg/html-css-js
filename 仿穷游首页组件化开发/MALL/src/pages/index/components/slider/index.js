@@ -3,20 +3,13 @@ import './btn.css';
 import Slider from './module'
 import { getData } from 'api/getData';
 
-getData(
-    'https://www.fastmock.site/mock/8bca531d04a039bf6bf79dc36424d6f5/qy/slider'
-).then(data => {
-    console.log(data);
-})
-
-
 const slider = new Slider(document.querySelector('.slider'),{
     initialIndex:0,
     animation: true,
     // 切换速度，单位 ms
     speed: 300,
     // 自动切换，单位 ms
-    autoplay: 1000
+    autoplay: 0
 });
 
 const leftBtnEl = document.getElementById('left-btn');
@@ -42,3 +35,4 @@ bannerEl.onmouseenter = ()=> {
 bannerEl.onmouseleave = () => {
     slider.autoplay();
 }
+
