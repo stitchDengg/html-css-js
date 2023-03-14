@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+  </div>
+</body>
+
+<style>
+  div{
+    display: flex;
+    width: 800px;
+    height: 300px;
+    background-color: pink;
+    /* 默认的主轴是row */
+    /*  justify-content是设置主轴上的默认排列方式 默认是flex-start*/
+    justify-content: space-between;
+    /* 控制侧轴的对齐方式 */
+    align-items: center;
+  }
+  div span{
+    width: 150px;
+    height: 100px;
+    background-color: purple;
+  }
+</style>
+</html>
